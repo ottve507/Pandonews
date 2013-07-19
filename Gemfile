@@ -6,8 +6,6 @@ gem 'rails', '3.2.7'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 group :development do
-  gem 'sqlite3'
-  gem 'jquery-rails'
 end
 
 
@@ -25,6 +23,10 @@ gem 'feedzirra', :git => 'https://github.com/pauldix/feedzirra.git'
 gem "paperclip", "~> 3.0"
 
 # To use ActiveModel has_secure_password
+gem 'sqlite3'
+gem 'jquery-rails'
+
+
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'ancestry'
 gem 'geocoder'
