@@ -1,0 +1,140 @@
+
+<div id="profile_plates">
+		<%= form_tag(@user, :method => "get") do %>
+<div id="profile_plates_interaction_area">
+
+<div id="arrow_box">
+	<a href="" id="myplatesbutton"><img src="/assets/arrowright.png"></a>
+	<a href="" id="myplatesbutton2"><img src="/assets/arrowdown.png"></a>
+</div>
+<div id="plate_heading_box">
+	<p class="plates_head">
+			
+			<%@params=@myp.collect{|i| i.to_i}%>
+		 	<%@allsecondary=@plates.collect(&:id)%>
+
+			<%if @startup != 1%>
+				<%if ifAllChecked(@params,@allsecondary) %>
+				<input type='checkbox' onclick='checkAllPlates();' class="plates_check_all" checked="checked">
+				<%else%>
+				<input type='checkbox' onclick='checkAllPlates();' class="plates_check_all">  
+				<%end%>
+			<%else%>
+			<input type='checkbox' onclick='checkAllPlates();' class="plates_check_all"> 
+			<%end%> 
+	
+		my plates
+		</input>
+		</p>
+</div>
+<div id ="myplates">
+	<%if @plates.any?%>
+	<% @plates.each do |p| %>
+	
+	<%if @startup == 1 %>
+      <%= check_box_tag "plates[]", p.id, :class =>'plates_check'%>
+	<%else%>
+		<%= check_box_tag "plates[]", p.id,	@myp.include?(p.id.to_s), :class =>'plates_check'%>
+	<%end%>
+      <%= link_to p.name, showplate_identities_path(p), :class => "plates_links" %>
+      <br />
+
+    <% end %>
+	<%else%>
+		no plates yet.
+	<%end%>
+
+	
+
+</div>
+<div id="arrow_box">
+	<a href="" id="secondaryplatesbutton"><img src="/assets/arrowright.png"></a>
+	<a href="" id="secondaryplatesbutton2"><img src="/assets/arrowdown.png"></a>
+</div>
+<div id="plate_heading_box">
+	<p class="plates_head">
+		<%@params=@sp.collect{|i| i.to_i}%>
+	 	<%@allsecondary=@secondaryplates.collect(&:id)%>
+	
+		<%if @startup != 1%>
+			<%if ifAllChecked(@params,@allsecondary) %>
+			<input type='checkbox' onclick='checkAllSecondaryPlates();' class="secondary_plates_check_all" checked="checked">
+			<%else%>
+			<input type='checkbox' onclick='checkAllSecondaryPlates();' class="secondary_plates_check_all">
+			<%end%>
+		<%else%>
+		<input type='checkbox' onclick='checkAllSecondaryPlates();' class="secondary_plates_check_all">
+		<%end%>
+	my gathered plates
+	</input>
+		
+	
+	</p>
+</div>
+<div id ="secondaryplates">
+	<%if @secondaryplates.any?%>
+	
+	<% @secondaryplates.each do |p| %>
+	<%if @startup == 1 %>
+      <%= check_box_tag "secondaryplates[]", p.id, :class =>'secondary_plates_check'%>
+	<%else%>
+	  <%= check_box_tag "secondaryplates[]", p.id, @sp.include?(p.id.to_s), :class =>'secondary_plates_check'%>
+	<%end%>
+      <%= link_to p.name, showplate_identities_path(p), :class => "plates_links" %>
+      <br />
+    <% end %>
+	
+	<%else%>
+		no subscriptions.
+	<%end%>
+
+</div>
+
+<div id="arrow_box">
+	<a href="" id="friendslistbutton"><img src="/assets/arrowright.png"></a>
+	<a href="" id="friendslistbutton2"><img src="/assets/arrowdown.png"></a>
+</div>
+<div id="plate_heading_box">
+	<p class="plates_head">
+		
+		<%@params=@f.collect{|i| i.to_i}%>
+	 	<%@allsecondary=@friends.collect(&:id)%>
+	
+		<%if @startup != 1%>
+			<%if ifAllChecked(@params,@allsecondary) %>
+			<input type='checkbox' onclick='checkAllFriends();' class="friends_check_all" checked="checked">
+			<%else%>
+			<input type='checkbox' onclick='checkAllFriends();' class="friends_check_all"> 
+			<%end%>
+		<%else%>
+		<input type='checkbox' onclick='checkAllFriends();' class="friends_check_all"> 
+		<%end%> 
+		following
+		</input></p>
+</div>
+<div id ="friendslist">
+	<%if @user.friends.any?%>
+		<% @user.friends.each do |p| %>
+		 <%= check_box_tag "friends[]", p.id, @f.include?(p.id.to_s), :class =>'following_check'%>
+	     <%= link_to p.name, showplate_identities_path(p), :class => "plates_links" %>
+			<br>
+		<%end%>
+	<%else%>
+		not following anyone atm.
+	<%end%>
+</div>
+</div>
+
+<%= submit_tag "update", :class => "submitbutton_identity" %>
+
+<% end %>
+
+<div id="menuarea">
+	<hr style="width:50%;"/>
+	<center>
+	<%= link_to "Create plate", '/plates/new'%> | <%= link_to "Add feed", '/feeds/add_feed'%>
+	</center>
+
+
+	</div>
+</div>

@@ -1,0 +1,20 @@
+<%= form_for @search do |f| %>
+	<div class ="field">
+		<%=f.label :searchall %>
+		<%=f.text_field :searchall%>
+	</div>
+	
+	<div class ="field">
+		<%=f.label :language %>
+		<%=f.text_field :language%>
+	</div>
+	
+	<div class ="field">
+		<%=f.label :location %>
+		<%=f.text_field :location%>
+	</div>
+	
+	<div class ="submit">
+		<%=f.submit "Search" %>
+	</div>
+<%end%>

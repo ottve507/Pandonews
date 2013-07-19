@@ -1,0 +1,64 @@
+<% if current_user %>
+  <h1>User Profile</h1>
+  <p>
+    <strong>Name:</strong>
+    <%= current_user.name %>
+  </p>
+  <p>
+    <strong>Provider:</strong>
+    <%= current_user.provider %>
+  </p>
+  <p>
+    <strong>OmniAuth UID:</strong>
+    <%= current_user.uid %><br>
+
+  <strong>ID:</strong>
+    <%= current_user.id %><br>
+
+	<img src="<%= current_user.image %>"><br>
+	<%= current_user.location %><br>
+	<%= current_user.language %><br>
+	<%= current_user.firstname %><br>
+	<%= current_user.lastname %><br>
+	<%= current_user.email %><br>
+	
+	
+  </p>
+  <p><%= link_to "Log out", logout_path %></p>
+<% else %>
+
+<div id="sessions_middlebox">
+
+  <h1>Login</h1>
+
+  <p><strong>Login through a social media service:</strong></p>
+
+ <div class="auth_providers">
+    <a href="/auth/twitter" class="auth_provider">
+      <%= image_tag "twitter_64.png", size: "64x64", alt: "Twitter" %>
+      Twitter
+    </a>
+    <a href="/auth/facebook" class="auth_provider">
+      <%= image_tag "facebook_64.png", size: "64x64", alt: "Facebook" %>
+      Facebook
+    </a>
+  </div>
+  
+  <p>
+    <strong>Don't use these services?</strong>
+    <%= link_to "Create an account (it is super easy, we promise)", new_identity_path %> or login below.
+  </p>
+  
+  <%= form_tag "/auth/identity/callback" do %>
+    <div class="field">
+      <%= label_tag :auth_key, "Email" %><br>
+      <%= text_field_tag :auth_key %>
+    </div>
+    <div class="field">
+      <%= label_tag :password %><br>
+      <%= password_field_tag :password %>
+    </div>
+    <div class="actions"><%= submit_tag "Login" %></div>
+  <% end %>
+</div>
+<% end %>

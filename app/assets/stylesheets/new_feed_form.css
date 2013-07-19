@@ -1,0 +1,34 @@
+#new_feed_form_container{
+	margin-left:10%;
+	width:80%;
+	margin-top:50px;
+	
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+
+	background-color:white;
+	-moz-box-shadow: 0 0 1px 1px #888;
+	-webkit-box-shadow: 0 0 1px 1px #888;
+	box-shadow: 0 0 1px 1px #888;
+	overflow:auto; 	
+	float:left;
+}
+
+
+.new_feed_form_content{
+	color: orange;
+	float:left;
+	font-size: 15px;
+	margin-top:5%;
+	margin-left:10%;
+	min-width:80%;
+	max-width:80%;
+}
+
+.new_feed_form_title{
+	color: orange;
+	font-size: 15px;
+	margin-top:5%;
+	margin-left:10%;
+	width:60%;
+}

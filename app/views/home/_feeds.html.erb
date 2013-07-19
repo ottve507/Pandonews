@@ -1,0 +1,40 @@
+<%  @anv = User.find_by_id(feeds.user_id) %>
+<%  @set = Setting.find_by_id(feeds.user_id) %>
+
+<div id="feedbox">
+<div id="placecounter">
+	<% if @counter %>
+	<%@counter=@counter+1%>
+	#<%=@counter%>
+	<%else%>
+	 ::::
+	<%end%>
+		</div>
+<div id="userinfo">
+	<%= link_to(@anv) do %>		
+	<%if @anv.provider=='facebook' || @anv.provider=='twitter' %>
+		<%if @set.profilepicture.url != '/profilepictures/original/missing.png' %>
+			<img src="<%=@set.profilepicture.url%>" class="pictureresizing">
+		<% else %>
+			<img src="<%=@anv.image%>" class="pictureresizing">
+		<%end%>
+	<%else%>
+		<img src="<%=@set.profilepicture.url%>" class="pictureresizing">
+	<%end%>
+	<br>
+   <% end %>
+</div>
+  <div id="feedbox_content">
+  <div id ="info"><div id="headerboxtext"><p class="headerlinkstyle"> <%= link_to feeds.title, feeds %></p></div><div id="headerboximage"></div></div>		
+		<p class="feedtext"><%=feeds.content.html_safe %></p>
+		
+
+		</div>
+		<div id="bottominfo">
+				<p class="linkstyle">
+				<%= link_to @anv.name, @anv%>
+				</p>
+			<hr style="width:80%;"/>
+			</div>
+		</div>		
+<br>

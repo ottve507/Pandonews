@@ -1,0 +1,173 @@
+a img {
+  border: none;
+}
+
+a {
+  color: orange;
+text-decoration: none;
+}
+
+.show_link{
+  color: orange;
+  font-size: 30px;
+}
+
+.show_content{
+
+  font-size: 20px;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+
+}
+
+#containers {
+  width: 100%;
+  background-color: #FFF;
+  padding: 30px 10px;
+  border: solid 1px black;
+  margin-top: 20px;
+  position: relative;
+  float:left;
+}
+
+#navigation {
+	position: fixed;
+	overflow:hidden; 
+	top:0;
+	height:80px;
+	width:100%;
+	background-color:#434343;
+	border-bottom:solid 3px gray;
+	z-index : 8;
+}
+
+#navigation_image{
+	background-color:#434343;
+	display:inline-block;
+	height:100%;
+	margin-left:0px;
+	width:25%;
+	float:left;
+	box-shadow: 0 0 5px black;
+
+}
+
+#navigation_text {
+	display:block;
+	float:left;
+	position:relative;
+	width:65%;
+
+	padding-top:15px;
+	font-size:15px;
+}
+
+#navigation_text_options{
+	float:left;
+	position:relative;
+	border-right:1px solid gray;
+	display:inline-block;
+	width:10%;
+	margin-left:3%;	
+}
+
+#navigation_text_options_last{
+	float:left;
+	position:relative;
+	display:inline-block;
+	width:10%;
+	margin-left:3%;
+	
+}
+
+
+#site_content {
+position:relative;
+width:100%;
+height:90%;
+background-color:red;
+}
+
+
+
+#flash_notice, #flash_error, #flash_alert {
+  padding: 5px 8px;
+  margin: 10px 0;
+  margin-right: 150px;
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_error, #flash_alert {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+.field_with_errors {
+  display: inline;
+}
+
+.error_messages {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  font-size: 12px;
+}
+
+.error_messages h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 12px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+.error_messages p {
+  margin: 8px 10px;
+}
+
+form .field, form .actions {
+  margin: 12px 0;
+}
+
+IMG.displayed {
+    display: block;
+    margin-top:25px;
+    margin-left: auto;
+    margin-right: auto }
+
+nav a {
+	  display: inline-block;
+	  padding: 7px;
+	  margin-top:2px;
+	  text-decoration: none;
+}
+
+.inlines {
+	position:relative;
+	float:left;
+	display:inline-block;
+	margin-top:4px;
+	width:65%;
+	height:30px;
+	margin-left:2%;
+	font-size:16px;
+	letter-spacing:1px;
+	padding-left:2px;
+}
+
+.logo {
+	float:left;
+	margin-right:20px;	
+}

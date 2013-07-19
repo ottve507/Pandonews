@@ -1,0 +1,26 @@
+<%= form_for(@plate) do |f| %>
+  <% if @plate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@plate.errors.count, "error") %> prohibited this feed from being saved:</h2>
+
+      <ul>
+      <% @plate.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <%= f.text_field :name, :class=>"new_feed_form_title", :placeholder => "the name of your plate" %>
+	<%= f.text_area :summmary, :class=>"new_feed_form_content", :placeholder => "a summary of your plate"  %>
+    <%= f.text_field :language, :class=>"new_feed_form_title", :placeholder => "what language are you writing in?", :value => @language_setting %>
+
+<div id='input'>
+    <%= f.text_field :location, :id=>"gmaps-input-address", :class=>"new_feed_form_title", :placeholder => "location", :value => @location_setting[0].city + ', ' + @location_setting[0].country %>
+</div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

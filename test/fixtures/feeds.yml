@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  content: MyText
+  url: MyText
+  published_at: 2013-04-27 22:32:01
+  guid: MyString
+  location: MyString
+  language: MyString
+  user_id: 1
+  url_to_feed: MyString
+  type_of_feed: MyString
+  thumbnail_url: MyString
+  original_plate_id: 1
+  latitude: 1.5
+  longitude: 1.5
+
+two:
+  title: MyString
+  content: MyText
+  url: MyText
+  published_at: 2013-04-27 22:32:01
+  guid: MyString
+  location: MyString
+  language: MyString
+  user_id: 1
+  url_to_feed: MyString
+  type_of_feed: MyString
+  thumbnail_url: MyString
+  original_plate_id: 1
+  latitude: 1.5
+  longitude: 1.5

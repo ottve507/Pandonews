@@ -1,0 +1,68 @@
+<div id="feed_profile_box">
+	<p class="identity_name"><%=@user.name%></p>
+	
+	<%if @user.provider=='facebook' || @user.provider=='twitter' %>
+		<%if @setting.profilepicture.url != '/profilepictures/original/missing.png' %>
+			<img src="<%=@setting.profilepicture.url%>" class="identity_resize">
+		<% else %>
+			<img src="<%=@user.image%>" class="identity_resize">
+		<%end%>
+	<%else%>
+		<img src="<%=@setting.profilepicture.url%>" class="identity_resize">
+	<%end%>
+	
+	<hr style="width:50%; margin-left:5%;"/>
+	<p class="identity_info">Location: <%=@setting.location%></p> 
+	<p class="identity_info">Language: <%=@setting.primary_language%></p> 
+
+</div>
+
+
+
+<div id="profile_plates">
+<p class="plates_head">Plates:</p>
+<% @plates.each do |p| %>
+	<%= link_to p.name, showplate_identities_path(p), :class => "plates_links" %><br>
+<%end%>
+	
+<hr style="width:50%;"/>
+<p class="plates_head">Following:</p>
+<% @user.friends.first(5).each do |p| %>
+	<%= link_to p.name, p, :class => "plates_links" %><br>
+<%end%>
+
+<hr style="width:50%;"/>
+<p class="plates_head">Followers:</p>
+<% @friends.each do |user| %>
+    
+<% if user.id != @user.id %> 
+	<%if user.is_friend? @user %>
+	<%= link_to user.name, user %>
+	<% end %>
+ <% end %>    
+<% end %>
+
+<%if current_user%>
+<%if current_user.id == @user.id %><br>
+<hr style="width:50%;"/>
+<center>
+<%= link_to "Create plate", '/plates/new'%> | <%= link_to "Add feed", '/feeds/add_feed'%>
+</center>
+<%end%>
+<%end%>
+
+<a href="" id="button"><img src="/assets/arrowright.png"></a>
+<a href="" id="button2"><img src="/assets/arrowdown.png"></a>
+<div id ="effect">hello</div>
+
+
+</div>
+
+<div id="identity_main">
+	    <%= render :partial => 'renderplate', :collection => @feeds %>		
+	</div>
+<div id="lastpage" type="<%=@feeds.total_pages%>"><%= will_paginate(@feeds)%></div>
+
+
+
+

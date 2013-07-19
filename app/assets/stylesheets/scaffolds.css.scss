@@ -1,0 +1,150 @@
+//Before 7
+
+#feedbox {
+float:left;
+width:100%;
+margin-left:0%;
+margin-right:auto;
+}
+
+#placecounter {
+float:left;
+font-family:Optima;
+font-size:50px;
+width:10%;
+}
+
+#userinfo {
+float:left;
+width:8%;
+font-family:Optima;
+overflow:hidden;
+font-size:20px;
+display: inline-block;
+}
+
+
+#feedbox_content {
+float:left;
+width:65%;
+overflow:hidden;
+display: inline-block;
+}
+
+
+#feedboxes {
+width:80%;
+margin-top:40px;
+margin-left:8%;
+margin-right:auto;
+padding-top:40px;
+padding-bottom:40px;
+}
+
+#lastpage{
+width:80%;
+margin-top:60px;
+margin-left:8%;
+margin-right:auto;
+}
+
+.cleaner {
+  clear: both;
+  font-size: 1px;
+}
+
+
+#bottominfo {
+float:left;
+width:100%;
+}
+
+#info{
+float:left;
+width:100%;
+}
+
+#headerboximage{
+float:left;
+width:10%;
+display: inline-block;
+}
+
+#headerboxtext{
+float:left;
+padding-left:10px;
+margin-top:-20px;
+width:80%;
+
+}
+
+.pictureresizing{
+width:100%;
+max-height:250px;
+}
+
+.linkstyle{
+font-size:10px;
+padding:0px;
+margin:0px;
+margin-left:10%;
+margin-top:1%;
+}
+
+.headerlinkstyle{
+font-size:20px;
+padding-top:0px;
+}
+
+.feedtext{
+margin:0;
+padding:0;
+padding-left:10px;
+}
+
+//After 7
+#placecounter_after7 {
+float:left;
+font-family:Optima;
+min-height:10px;
+width:10%;
+}
+
+#userinfo_after7 {
+float:left;
+width:8%;
+font-family:Optima;
+overflow:hidden;
+font-size:20px;
+display: inline-block;
+}
+
+
+#feedbox_content_after7 {
+float:left;
+width:65%;
+height:100%;
+overflow:hidden;
+display: inline-block;
+}
+
+.pictureresizing_after7{
+width:60%;
+max-height:250px;
+}
+
+
+.linkstyle_after7{
+font-size:10px;
+padding:0px;
+margin:0px;
+margin-left:10%;
+margin-top:0%;
+}
+
+.headerlinkstyle_after7{
+font-size:15px;
+padding-top:0px;
+padding-left:10px;
+margin-top:0px;
+}

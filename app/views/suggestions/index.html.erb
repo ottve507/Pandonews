@@ -1,0 +1,16 @@
+<h1><%=@suggestion.title%></h1>
+<%=@suggestion.content.html_safe%>
+<%=@comments = @suggestion.comments%>
+
+<div id="bottom_stuff_feeds">
+	<div id="commenting_area"> <%if current_user%> <%= render "comments/form"%> <%else%> <%= link_to "login to
+		comment.", sessions_path %> <%end%> </div>
+		<%if @comments?%>
+			<%= nested_comments @comments%>
+		<%end%>
+
+		<%= will_paginate @comments, :class => 'pagination_comments', :page_links => false, :next_label => 'load more comments' %>
+		
+		</div>
+</div>
+

@@ -1,0 +1,37 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.pagination_comments .previous_page {
+  visibility:hidden;
+}
+
+.pagination_comments .next_page {
+  visibility:visible;
+
+color: rgba(255,255,255,1);
+text-decoration: none;
+background-color: orange;
+font-weight: 500;
+font-size: 90%;
+display: block;
+padding: 2px;
+border-radius: 4px;
+margin-top: 20px;
+margin-left: 45%;
+width: 150px;
+text-align: center;
+
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-box-shadow: 0px 4px 0px rgba(250,201,5,1), 0px 9px 25px rgba(0,0,0,.7);
+  -moz-box-shadow: 0px 4px 0px rgba(250,201,5,1), 0px 9px 25px rgba(0,0,0,.7);
+
+	-webkit-transition: all .1s ease;
+	-moz-transition: all .1s ease;
+	-ms-transition: all .1s ease;
+	-o-transition: all .1s ease;
+	  transition: all .1s ease;
+	
+
+}

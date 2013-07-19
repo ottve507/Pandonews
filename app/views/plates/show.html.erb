@@ -1,0 +1,26 @@
+<div id ="show_profile_box">
+	<%  @anv = User.find_by_id(@plate.user_id) %>
+	<%= @anv.name %>
+</div>
+
+<div id="show_feed">
+<p id="notice"><%= notice %></p>
+
+
+<p class="show_content">
+  <%= @plate.summmary.html_safe %>
+</p>
+
+<p>
+   <%if @plate.location!=nil%>
+  <b>Location:</b>
+  <%= @plate.location %>
+	<%end%>
+</p>
+
+</div>
+
+
+
+
+

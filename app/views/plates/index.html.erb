@@ -1,0 +1,55 @@
+
+<center><div id="map" style="height:250px; width:50%;margin-top:10px; display:inline-block; position:relative;"></div></center>
+
+<script>
+		var map = L.map('map');
+
+		L.tileLayer('http://{s}.tile.cloudmade.com/{key}/22677/256/{z}/{x}/{y}.png', {
+			attribution: 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
+			key: 'BC9A493B41014CAABB98F0471D759707'
+		}).addTo(map);
+
+		var LeafIcon = L.Icon.extend({
+			options: {
+				iconSize:     [38, 95],
+				shadowSize:   [50, 64],
+				iconAnchor:   [22, 94],
+				shadowAnchor: [4, 62],
+				popupAnchor:  [-3, -76]
+			}
+		});
+
+		var greenIcon = new LeafIcon({iconUrl: '/assets/pointer.png'});
+		var southWest = new L.LatLng(1, -74.227),
+		    northEast = new L.LatLng(40.774, -74.125),
+		    bounds = new L.LatLngBounds(southWest, northEast);
+
+		L.marker(southWest, {icon: greenIcon}).bindPopup("I am a green leaf.").addTo(map);
+		L.marker(northEast, {icon: greenIcon}).bindPopup("I am a green leaf.").addTo(map);		
+		map.fitBounds(bounds);
+		var zoomLevel = map.getZoom();
+		map.setZoom(zoomLevel-2);
+		
+
+</script>
+	
+
+
+<h1>Listing feeds</h1>
+
+<% @plate.each do |feed| %>
+  <tr>
+    <td><%= feed.name %></td>
+    <td><%= feed.summmary %></td>
+    <td><%= feed.location %></td>
+    <td><%= feed.language %></td>
+    <td><%= link_to 'Show', feed %></td>
+    <td><%= link_to 'Edit', edit_feed_path(feed) %></td>
+    <td><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+

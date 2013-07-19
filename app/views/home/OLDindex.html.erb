@@ -1,0 +1,39 @@
+		<center><p class="logoText">
+	<%if current_user %>
+		<% @user = User.find_by_id(current_user.id) %>
+		<% @setting = Setting.find_by_id(current_user.id)%>
+	
+			feed<%= @setting.firstname%>
+		<%else%>
+		feedMe
+		<%end%>
+		
+		</p</center>
+		<hr style="width:50%;"/>
+		<center>
+		<nav>
+			<%= link_to "Fresh plates" %> |
+			<%= link_to "Hot plates" %> |
+			<%= link_to "Most discussed" %> 
+		</nav>
+		</center>
+
+<div id="feedboxes">
+		<% @feeds.each do |r| %>
+	      <div id="feedbox", style="background-color: yellow;">
+		  <div id="feedbox_content">
+		  <div id ="info">hej</div>
+		   <h2><%= link_to r.title, r %></h2>
+				<img src="<%=r.thumbnail_url%>">
+				<%=r.content.html_safe %>
+				<%  @anv = User.find_by_id(r.user_id) %>
+				</div>
+				<div id="bottominfo">By:<%= link_to @anv.name, user_path(@anv.id) %> | 
+					<%=r.impressionist_count(:filter=>:all)%></div>
+				</div>
+		<% end %>
+			<div class='cleaner'>&nbsp;</div>
+		<br>
+</div>
+<div class='cleaner'>&nbsp;</div>
+

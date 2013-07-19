@@ -1,0 +1,35 @@
+
+<% @posts.each do |post| %>
+<h2><%= link_to post.title, post %></h2>
+<h2><%= post.content %></h2>
+<% if post.user_id==current_user.id%>
+ <%= form_for post do |t| %>
+ <%= t.hidden_field :rel_current_id, :value=>post.rel_original_id%>
+ <%= t.submit "Remove dish" %>
+<%end%>
+<%end%>
+</p>
+<hr/>
+<% end %>
+<hr/>
+<hr/>
+Your posts:
+<p><%@your_posts.each do |post|%>
+	<h2><%= link_to post.title, post %></h2>
+	<h2><%= post.content %></h2>
+	<p><%= post.rel_current_id %></p>
+	
+	<% if post.rel_current_id != @rela.id%>
+   	 <%= form_for post do |t| %>
+     <%= t.hidden_field :rel_current_id, :value=>@rela.id%>
+     <%= t.submit "Add dish" %>
+	<%end%>
+    <%else%>
+    <%= form_for post do |t| %>
+    <%= t.hidden_field :rel_current_id, :value=>post.rel_original_id%>
+    <%= t.submit "Remove dish" %>
+    <% end %>
+	<%end%>
+
+
+	<%end%></p>

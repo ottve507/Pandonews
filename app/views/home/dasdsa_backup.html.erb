@@ -1,0 +1,89 @@
+<% javascript :defaults, 'endless_page' %>
+
+		<center><p class="logoText">
+	<%if current_user %>
+		<% @user = User.find_by_id(current_user.id) %>
+		<% @setting = Setting.find_by_id(current_user.id)%>
+	
+			feed<%= @setting.firstname%>
+		<%else%>
+		feedMe
+		<%end%>
+		
+		</p></center>
+		<hr style="width:50%;"/>
+		<center>
+		<nav>
+			<%= link_to "Fresh plates" %> |
+			<%= link_to "Hot plates" %> |
+			<%= link_to "Most discussed" %> 
+		</nav>
+		</center>
+<% @counter=0%>
+<div id="feedboxes">
+		<% @feeds.each do |r| %>
+		<%  @anv = User.find_by_id(r.user_id) %>
+		<%  @set = Setting.find_by_id(r.user_id) %>
+		<% @counter=@counter + 1%>
+		
+		<%if @counter<=7 %>
+	    <div id="feedbox">
+		<div id="placecounter">#<%=@counter%></div>
+		<div id="userinfo">
+			<%= link_to(@anv) do %>		
+			<%if @anv.provider=='facebook' || @anv.provider=='twitter' %>
+				<%if @set.profilepicture.url != '/profilepictures/original/missing.png' %>
+					<img src="<%=@set.profilepicture.url%>" class="pictureresizing">
+				<% else %>
+					<img src="<%=@anv.image%>" class="pictureresizing">
+				<%end%>
+			<%else%>
+				<img src="<%=@set.profilepicture.url%>" class="pictureresizing">
+			<%end%>
+			<br>
+		   <% end %>
+		</div>
+		  <div id="feedbox_content">
+		  <div id ="info"><div id="headerboxtext"><p class="headerlinkstyle"> <%= link_to r.title, r %></p></div><div id="headerboximage"></div></div>		
+				<p class="feedtext"><%=r.content.html_safe %></p>
+				
+		
+				</div>
+				<div id="bottominfo">
+						<p class="linkstyle">
+						<%= link_to @anv.name, @anv%>
+						</p>
+					<hr style="width:80%;"/>
+					</div>
+				</div>
+				<%else%>
+				
+				
+				<div id="feedbox">
+				
+				<div id="placecounter_after7"></div>
+				<div id="userinfo_after7">
+						<%= link_to(@anv) do %>		
+						<%if @anv.provider=='facebook' || @anv.provider=='twitter' %>
+							<%if @set.profilepicture.url != '/profilepictures/original/missing.png' %>
+								<img src="<%=@set.profilepicture.url%>" class="pictureresizing_after7">
+							<% else %>
+								<img src="<%=@anv.image%>" class="pictureresizing_after7">
+							<%end%>
+						<%else%>
+							<img src="<%=@set.profilepicture.url%>" class="pictureresizing_after7">
+						<%end%>
+						<%end%>					
+				</div>
+				<div id="feedbox_content_after7"><p class="headerlinkstyle_after7"><%= link_to r.title, r %></p></div>
+				<div id="bottominfo">
+						<p class="linkstyle_after7">
+						<%= link_to @anv.name, @anv%>
+						</p>
+					<hr style="width:80%;"/>
+					</div>
+				</div>
+			<% end %>
+		
+		<% end %>
+		</div>

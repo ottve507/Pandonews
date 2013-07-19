@@ -1,0 +1,39 @@
+<div id="add_feed_main">
+		<p class="magic_font">this is where the magic happens,</p>
+		<p class="less_magic_font">add your RSS-url and share it!</p>
+		
+<%if @plates!=[] %>
+	<%= form_for @feed do |f| %>
+		<div id="add_feed_input_field">
+			<div id="add_feed_input_field_part1">
+  				<p class="label_text">1. enter feed url:
+  					<%= f.text_field :url, :class => "add_url_text" %> <p class="label_text_small">psst! for example: "http://rss.nytimes.com/services/xml/rss/nyt/Europe.xml"</p>
+				</p>
+			</div>
+			<div id="add_feed_input_field_part2">
+				<p class="label_text_right">Input the url to your feed, this will be added to your plate and its settings</p>
+			</div>
+		</div>
+		
+		<div id="add_feed_input_field">
+		<p class="label_text">2. choose which plate to add feed to:</p>
+  		<%= f.collection_select :original_plate_id, @plates, :id, :name%>
+		</div>
+		
+		<div id="add_feed_input_field">
+			<p class="label_text">3. click share!</p>
+	  			<%= f.submit "share", :class => "submitbutton" %>
+			
+		</div>
+
+  	
+	<% end %>
+	
+
+	<%else%>
+	<%= link_to "Add plate", new_plate_path %>
+	<%end%>
+	
+</div>
+
+

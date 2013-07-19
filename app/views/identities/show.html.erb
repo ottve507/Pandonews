@@ -1,0 +1,48 @@
+<%if @startup==1%>
+<script>
+function clickDefault() {
+	var secondary= document.getElementsByClassName('secondary_plates_check_all');
+	var myPlates= document.getElementsByClassName('plates_check_all');
+    secondary[0].checked = true;
+	myPlates[0].checked = true;
+		};
+$(document).ready(function() {  
+	clickDefault(); 
+});
+</script>
+<%end%>
+
+
+<div id="feed_profile_box">
+	<p class="identity_name"><%=@user.name%></p>
+	
+	<%if @user.provider=='facebook' || @user.provider=='twitter' %>
+		<%if @setting.profilepicture.url != '/profilepictures/original/missing.png' %>
+			<img src="<%=@setting.profilepicture.url%>" class="identity_resize">
+		<% else %>
+			<img src="<%=@user.image%>" class="identity_resize">
+		<%end%>
+	<%else%>
+		<img src="<%=@setting.profilepicture.url%>" class="identity_resize">
+	<%end%>
+	
+	
+	<hr style="width:50%; margin-left:5%;"/>
+	<p class="identity_info">Location: <%=@setting.location%></p> 
+	<p class="identity_info">Language: <%=@setting.primary_language%></p> 
+</div>
+
+<%=render :partial => 'platemenu'%>
+
+<div id="identity_main">
+<%if @feeds%>	
+	    <%= render :partial => 'renderplate', :collection => @feeds %>
+<%else%>
+		<h1><center>Nothing here... yet</center></h1>
+<%end%>
+</div>
+<%if @feeds%>
+<div id="lastpage_identity" type="<%=@feeds.total_pages%>">
+<center>
+<%= will_paginate(@feeds)%></center></div>	
+<%end%>

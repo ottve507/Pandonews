@@ -1,0 +1,382 @@
+// Place all the styles related to the Feeds controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#bottom_stuff_feeds {
+float:left;
+width:76%;
+margin-left:10%;
+background-color:white;
+margin-top:20px;
+-moz-box-shadow: 0 0 1px 1px #888;
+-webkit-box-shadow: 0 0 1px 1px #888;
+box-shadow: 0 0 1px 1px #888;
+overflow:auto;
+padding:2%;
+display: inline-block;
+}
+
+#comment_box_action{
+display: inline-block;
+float:left;
+width:100%;
+margin-top:20px;
+}
+
+#comment_box_child{
+float:left;
+padding-top:10px;
+padding-bottom:10px;
+width: 75%;
+margin-top:1%;
+margin-bottom:1%;
+margin-left:20%;
+-moz-box-shadow: 0 0 1px 1px #888;
+-webkit-box-shadow: 0 0 1px 1px #888;
+box-shadow: 0 0 1px 1px #888;
+
+border-top-right-radius: 5px;
+border-top-left-radius: 5px;
+border-bottom-right-radius: 5px;
+border-bottom-left-radius: 5px;
+
+}
+
+#comment_box_parent{
+display: inline-block;
+float:left;
+padding-top:10px;
+padding-bottom:10px;
+width: 90%;
+margin-top:1%;
+margin-bottom:1%;
+margin-left:5%;
+-moz-box-shadow: 0 0 1px 1px #888;
+-webkit-box-shadow: 0 0 1px 1px #888;
+box-shadow: 0 0 1px 1px #888;
+
+border-top-right-radius: 5px;
+border-top-left-radius: 5px;
+border-bottom-right-radius: 5px;
+border-bottom-left-radius: 5px;
+}
+
+#comment_box_vote{
+display: inline-block;
+float:left;
+width:10%;
+text-align:center;
+margin-top:-20px;
+}
+
+#commenting_area{
+display: inline-block;
+float:left;
+margin-bottom:2%;
+margin-left:5%;
+background-color:#DBDBDB;
+width:88%;
+padding:1%;
+
+-moz-box-shadow: 0 0 1px 1px #888;
+-webkit-box-shadow: 0 0 1px 1px #888;
+box-shadow: 0 0 1px 1px #888;
+
+border-top-right-radius: 5px;
+border-top-left-radius: 5px;
+border-bottom-right-radius: 5px;
+border-bottom-left-radius: 5px;
+}
+
+#commenting_box{
+display: inline-block;
+max-width: 100%;
+width:50%;
+float:left;
+}
+
+
+#feed_show_map{
+display: inline-block;
+margin-top:30px;
+margin-bottom:30px;
+width:100%;
+height:220px;
+display:block;
+float:left;
+}
+
+#feed_show_map_left{
+display: inline-block;
+width:55%;
+height:220px;
+display:block;
+float:left;
+border-right:3px solid gray;
+
+}
+
+#feed_show_map_right{
+display: inline-block;
+width:40%;
+height:220px;
+display:block;
+float:left;
+overflow-y:auto;
+}
+
+#googleMap{
+width:100%;
+height:100%;
+}
+
+
+#show_profile_box{
+display: inline-block;
+width:80%;
+padding-top:2%;
+margin-top:60px;
+margin-left:10%;
+background-color:white;
+
+border-top-right-radius: 10px;
+border-top-left-radius: 10px;
+-moz-box-shadow: 0 0 1px 1px #888;
+-webkit-box-shadow: 0 0 1px 1px #888;
+box-shadow: 0 0 1px 1px #888;
+border-bottom:solid 2px black;
+overflow:auto; 
+}
+
+#comment_box_user_info{
+display: inline-block;
+float:left;
+text-align: center;
+width:10%;
+}
+
+#show_feed_wrapper{
+display: inline-block;
+border-top-right-radius: 10px;
+border-top-left-radius: 10px;
+width:80%;
+background-color:white;
+margin-left:10%;
+-moz-box-shadow: 0 0 1px 1px #888;
+-webkit-box-shadow: 0 0 1px 1px #888;
+box-shadow: 0 0 1px 1px #888;
+overflow:auto; 
+margin-top:60px;
+}
+
+#show_feed_wrapper_bottom {
+display: inline-block;
+width:100%;
+float:left;
+}
+
+#show_feed {
+display: inline-block;
+float:left;
+background-color:white;
+width:64%;
+padding:1%;
+padding-left:7%;
+padding-right:7%;
+box-shadow: 5px 0 7px -5px black;
+}
+
+#show_feed_related_feeds {
+display: inline-block;
+width:20%;
+background-color:white;
+float:left;
+}
+
+#title_divider_left{
+display: inline-block;
+width:90%;
+float:left;
+}
+
+#title_divider_right{
+display: inline-block;
+width:10%;
+float:left;
+}
+
+.location_feeds{
+font-size:100%;
+font-weight:bold;
+margin:0;
+padding:0;
+display: inline-block;
+}
+
+.info_feeds{
+font-size:100%;
+margin:0;
+padding:0;
+display:inline;
+font-weight:bold;
+}
+
+.info_feeds_color{
+color: orange;
+font-size:100%;
+margin:0;
+padding:0;
+display:inline;
+}
+
+hr.style-two { border: 0; height: 1px; background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); }
+
+h1.votecount {
+color:orange;
+margin-bottom:3px;
+padding-bottom:0;
+}
+
+
+//___________________________________add_feed stuff___________________
+
+#add_feed_main {
+width:80%;
+margin-top:60px;
+margin-left:8%;
+margin-right:auto;
+background-color:white;
+border:solid 1px black;
+float:left;
+padding-bottom: 50px;
+}
+
+#add_feed_input_field {
+width:80%;
+margin-left:auto;
+margin-right:auto;
+background-color:white;
+margin-top:20px;
+text-alignt:left;
+float:left;
+margin-left:10%;
+}
+
+#add_feed_input_field_part1{
+width:60%;
+float:left;
+}
+
+#add_feed_input_field_part2{
+width:39%;
+height:150px;
+float:left;
+background-image:url('/assets/arrow.png');
+background-color:white;
+background-repeat: no-repeat;
+}
+
+.magic_font {
+color: orange;
+font-family:helvetica;
+font-size: 50px;
+margin-left:5%;
+margin-bottom:0px;
+}
+
+.less_magic_font {
+color: orange;
+font-size: 20px;
+margin-top:0;
+margin-bottom:0;
+margin-left:35%;
+}
+
+.label_text {
+color: gray;
+font-size: 20px;
+margin-top:0;
+margin-bottom:0;
+}
+
+.label_text_small {
+color: gray;
+font-size: 10px;
+margin-top:0;
+margin-bottom:0;
+display: inline-block;
+}
+
+.label_text_right {
+color: gray;
+font-size: 20px;
+margin-top:40px;
+margin-bottom:0;
+margin-left:110px;
+}
+
+.add_url_text {
+color: orange;
+font-size: 15px;
+margin-top:2px;
+margin-bottom:0;
+width:80%;
+}
+
+
+.submitbutton {
+color: rgba(255,255,255,1);
+text-decoration: none;
+background-color: orange;
+font-weight: 500;
+font-size: 90%;
+display: block;
+padding: 2px;
+border-radius: 4px;
+margin-top: 20px;
+width: 150px;
+text-align: center;
+
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-box-shadow: 0px 4px 0px rgba(250,201,5,1), 0px 9px 25px rgba(0,0,0,.7);
+  -moz-box-shadow: 0px 4px 0px rgba(250,201,5,1), 0px 9px 25px rgba(0,0,0,.7);
+
+
+	
+	-webkit-transition: all .1s ease;
+	-moz-transition: all .1s ease;
+	-ms-transition: all .1s ease;
+	-o-transition: all .1s ease;
+	  transition: all .1s ease;
+}
+
+.submitbutton:active {
+   -webkit-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+   -moz-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+   
+}
+
+
+ .ui-autocomplete {
+background-color:white;
+max-height: 100px;
+overflow-y: auto;
+position:absolute;
+/* prevent horizontal scrollbar */
+overflow-x: hidden;
+-moz-box-shadow: 0 0 1px 1px #888;
+-webkit-box-shadow: 0 0 1px 1px #888;
+box-shadow: 0 0 1px 1px #888;
+}
+/* IE 6 doesn't support max-height
+* we use height instead, but this forces the menu to always be this tall
+*/
+* html .ui-autocomplete {
+background-color:white;
+height: 100px;
+-moz-box-shadow: 0 0 1px 1px #888;
+-webkit-box-shadow: 0 0 1px 1px #888;
+box-shadow: 0 0 1px 1px #888;
+position:absolute;
+}

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  keywords: MyString
+  location: MyString
+  language: MyString
+  searchall: MyString
+
+two:
+  keywords: MyString
+  location: MyString
+  language: MyString
+  searchall: MyString

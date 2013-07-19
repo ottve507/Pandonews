@@ -1,0 +1,237 @@
+// Place all the styles related to the identities controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#feed_profile_box{
+width:80%;
+height:200px;
+margin-left:10%;
+background-color:white;
+overflow:hidden;
+
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+-moz-box-shadow: 0 0 1px 1px #888;
+-webkit-box-shadow: 0 0 1px 1px #888;
+box-shadow: 0 0 1px 1px #888;
+}
+
+#identity_main{
+background-color:white;
+min-height:200px;
+padding-top:4px;
+float:left;
+width:80%;
+margin-left:10%;
+margin-top:20px;
+//background-color:#777777;
+
+display: inline-block;
+
+border-top-right-radius: 10px;
+border-top-left-radius: 10px;
+-moz-box-shadow: 0 0 1px 1px #888;
+-webkit-box-shadow: 0 0 1px 1px #888;
+box-shadow: 0 0 1px 1px #888;
+
+}
+
+#feedbox {
+float:left;
+width:100%;
+margin-left:0%;
+margin-right:auto;
+
+}
+
+#feedbox_content_identity {
+float:left;
+margin-left:5%;
+width:90%;
+overflow:hidden;
+display: inline-block;
+background-color:white;
+border-bottom-style:solid;
+}
+
+#userinfo_identity {
+float:left;
+width:10%;
+font-family:Optima;
+overflow:hidden;
+font-size:20px;
+display: inline-block;
+}
+
+#info{
+float:left;
+width:100%;
+}
+
+#headerboxtext_identity{
+float:left;
+margin-top:-20px;
+width:88%;
+margin-left:2%;
+}
+
+#profile_plates {
+float:left;
+//background-color:#434343;
+background-color:white;
+width:80%;
+margin-left:10%;
+margin-top:20px;
+display: inline-block;
+
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+border-top-right-radius: 10px;
+border-top-left-radius: 10px;
+
+-moz-box-shadow: 0 0 1px 1px #888;
+-webkit-box-shadow: 0 0 1px 1px #888;
+box-shadow: 0 0 1px 1px #888;
+
+}
+
+#menuarea{
+width:100%;
+height:10%;
+float:left;
+}
+
+#arrow_box{
+float:left;
+display: inline-block;
+width:1%;
+margin-top:2.5%;
+margin-bottom: -2.5%;
+margin-left:5%;
+
+}
+
+#plate_heading_box{
+float:left;
+display: inline-block;
+margin-top:1.7%;
+margin-bottom: -1.7%;
+width:92%;
+}
+
+#myplates{
+margin-top:2%;
+float:left;
+width:90%;
+margin-left:10%;
+}
+
+#secondaryplates{
+margin-top:2%;
+margin-top:10px;
+float:left;
+width:90%;
+margin-left:10%;
+}
+
+#friendslist{
+margin-top:2%;
+margin-top:10px;
+float:left;
+width:90%;
+margin-left:10%;
+}
+
+#lastpage_identity{
+padding:30px;
+padding-right:0px;
+padding-left:0px;
+float:left;
+background-color:white;
+width:80%;
+margin-left:10%;
+margin-top:10px;
+
+
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+border-top-right-radius: 10px;
+border-top-left-radius: 10px;
+
+-moz-box-shadow: 0 0 1px 1px #888;
+-webkit-box-shadow: 0 0 1px 1px #888;
+box-shadow: 0 0 1px 1px #888;
+}
+
+.feedtext_identity{
+margin:0;
+padding:0;
+margin-left:12%;
+}
+
+
+.identity_name {
+font-size:45px;
+margin:0px;
+padding:0px;
+margin-left:5%;
+margin-top:50px;
+display: inline-block;
+}
+
+.identity_resize{
+	width: auto;
+	height: 100%;
+	float:right;
+	display: inline-block;
+}
+
+.identity_info {
+
+font-size:13px;
+margin:0px;
+padding:0px;
+margin-left:5%;
+margin-top:20px;
+}
+
+
+.plates_head {
+font-size:15px;
+padding:0px;
+margin:2px;
+margin-bottom:10px;
+margin-left:1%;
+font-color:gray;
+}
+
+.plates_links {
+font-weight: 650;
+font-size:12px;
+margin-left:10px;
+}
+
+.submitbutton_identity {
+color: rgba(255,255,255,1);
+text-decoration: none;
+background-color: orange;
+font-weight: 500;
+font-size: 90%;
+margin-left:10%;
+padding: 2px;
+border-radius: 4px;
+margin-top: 20px;
+width: 150px;
+text-align: center;
+
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-box-shadow: 0px 4px 0px rgba(250,201,5,1), 0px 9px 25px rgba(0,0,0,.7);
+  -moz-box-shadow: 0px 4px 0px rgba(250,201,5,1), 0px 9px 25px rgba(0,0,0,.7);
+
+	-webkit-transition: all .1s ease;
+	-moz-transition: all .1s ease;
+	-ms-transition: all .1s ease;
+	-o-transition: all .1s ease;
+	  transition: all .1s ease;
+}

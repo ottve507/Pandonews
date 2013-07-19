@@ -1,0 +1,35 @@
+<%  @anv = User.find_by_id(renderplate.user_id) %>
+<%  @set = Setting.find_by_id(renderplate.user_id) %>
+
+<div id="feedbox">
+  <div id="feedbox_content_identity">
+  
+<div id ="info">
+	<div id="userinfo_identity">
+		<%= link_to(@anv) do %>		
+		<%if @anv.provider=='facebook' || @anv.provider=='twitter' %>
+			<%if @set.profilepicture.url != '/profilepictures/original/missing.png' %>
+				<img src="<%=@set.profilepicture.url%>" class="pictureresizing">
+			<% else %>
+				<img src="<%=@anv.image%>" class="pictureresizing">
+			<%end%>
+		<%else%>
+			<img src="<%=@set.profilepicture.url%>" class="pictureresizing">
+		<%end%>
+		<br>
+	   <% end %>
+
+		<p class="linkstyle">
+		<%= link_to @anv.name, @anv%>
+		</p>
+	</div>
+	
+	
+	<div id="headerboxtext_identity">
+		<p class="headerlinkstyle"> <%= link_to renderplate.title, renderplate %>
+		</p>
+	</div>
+</div>		
+	<p class="feedtext_identity"><%=renderplate.content.html_safe %></p>
+	</div>
+</div>

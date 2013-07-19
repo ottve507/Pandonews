@@ -1,0 +1,30 @@
+<%=javascript_include_tag 'endless_page'%>
+
+
+<h1>Search results</h1>
+<div id="feedboxes">
+	<center>
+	<%= form_for @newsearch do |f| %>
+		<div class ="field">
+			<%=f.text_field :keywords%>
+			<%=f.submit "Search" %>
+		</div>
+
+		<div class ="field">
+			<%=f.label :language %>
+			<%=f.text_field :language%>
+			<%=f.label :location %>
+			<%=f.text_field :location%>
+		</div>
+
+		<div class ="submit">
+			
+		</div>
+	<%end%>
+	</center>
+<%=render :partial=> 'ur', :collection=>@usersearch%>
+<%=render :partial=> 'fr', :collection=>@search%>
+</div>
+<div id="lastpage" type="<%=@search.total_pages%>"><%= will_paginate(@search)%></div>
+
+

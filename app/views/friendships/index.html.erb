@@ -1,0 +1,11 @@
+<% @users.each do |user| %>
+    
+<% if user.id != current_user.id %> 
+	<%=h user.name %> 
+	<%if current_user.is_friend? user %>
+	<%= link_to "Destroy", friendship_path(current_user.friendships.find_by_friend_id(user.id)), :method => :delete %>
+	<%else%>
+	<%= link_to "Add friend", friendships_path(:friend_id => user), :method => :post %> 
+	<% end %>
+ <% end %>    
+<% end %>

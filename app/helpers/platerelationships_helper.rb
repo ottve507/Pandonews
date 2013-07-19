@@ -1,0 +1,2 @@
+module PlaterelationshipsHelper
+end

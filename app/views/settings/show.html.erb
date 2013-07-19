@@ -1,0 +1,16 @@
+<div id ="show_profile_box">
+	<%  @anv = User.find_by_id(@setting.id) %>
+	<%= @anv.name %>
+</div>
+
+<div id="show_feed">
+<p id="notice"><%= notice %></p>
+
+<%= @setting.location %>
+<%= image_tag @setting.profilepicture.url %>
+<%= link_to 'Edit', edit_setting_path(@setting) %>
+
+
+
+
+

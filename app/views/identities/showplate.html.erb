@@ -1,0 +1,46 @@
+<%if current_user%>
+<%if current_user.id == @plate.user_id %>
+<%= link_to "Add feed", '/feeds/add_feed'%>
+<%end%>
+<%end%>
+
+<div id="feed_profile_box">
+	profile picture, ratings?, <br>
+	
+	
+	
+<% if current_user%>
+	<% if current_user.id != @plate.user_id%>
+		<% if current_user.secondaryplates.any?%>
+			<%@sp = current_user.secondaryplates%>
+			<%if @sp.include? @plate%>
+			<% @currentupr = Userplaterelationship.find_by_secondaryplate_id(@plate.id) %>
+			<%= link_to "Unsubscribe ", @currentupr, :method => :delete %>
+			<%else%>
+			<%= form_for(@upr) do |upr| %>
+				<%=upr.hidden_field :secondaryplate_id, :value=>@plate.id%>
+				<%=upr.hidden_field :user_id, :value=>current_user.id%>
+				<%=upr.submit "Subscribe"%>
+			<%end%>
+			<%end%>	
+		<%else%>
+			<%= form_for(@upr) do |upr| %>
+				<%=upr.hidden_field :secondaryplate_id, :value=>@plate.id%>
+				<%=upr.hidden_field :user_id, :value=>current_user.id%>
+				<%=upr.submit "Subscribe"%>
+			<%end%>		
+		<%end%>	
+	<%end%>
+<%end%>
+	
+	
+</div>
+
+<div id="feedboxes">
+	    <%= render :partial => 'renderplate', :collection => @feeds %>		
+</div>
+
+<div id="lastpage" type="<%=@feeds.total_pages%>"><%= will_paginate(@feeds)%></div>
+
+
+
