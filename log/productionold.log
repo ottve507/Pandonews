@@ -1,0 +1,679 @@
+Connecting to database specified by database.yml
+Migrating to CreateIdentities (20111205064635)
+Migrating to CreateRelationships (20121202133106)
+Migrating to CreateFriendships (20121209133638)
+Migrating to CreateImpressions (20121230113909)
+Migrating to CreateSettings (20130120194546)
+Migrating to AddAttachmentProfilepictureToSettings (20130126154139)
+Migrating to ActsAsTaggableOnMigration (20130213154458)
+Migrating to CreatePlaterelationships (20130224112804)
+Migrating to CreatePlates (20130224113142)
+Migrating to CreateUserplaterelationships (20130308094242)
+Migrating to CreateUsers (20130407144011)
+Migrating to CreateComments (20130414200205)
+Migrating to CreateMakeVoteableTables (20130421151009)
+Migrating to CreateSuggestions (20130421203150)
+Migrating to CreateFeeds (20130427203201)
+Migrating to CreateSearches (20130718115425)
+Connecting to database specified by database.yml
+Migrating to CreateIdentities (20111205064635)
+Migrating to CreateRelationships (20121202133106)
+Migrating to CreateFriendships (20121209133638)
+Migrating to CreateImpressions (20121230113909)
+Migrating to CreateSettings (20130120194546)
+Migrating to AddAttachmentProfilepictureToSettings (20130126154139)
+Migrating to ActsAsTaggableOnMigration (20130213154458)
+Migrating to CreatePlaterelationships (20130224112804)
+Migrating to CreatePlates (20130224113142)
+Migrating to CreateUserplaterelationships (20130308094242)
+Migrating to CreateUsers (20130407144011)
+Migrating to CreateComments (20130414200205)
+Migrating to CreateMakeVoteableTables (20130421151009)
+Migrating to CreateSuggestions (20130421203150)
+Migrating to CreateFeeds (20130427203201)
+Migrating to CreateSearches (20130718115425)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Migrating to CreateIdentities (20111205064635)
+Migrating to CreateRelationships (20121202133106)
+Migrating to CreateFriendships (20121209133638)
+Migrating to CreateImpressions (20121230113909)
+Migrating to CreateSettings (20130120194546)
+Migrating to AddAttachmentProfilepictureToSettings (20130126154139)
+Migrating to ActsAsTaggableOnMigration (20130213154458)
+Migrating to CreatePlaterelationships (20130224112804)
+Migrating to CreatePlates (20130224113142)
+Migrating to CreateUserplaterelationships (20130308094242)
+Migrating to CreateUsers (20130407144011)
+Migrating to CreateComments (20130414200205)
+Migrating to CreateMakeVoteableTables (20130421151009)
+Migrating to CreateSuggestions (20130421203150)
+Migrating to CreateFeeds (20130427203201)
+Migrating to CreateSearches (20130718115425)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateIdentities (20111205064635)
+Migrating to CreateRelationships (20121202133106)
+Migrating to CreateFriendships (20121209133638)
+Migrating to CreateImpressions (20121230113909)
+Migrating to CreateSettings (20130120194546)
+Migrating to AddAttachmentProfilepictureToSettings (20130126154139)
+Migrating to ActsAsTaggableOnMigration (20130213154458)
+Migrating to CreatePlaterelationships (20130224112804)
+Migrating to CreatePlates (20130224113142)
+Migrating to CreateUserplaterelationships (20130308094242)
+Migrating to CreateUsers (20130407144011)
+Migrating to CreateComments (20130414200205)
+Migrating to CreateMakeVoteableTables (20130421151009)
+Migrating to CreateSuggestions (20130421203150)
+Migrating to CreateFeeds (20130427203201)
+Migrating to CreateSearches (20130718115425)
+  [1m[35m (0.6ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("comments")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_comments_on_ancestry')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("feeds")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("friendships")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("identities")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("impressions")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("platerelationships")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("plates")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("relationships")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("searches")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("settings")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("suggestions")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("taggings")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_taggings_on_taggable_id_and_taggable_type_and_context')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_taggings_on_tag_id')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("tags")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("userplaterelationships")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("votings")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_votings_on_voter_type_and_voter_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_votings_on_voteable_type_and_voteable_id')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('unique_voters')[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 95.192.51.41 at 2013-07-19 19:40:57 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.2ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (51.3ms)
+Compiled comments.css  (510ms)  (pid 21021)
+Compiled feeds.css  (50ms)  (pid 21021)
+Compiled friendships.css  (1ms)  (pid 21021)
+Compiled home.css  (8ms)  (pid 21021)
+Compiled identities.css  (23ms)  (pid 21021)
+Compiled layout.css  (0ms)  (pid 21021)
+Compiled leaflet.css  (0ms)  (pid 21021)
+Compiled new_feed_form.css  (0ms)  (pid 21021)
+Compiled plate.css  (1ms)  (pid 21021)
+Compiled platerelationships.css  (0ms)  (pid 21021)
+Compiled plates.css  (0ms)  (pid 21021)
+Compiled relationships.css  (1ms)  (pid 21021)
+Compiled scaffolds.css  (16ms)  (pid 21021)
+Compiled searches.css  (1ms)  (pid 21021)
+Compiled sessions.css  (4ms)  (pid 21021)
+Compiled settings.css  (0ms)  (pid 21021)
+Compiled suggestions.css  (1ms)  (pid 21021)
+Compiled userplaterelationships.css  (1ms)  (pid 21021)
+Compiled application.css  (959ms)  (pid 21021)
+Compiled jquery.js  (50ms)  (pid 21021)
+Compiled jquery_ujs.js  (0ms)  (pid 21021)
+Compiled misc/OpenLayers.js  (49ms)  (pid 21021)
+Compiled misc/comments_pagination.js  (0ms)  (pid 21021)
+Compiled misc/endless_page.js  (0ms)  (pid 21021)
+Compiled misc/feeds_show_map.js  (0ms)  (pid 21021)
+Compiled misc/hideplate.js  (0ms)  (pid 21021)
+Compiled misc/jquery-1.9.1.js  (2ms)  (pid 21021)
+Compiled misc/jquery-ui-1.10.1.custom.js  (0ms)  (pid 21021)
+Compiled misc/jquery-ui-1.10.1.custom.min.js  (0ms)  (pid 21021)
+Compiled misc/jquery-ui.custom.js  (0ms)  (pid 21021)
+Compiled misc/jquery.ui.effect-blind.js  (0ms)  (pid 21021)
+Compiled misc/leaflet.js  (0ms)  (pid 21021)
+Compiled misc/showplates.js  (0ms)  (pid 21021)
+Compiled application.js  (359ms)  (pid 21021)
+Completed 200 OK in 15825ms (Views: 15816.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/application-f2f8c857060352e11abae9b867c3ede5.css" for 95.192.51.41 at 2013-07-19 19:41:13 +0000
+Served asset /application-f2f8c857060352e11abae9b867c3ede5.css - 200 OK (0ms)
+
+
+Started GET "/assets/application-2c78369fe6b19ea98f9b57758033e948.js" for 95.192.51.41 at 2013-07-19 19:41:13 +0000
+Served asset /application-2c78369fe6b19ea98f9b57758033e948.js - 200 OK (0ms)
+
+
+Started GET "/assets/f.png" for 95.192.51.41 at 2013-07-19 19:41:13 +0000
+Served asset /f.png - 200 OK (6ms)
+
+
+Started GET "/assets/home_top_background.png" for 95.192.51.41 at 2013-07-19 19:41:14 +0000
+Served asset /home_top_background.png - 200 OK (37ms)
+
+
+Started GET "/assets/home_top_feeds.png" for 95.192.51.41 at 2013-07-19 19:41:14 +0000
+Served asset /home_top_feeds.png - 200 OK (17ms)
+
+
+Started GET "/sessions" for 95.192.51.41 at 2013-07-19 19:41:25 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 40ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/twitter_64-0a7235cee2916e0f1272efef8a1a641e.png" for 95.192.51.41 at 2013-07-19 19:41:26 +0000
+Served asset /twitter_64-0a7235cee2916e0f1272efef8a1a641e.png - 200 OK (0ms)
+
+
+Started GET "/assets/facebook_64-8f130f5352bbd02d99d52b833043d865.png" for 95.192.51.41 at 2013-07-19 19:41:26 +0000
+Served asset /facebook_64-8f130f5352bbd02d99d52b833043d865.png - 200 OK (0ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-19 19:42:25 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 11ms (Views: 5.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-19 20:15:17 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-19 20:50:30 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sessions" for 95.192.51.41 at 2013-07-19 21:26:24 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/f.png" for 95.192.51.41 at 2013-07-19 21:26:24 +0000
+Served asset /f.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-19 21:39:06 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-19 22:05:13 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-19 22:33:39 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-19 23:01:39 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-19 23:31:23 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-20 00:51:57 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-20 04:45:21 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-20 05:43:17 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-20 06:00:40 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-20 06:17:23 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-20 06:35:12 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.4ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 95.192.51.41 at 2013-07-20 06:37:39 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/f.png" for 95.192.51.41 at 2013-07-20 06:37:39 +0000
+Served asset /f.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home_top_background.png" for 95.192.51.41 at 2013-07-20 06:37:39 +0000
+Served asset /home_top_background.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home_top_feeds.png" for 95.192.51.41 at 2013-07-20 06:37:39 +0000
+Served asset /home_top_feeds.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 95.192.51.41 at 2013-07-20 06:37:49 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/f.png" for 95.192.51.41 at 2013-07-20 06:37:49 +0000
+Served asset /f.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home_top_background.png" for 95.192.51.41 at 2013-07-20 06:37:49 +0000
+Served asset /home_top_background.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home_top_feeds.png" for 95.192.51.41 at 2013-07-20 06:37:49 +0000
+Served asset /home_top_feeds.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 95.192.51.41 at 2013-07-20 06:37:50 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/home_top_background.png" for 95.192.51.41 at 2013-07-20 06:37:50 +0000
+Served asset /home_top_background.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/f.png" for 95.192.51.41 at 2013-07-20 06:37:50 +0000
+Served asset /f.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home_top_feeds.png" for 95.192.51.41 at 2013-07-20 06:37:50 +0000
+Served asset /home_top_feeds.png - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 95.192.51.41 at 2013-07-20 06:39:39 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.2ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (46.7ms)
+Compiled comments.css  (503ms)  (pid 29559)
+Compiled feeds.css  (21ms)  (pid 29559)
+Compiled friendships.css  (0ms)  (pid 29559)
+Compiled home.css  (4ms)  (pid 29559)
+Compiled identities.css  (12ms)  (pid 29559)
+Compiled layout.css  (0ms)  (pid 29559)
+Compiled leaflet.css  (0ms)  (pid 29559)
+Compiled new_feed_form.css  (0ms)  (pid 29559)
+Compiled plate.css  (0ms)  (pid 29559)
+Compiled platerelationships.css  (0ms)  (pid 29559)
+Compiled plates.css  (0ms)  (pid 29559)
+Compiled relationships.css  (0ms)  (pid 29559)
+Compiled scaffolds.css  (7ms)  (pid 29559)
+Compiled searches.css  (0ms)  (pid 29559)
+Compiled sessions.css  (2ms)  (pid 29559)
+Compiled settings.css  (0ms)  (pid 29559)
+Compiled suggestions.css  (0ms)  (pid 29559)
+Compiled userplaterelationships.css  (0ms)  (pid 29559)
+Compiled application.css  (635ms)  (pid 29559)
+Compiled jquery.js  (4ms)  (pid 29559)
+Compiled jquery_ujs.js  (0ms)  (pid 29559)
+Compiled misc/OpenLayers.js  (47ms)  (pid 29559)
+Compiled misc/comments_pagination.js  (0ms)  (pid 29559)
+Compiled misc/endless_page.js  (0ms)  (pid 29559)
+Compiled misc/feeds_show_map.js  (0ms)  (pid 29559)
+Compiled misc/hideplate.js  (0ms)  (pid 29559)
+Compiled misc/jquery-1.9.1.js  (1ms)  (pid 29559)
+Compiled misc/jquery-ui-1.10.1.custom.js  (0ms)  (pid 29559)
+Compiled misc/jquery-ui-1.10.1.custom.min.js  (0ms)  (pid 29559)
+Compiled misc/jquery-ui.custom.js  (0ms)  (pid 29559)
+Compiled misc/jquery.ui.effect-blind.js  (0ms)  (pid 29559)
+Compiled misc/leaflet.js  (0ms)  (pid 29559)
+Compiled misc/showplates.js  (0ms)  (pid 29559)
+Compiled application.js  (212ms)  (pid 29559)
+Completed 200 OK in 15577ms (Views: 15568.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/home_top_background.png" for 95.192.51.41 at 2013-07-20 06:39:56 +0000
+Served asset /home_top_background.png - 304 Not Modified (23ms)
+
+
+Started GET "/assets/f.png" for 95.192.51.41 at 2013-07-20 06:39:56 +0000
+Served asset /f.png - 304 Not Modified (11ms)
+
+
+Started GET "/assets/home_top_feeds.png" for 95.192.51.41 at 2013-07-20 06:39:56 +0000
+Served asset /home_top_feeds.png - 304 Not Modified (12ms)
+
+
+Started GET "/" for 95.192.51.41 at 2013-07-20 06:40:11 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.2ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 218ms (Views: 208.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/home_top_background.png" for 95.192.51.41 at 2013-07-20 06:40:12 +0000
+Served asset /home_top_background.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/f.png" for 95.192.51.41 at 2013-07-20 06:40:12 +0000
+Served asset /f.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home_top_feeds.png" for 95.192.51.41 at 2013-07-20 06:40:12 +0000
+Served asset /home_top_feeds.png - 304 Not Modified (3ms)
+
+
+Started GET "/" for 95.192.51.41 at 2013-07-20 06:40:19 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.2ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 232ms (Views: 222.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/home_top_background.png" for 95.192.51.41 at 2013-07-20 06:40:20 +0000
+Served asset /home_top_background.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/f.png" for 95.192.51.41 at 2013-07-20 06:40:20 +0000
+Served asset /f.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home_top_feeds.png" for 95.192.51.41 at 2013-07-20 06:40:20 +0000
+Served asset /home_top_feeds.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-20 06:54:46 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-20 07:16:25 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (45.2ms)
+Completed 200 OK in 51ms (Views: 49.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/config/bd_mpc/offers.json" for 128.194.140.14 at 2013-07-20 07:31:27 +0000
+
+ActionController::RoutingError (No route matches [GET] "/config/bd_mpc/offers.json"):
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  railties (3.2.7) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+  Rendered /home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-20 07:41:21 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-20 08:12:03 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-20 08:53:26 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/science/browse/a/fulltext" for 113.9.231.254 at 2013-07-20 09:43:20 +0000
+
+ActionController::RoutingError (No route matches [GET] "/science/browse/a/fulltext"):
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  railties (3.2.7) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+  Rendered /home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-20 09:46:51 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 31.210.57.178 at 2013-07-20 10:31:13 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-20 10:43:04 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-20 11:44:25 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-20 12:46:51 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 95.192.51.41 at 2013-07-20 13:37:03 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/home_top_background.png" for 95.192.51.41 at 2013-07-20 13:37:04 +0000
+Served asset /home_top_background.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/f.png" for 95.192.51.41 at 2013-07-20 13:37:04 +0000
+Served asset /f.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home_top_feeds.png" for 95.192.51.41 at 2013-07-20 13:37:04 +0000
+Served asset /home_top_feeds.png - 304 Not Modified (0ms)

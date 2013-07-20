@@ -287,3 +287,372 @@ Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/identities/1" for 95.192.51.41 at 2013-07-20 21:57:09 +0000
+Processing by IdentitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mSetting Load (0.2ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mFeed Load (0.3ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."user_id" = 1
+  [1m[36mPlate Load (0.1ms)[0m  [1mSELECT "plates".* FROM "plates" INNER JOIN "userplaterelationships" ON "plates"."id" = "userplaterelationships"."secondaryplate_id" WHERE "userplaterelationships"."user_id" = 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = 1
+ERROR: compiling _app_views_identities__platemenu_html_erb__4283539953559116469_30251460 RAISED /var/www/feedme/app/views/identities/_platemenu.html.erb:5: syntax error, unexpected '<', expecting keyword_end
+<%end
+ ^
+/var/www/feedme/app/views/identities/_platemenu.html.erb:5: unknown type of %string
+<%end
+    ^
+Function body:           def _app_views_identities__platemenu_html_erb__4283539953559116469_30251460(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "identities/_platemenu";_old_output_buffer = @output_buffer;platemenu = local_assigns[:platemenu];;@output_buffer = output_buffer || ActionView::OutputBuffer.new;if params[:plates]!=nil
+    @myp = params[:plates]
+  else
+    @myp = Array.new
+<%end
+if params[:secondaryplates]!=nil
+    @sp = params[:secondaryplates]
+ else
+   @sp = Array.new
+end
+if params[:friends]!=nil
+    @f = params[:friends]
+else
+    @f = Array.new
+end
+@output_buffer.safe_concat('
+
+
+
+
+
+<div id="profile_plates">
+		');@output_buffer.append=  form_tag(@user, :method => "get") do @output_buffer.safe_concat('
+');@output_buffer.safe_concat('<div id="profile_plates_interaction_area">
+<div id="arrow_box">
+	<a href="" id="myplatesbutton"><img src="/assets/arrowright.png"></a>
+	<a href="" id="myplatesbutton2"><img src="/assets/arrowdown.png"></a>
+</div>
+<div id="plate_heading_box">
+	<p class="plates_head">
+			
+');			@params=@myp.collect{|i| i.to_i}
+		 	@allsecondary=@plates.collect(&:id)
+@output_buffer.safe_concat('
+');			if @startup != 1
+				if ifAllChecked(@params,@allsecondary) 
+@output_buffer.safe_concat('				<input type=\'checkbox\' onclick=\'checkAllPlates();\' class="plates_check_all" checked="checked">
+');				else
+@output_buffer.safe_concat('				<input type=\'checkbox\' onclick=\'checkAllPlates();\' class="plates_check_all">  
+');				end
+			else
+@output_buffer.safe_concat('			<input type=\'checkbox\' onclick=\'checkAllPlates();\' class="plates_check_all"> 
+');			end 
+@output_buffer.safe_concat('	
+		my plates
+		</input>
+		</p>
+</div>
+<div id ="myplates">
+');	if @plates.any?
+	 @plates.each do |p| 
+@output_buffer.safe_concat('	
+');	if @startup == 1 
+@output_buffer.safe_concat('      ');@output_buffer.append= ( check_box_tag "plates[]", p.id, :class =>'plates_check');@output_buffer.safe_concat('
+');	else
+@output_buffer.safe_concat('		');@output_buffer.append= ( check_box_tag "plates[]", p.id,	@myp.include?(p.id.to_s), :class =>'plates_check');@output_buffer.safe_concat('
+');	end
+@output_buffer.safe_concat('      ');@output_buffer.append= ( link_to p.name, showplate_identities_path(p), :class => "plates_links" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('      <br />
+
+');     end 
+	else
+@output_buffer.safe_concat('		no plates yet.
+');	end
+@output_buffer.safe_concat('
+	
+
+</div>
+<div id="arrow_box">
+	<a href="" id="secondaryplatesbutton"><img src="/assets/arrowright.png"></a>
+	<a href="" id="secondaryplatesbutton2"><img src="/assets/arrowdown.png"></a>
+</div>
+<div id="plate_heading_box">
+	<p class="plates_head">
+');		@params=@sp.collect{|i| i.to_i}
+	 	@allsecondary=@secondaryplates.collect(&:id)
+@output_buffer.safe_concat('	
+');		if @startup != 1
+			if ifAllChecked(@params,@allsecondary) 
+@output_buffer.safe_concat('			<input type=\'checkbox\' onclick=\'checkAllSecondaryPlates();\' class="secondary_plates_check_all" checked="checked">
+');			else
+@output_buffer.safe_concat('			<input type=\'checkbox\' onclick=\'checkAllSecondaryPlates();\' class="secondary_plates_check_all">
+');			end
+		else
+@output_buffer.safe_concat('		<input type=\'checkbox\' onclick=\'checkAllSecondaryPlates();\' class="secondary_plates_check_all">
+');		end
+@output_buffer.safe_concat('	my gathered plates
+	</input>
+		
+	
+	</p>
+</div>
+<div id ="secondaryplates">
+');	if @secondaryplates.any?
+@output_buffer.safe_concat('	
+');	 @secondaryplates.each do |p| 
+	if @startup == 1 
+@output_buffer.safe_concat('      ');@output_buffer.append= ( check_box_tag "secondaryplates[]", p.id, :class =>'secondary_plates_check');@output_buffer.safe_concat('
+');	else
+@output_buffer.safe_concat('	  ');@output_buffer.append= ( check_box_tag "secondaryplates[]", p.id, @sp.include?(p.id.to_s), :class =>'secondary_plates_check');@output_buffer.safe_concat('
+');	end
+@output_buffer.safe_concat('      ');@output_buffer.append= ( link_to p.name, showplate_identities_path(p), :class => "plates_links" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('      <br />
+');     end 
+@output_buffer.safe_concat('	
+');	else
+@output_buffer.safe_concat('		no subscriptions.
+');	end
+@output_buffer.safe_concat('
+</div>
+
+<div id="arrow_box">
+	<a href="" id="friendslistbutton"><img src="/assets/arrowright.png"></a>
+	<a href="" id="friendslistbutton2"><img src="/assets/arrowdown.png"></a>
+</div>
+<div id="plate_heading_box">
+	<p class="plates_head">
+		
+');		@params=@f.collect{|i| i.to_i}
+	 	@allsecondary=@friends.collect(&:id)
+@output_buffer.safe_concat('	
+');		if @startup != 1
+			if ifAllChecked(@params,@allsecondary) 
+@output_buffer.safe_concat('			<input type=\'checkbox\' onclick=\'checkAllFriends();\' class="friends_check_all" checked="checked">
+');			else
+@output_buffer.safe_concat('			<input type=\'checkbox\' onclick=\'checkAllFriends();\' class="friends_check_all"> 
+');			end
+		else
+@output_buffer.safe_concat('		<input type=\'checkbox\' onclick=\'checkAllFriends();\' class="friends_check_all"> 
+');		end 
+@output_buffer.safe_concat('		following
+		</input></p>
+</div>
+<div id ="friendslist">
+');	if @user.friends.any?
+		 @user.friends.each do |p| 
+@output_buffer.safe_concat('		 ');@output_buffer.append= ( check_box_tag "friends[]", p.id, @f.include?(p.id.to_s), :class =>'following_check');@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	     ');@output_buffer.append= ( link_to p.name, showplate_identities_path(p), :class => "plates_links" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('			<br>
+');		end
+	else
+@output_buffer.safe_concat('		not following anyone atm.
+');	end
+@output_buffer.safe_concat('</div>
+</div>
+
+');@output_buffer.append= ( submit_tag "update", :class => "submitbutton_identity" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+'); end 
+@output_buffer.safe_concat('
+<div id="menuarea">
+	<hr style="width:50%;"/>
+	<center>
+	');@output_buffer.append= ( link_to "Create plate", '/plates/new');@output_buffer.safe_concat(' | ');@output_buffer.append= ( link_to "Add feed", '/feeds/add_feed');@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	</center>
+
+
+	</div>
+</div>');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/template.rb:297:in `module_eval'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/template.rb:297:in `compile'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/template.rb:232:in `compile!'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/template.rb:144:in `block in render'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/notifications.rb:125:in `instrument'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/template.rb:143:in `render'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/renderer/partial_renderer.rb:265:in `render_partial'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/renderer/partial_renderer.rb:238:in `block in render'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/notifications.rb:123:in `instrument'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/renderer/partial_renderer.rb:237:in `render'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/renderer/renderer.rb:41:in `render_partial'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/renderer/renderer.rb:15:in `render'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/helpers/rendering_helper.rb:24:in `render'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/haml-4.0.3/lib/haml/helpers/action_view_mods.rb:12:in `render_with_haml'
+/var/www/feedme/app/views/identities/show.html.erb:35:in `_app_views_identities_show_html_erb__3329726252662896330_35611260'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/template.rb:145:in `block in render'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/notifications.rb:125:in `instrument'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/template.rb:143:in `render'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/notifications.rb:123:in `instrument'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/abstract_controller/rendering.rb:88:in `render'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/otto/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.7/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_controller/metal/mime_responds.rb:196:in `respond_to'
+/var/www/feedme/app/controllers/identities_controller_old.rb:65:in `show'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/abstract_controller/base.rb:167:in `process_action'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/callbacks.rb:425:in `_run__2652996807956805875__process_action__2502620563110399166__callbacks'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/notifications.rb:123:in `instrument'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.7/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/abstract_controller/base.rb:121:in `process'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/abstract_controller/rendering.rb:45:in `process'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_controller/metal.rb:203:in `dispatch'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_controller/metal.rb:246:in `block in action'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_dispatch/routing/route_set.rb:600:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:401:in `call_app!'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/omniauth-identity-1.1.1/lib/omniauth/strategies/identity.rb:43:in `other_phase'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:183:in `call!'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:164:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:184:in `call!'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:164:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:184:in `call!'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:164:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:184:in `call!'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:164:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/omniauth-1.1.4/lib/omniauth/builder.rb:49:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_dispatch/middleware/cookies.rb:338:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.7/lib/active_record/query_cache.rb:64:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/callbacks.rb:405:in `_run__365827899978287231__call__2363558717866020990__callbacks'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/railties-3.2.7/lib/rails/rack/logger.rb:26:in `call_app'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/railties-3.2.7/lib/rails/rack/logger.rb:16:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.7/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/railties-3.2.7/lib/rails/engine.rb:479:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/railties-3.2.7/lib/rails/application.rb:220:in `call'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/railties-3.2.7/lib/rails/railtie/configurable.rb:30:in `method_missing'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/lib/phusion_passenger/utils.rb:470:in `safe_fork'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/lib/phusion_passenger/abstract_server.rb:180:in `start'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+<internal:prelude>:10:in `synchronize'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+/home/otto/.rvm/gems/ruby-1.9.3-p392/gems/passenger-3.0.19/helper-scripts/passenger-spawn-server:99:in `<main>'
+  Rendered identities/_platemenu.html.erb (7.2ms)
+  Rendered identities/show.html.erb within layouts/application (54.1ms)
+Completed 500 Internal Server Error in 325ms
+
+ActionView::Template::Error (/var/www/feedme/app/views/identities/_platemenu.html.erb:5: syntax error, unexpected '<', expecting keyword_end
+<%end
+ ^
+/var/www/feedme/app/views/identities/_platemenu.html.erb:5: unknown type of %string
+<%end
+    ^):
+    2:     <%@myp = params[:plates]%>
+    3:   <%else%>
+    4:     <%@myp = Array.new
+    5: <%end%>
+    6: <%if params[:secondaryplates]!=nil%>
+    7:     <%@sp = params[:secondaryplates]%>
+    8:  <%else%>
+  app/views/identities/show.html.erb:35:in `_app_views_identities_show_html_erb__3329726252662896330_35611260'
+  app/controllers/identities_controller_old.rb:65:in `show'
+
+
+  Rendered /home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.2ms)
+  Rendered /home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/otto/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.6ms)
+
+
+Started GET "/" for 130.236.2.190 at 2013-07-20 21:57:47 +0000
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  Rendered home/_feeds.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 74ms (Views: 69.4ms | ActiveRecord: 1.0ms)
+Connecting to database specified by database.yml
+  [1m[36mCronfeed Load (0.1ms)[0m  [1mSELECT "cronfeeds".* FROM "cronfeeds" [0m

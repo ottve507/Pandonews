@@ -1,0 +1,57 @@
+Connecting to database specified by database.yml
+  [1m[36m (5.8ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (46.0ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "content" text, "commentable_id" integer, "commentable_type" varchar(255), "ancestry" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "up_votes" integer DEFAULT 0 NOT NULL, "down_votes" integer DEFAULT 0 NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("comments")[0m
+  [1m[35m (11.0ms)[0m  CREATE INDEX "index_comments_on_ancestry" ON "comments" ("ancestry")
+  [1m[36m (7.8ms)[0m  [1mCREATE TABLE "cronfeeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "address" varchar(255), "plate_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (32.3ms)[0m  CREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "content" text, "url" text, "published_at" datetime, "guid" varchar(255), "location" varchar(255), "language" varchar(255), "user_id" integer, "url_to_feed" varchar(255), "type_of_feed" varchar(255), "thumbnail_url" varchar(255), "original_plate_id" integer, "latitude" float, "longitude" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "up_votes" integer DEFAULT 0 NOT NULL, "down_votes" integer DEFAULT 0 NOT NULL) 
+  [1m[36m (7.2ms)[0m  [1mCREATE TABLE "friendships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (7.4ms)[0m  CREATE TABLE "identities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "password_digest" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (7.6ms)[0m  [1mCREATE TABLE "impressions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "impressionable_type" varchar(255), "impressionable_id" integer, "user_id" integer, "ip_address" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (19.3ms)[0m  CREATE TABLE "platerelationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "plate_id" integer, "feed_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (16.2ms)[0m  [1mCREATE TABLE "plates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "location" varchar(255), "language" varchar(255), "public" boolean, "user_id" integer, "summmary" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (46.9ms)[0m  CREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "headline" varchar(255), "location" varchar(255), "origin" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (9.1ms)[0m  [1mCREATE TABLE "searches" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "keywords" varchar(255), "location" varchar(255), "language" varchar(255), "searchall" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (14.6ms)[0m  CREATE TABLE "settings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "location" varchar(255), "primary_language" varchar(255), "languages" varchar(255), "image_choice" boolean, "primary_language_choice" boolean, "languages_choice" boolean, "location_choice" boolean, "firstname" varchar(255), "lastname" varchar(255), "username" varchar(255), "email" varchar(255), "show_rating" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "profilepicture_file_name" varchar(255), "profilepicture_content_type" varchar(255), "profilepicture_file_size" integer, "profilepicture_updated_at" datetime) 
+  [1m[36m (23.0ms)[0m  [1mCREATE TABLE "suggestions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (28.4ms)[0m  CREATE TABLE "taggings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tag_id" integer, "taggable_id" integer, "taggable_type" varchar(255), "tagger_id" integer, "tagger_type" varchar(255), "context" varchar(128), "created_at" datetime) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("taggings")[0m
+  [1m[35m (30.4ms)[0m  CREATE INDEX "index_taggings_on_tag_id" ON "taggings" ("tag_id")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("taggings")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_taggings_on_tag_id')
+  [1m[36m (19.9ms)[0m  [1mCREATE INDEX "index_taggings_on_taggable_id_and_taggable_type_and_context" ON "taggings" ("taggable_id", "taggable_type", "context")[0m
+  [1m[35m (37.2ms)[0m  CREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) 
+  [1m[36m (17.1ms)[0m  [1mCREATE TABLE "userplaterelationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "secondaryplate_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (21.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "firstname" varchar(255), "lastname" varchar(255), "location" varchar(255), "language" varchar(255), "email" varchar(255), "image" varchar(255), "image_small" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "up_votes" integer DEFAULT 0 NOT NULL, "down_votes" integer DEFAULT 0 NOT NULL) 
+  [1m[36m (59.9ms)[0m  [1mCREATE TABLE "votings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "voteable_type" varchar(255), "voteable_id" integer, "voter_type" varchar(255), "voter_id" integer, "up_vote" boolean NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("votings")
+  [1m[36m (29.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_voters" ON "votings" ("voteable_type", "voteable_id", "voter_type", "voter_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("votings")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_info('unique_voters')[0m
+  [1m[35m (27.5ms)[0m  CREATE INDEX "index_votings_on_voteable_type_and_voteable_id" ON "votings" ("voteable_type", "voteable_id")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("votings")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_votings_on_voteable_type_and_voteable_id')
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_info('unique_voters')[0m
+  [1m[35m (35.0ms)[0m  CREATE INDEX "index_votings_on_voter_type_and_voter_id" ON "votings" ("voter_type", "voter_id")
+  [1m[36m (27.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (31.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (40.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130720074633')[0m
+  [1m[35m (36.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130718115425')
+  [1m[36m (33.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121230113909')[0m
+  [1m[35m (38.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111205064635')
+  [1m[36m (27.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130126154139')[0m
+  [1m[35m (30.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130224112804')
+  [1m[36m (25.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130407144011')[0m
+  [1m[35m (43.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130427203201')
+  [1m[36m (10.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121202133106')[0m
+  [1m[35m (6.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130421203150')
+  [1m[36m (41.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121209133638')[0m
+  [1m[35m (34.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130421151009')
+  [1m[36m (40.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130308094242')[0m
+  [1m[35m (37.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130120194546')
+  [1m[36m (27.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130213154458')[0m
+  [1m[35m (54.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130224113142')
+  [1m[36m (16.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130414200205')[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
