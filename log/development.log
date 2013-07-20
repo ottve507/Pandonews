@@ -26029,3 +26029,1645 @@ Served asset /home_top_feeds.png - 304 Not Modified (0ms)
 
 Started GET "/assets/f.png" for 127.0.0.1 at 2013-07-20 14:27:36 +0200
 Served asset /f.png - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-20 16:41:04 +0200
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (1.0ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.118508')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 25 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.217681')[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 1 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.219329')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.226400')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.228433')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 24 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.231507')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.233297')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 23 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.234625')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.236253')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 22 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.237981')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.239999')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 21 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.241427')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.242994')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 20 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.244220')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.245886')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 19 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.247853')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.249971')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 18 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.251232')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.252838')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 17 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.254047')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.257454')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 16 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.259672')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.261819')
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 15 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.263897')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.268438')
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 14 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.274146')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.276822')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 12 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.278308')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.281028')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 11 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.282355')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.284445')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 10 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.285909')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.288226')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 9 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.289935')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.291561')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 8 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.292761')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.294281')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 7 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.297461')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.299123')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 6 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.300409')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.301893')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 5 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.303536')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.305126')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 4 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.306697')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.308953')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 3 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.310247')[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.313603')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 2 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:04.954814' and created_at<='2013-07-20 14:41:05.316926')[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSetting Load (0.2ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1
+  Rendered home/_feeds.html.erb (186.1ms)
+  Rendered home/index.html.erb within layouts/application (284.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSetting Load (0.2ms)[0m  [1mSELECT "settings".* FROM "settings" WHERE "settings"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 830ms (Views: 460.8ms | ActiveRecord: 19.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:05 +0200
+Served asset /application.css - 304 Not Modified (83ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /comments.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/feeds.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /feeds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/friendships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /friendships.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /home.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/identities.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /identities.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /layout.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/plate.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /plate.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/new_feed_form.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /new_feed_form.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/leaflet.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /leaflet.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/platerelationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /platerelationships.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/plates.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /plates.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/relationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /relationships.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /searches.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/settings.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /settings.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/suggestions.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /suggestions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/userplaterelationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /userplaterelationships.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/misc/feeds_show_map.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /misc/feeds_show_map.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/misc/OpenLayers.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /misc/OpenLayers.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/misc/endless_page.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /misc/endless_page.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/misc/comments_pagination.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /misc/comments_pagination.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/misc/hideplate.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /misc/hideplate.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/misc/jquery-1.9.1.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /misc/jquery-1.9.1.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/misc/jquery-ui-1.10.1.custom.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /misc/jquery-ui-1.10.1.custom.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/misc/jquery-ui-1.10.1.custom.min.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /misc/jquery-ui-1.10.1.custom.min.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/misc/showplates.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /misc/showplates.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/misc/leaflet.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /misc/leaflet.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/misc/jquery-ui.custom.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /misc/jquery-ui.custom.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/misc/jquery.ui.effect-blind.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /misc/jquery.ui.effect-blind.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /application.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/home_top_background.png" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /home_top_background.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/f.png" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /f.png - 304 Not Modified (63ms)
+
+
+Started GET "/assets/home_top_feeds.png" for 127.0.0.1 at 2013-07-20 16:41:06 +0200
+Served asset /home_top_feeds.png - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Processing by HomeController#index as HTML
+  [1m[35mFeed Load (0.7ms)[0m  SELECT "feeds".* FROM "feeds" ORDER BY created_at DESC
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.314497')[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 25 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.316988')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 1 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.319121')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.320876')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.321996')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 24 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.323250')
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.325036')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 23 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.327892')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.329417')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 22 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.331462')
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.334081')[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 21 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.336465')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.338834')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 20 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.340084')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.341463')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 19 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.342589')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.344035')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 18 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.345000')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.346332')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 17 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.347444')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.348934')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 16 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.350023')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.351363')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 15 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.352309')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.353508')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 14 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.354429')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.355574')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 12 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.356531')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.357877')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 11 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.359004')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.360332')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 10 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.361345')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.362570')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 9 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.363495')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.364774')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 8 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.366144')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.367705')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 7 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.368941')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.370828')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 6 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.371927')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.373258')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 5 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.374192')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.375440')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 4 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.376430')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.377665')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 3 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.378634')
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.380036')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 2 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:08.311633' and created_at<='2013-07-20 14:41:08.381491')
+  [1m[36mFeed Load (0.2ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSetting Load (0.1ms)[0m  [1mSELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1[0m
+  Rendered home/_feeds.html.erb (23.0ms)
+  Rendered home/index.html.erb within layouts/application (26.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSetting Load (0.1ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 126ms (Views: 51.4ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/identities.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /identities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friendships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /friendships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feeds.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /feeds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new_feed_form.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /new_feed_form.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/leaflet.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /leaflet.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plate.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /plate.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/platerelationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /platerelationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plates.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /plates.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/relationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /relationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /searches.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/settings.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /settings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/suggestions.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /suggestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userplaterelationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /userplaterelationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/OpenLayers.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /misc/OpenLayers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/comments_pagination.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /misc/comments_pagination.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/endless_page.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /misc/endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/hideplate.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /misc/hideplate.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui-1.10.1.custom.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /misc/jquery-ui-1.10.1.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-1.9.1.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /misc/jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui.custom.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /misc/jquery-ui.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/feeds_show_map.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /misc/feeds_show_map.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery.ui.effect-blind.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /misc/jquery.ui.effect-blind.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/leaflet.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /misc/leaflet.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui-1.10.1.custom.min.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /misc/jquery-ui-1.10.1.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/showplates.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:08 +0200
+Served asset /misc/showplates.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home_top_background.png" for 127.0.0.1 at 2013-07-20 16:41:09 +0200
+Served asset /home_top_background.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home_top_feeds.png" for 127.0.0.1 at 2013-07-20 16:41:09 +0200
+Served asset /home_top_feeds.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/f.png" for 127.0.0.1 at 2013-07-20 16:41:09 +0200
+Served asset /f.png - 304 Not Modified (0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.9ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.302775')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 25 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.304359')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 1 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.305650')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.306823')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.307787')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 24 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.308931')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.310228')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 23 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.311258')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.312671')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 22 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.313629')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.315427')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 21 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.316563')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.317903')
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 20 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.318959')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.322057')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 19 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.323935')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.325941')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 18 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.326921')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.328155')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 17 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.329165')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.330387')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 16 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.331509')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.332824')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 15 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.333738')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.335007')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 14 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.335931')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.337082')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 12 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.338093')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.339338')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 11 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.340392')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.341672')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 10 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.342630')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.343929')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 9 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.344839')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.346090')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 8 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.347060')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.348745')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 7 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.350960')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.352537')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 6 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.353546')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.354743')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 5 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.355646')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.357871')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 4 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.359606')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.361217')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 3 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.362226')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.363460')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 2 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:10.299720' and created_at<='2013-07-20 14:41:10.364556')[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSetting Load (0.2ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1
+  Rendered home/_feeds.html.erb (23.1ms)
+  Rendered home/index.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 113ms (Views: 44.0ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/identities.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /identities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friendships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /friendships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feeds.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /feeds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/leaflet.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /leaflet.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new_feed_form.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /new_feed_form.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/platerelationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /platerelationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plate.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /plate.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plates.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /plates.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/relationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /relationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /searches.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userplaterelationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /userplaterelationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/suggestions.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /suggestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/OpenLayers.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /misc/OpenLayers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/settings.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /settings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/comments_pagination.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /misc/comments_pagination.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/feeds_show_map.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /misc/feeds_show_map.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/hideplate.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /misc/hideplate.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/misc/jquery-ui-1.10.1.custom.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /misc/jquery-ui-1.10.1.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui-1.10.1.custom.min.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /misc/jquery-ui-1.10.1.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/endless_page.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /misc/endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui.custom.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /misc/jquery-ui.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery.ui.effect-blind.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /misc/jquery.ui.effect-blind.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-1.9.1.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /misc/jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/showplates.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /misc/showplates.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/leaflet.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:10 +0200
+Served asset /misc/leaflet.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home_top_background.png" for 127.0.0.1 at 2013-07-20 16:41:11 +0200
+Served asset /home_top_background.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/f.png" for 127.0.0.1 at 2013-07-20 16:41:11 +0200
+Served asset /f.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home_top_feeds.png" for 127.0.0.1 at 2013-07-20 16:41:11 +0200
+Served asset /home_top_feeds.png - 304 Not Modified (0ms)
+
+
+Started GET "/sessions" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/identities.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /identities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friendships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /friendships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feeds.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /feeds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/leaflet.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /leaflet.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new_feed_form.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /new_feed_form.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plates.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /plates.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plate.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /plate.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/platerelationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /platerelationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/relationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /relationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /searches.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/settings.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /settings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/suggestions.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /suggestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userplaterelationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /userplaterelationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/comments_pagination.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /misc/comments_pagination.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/OpenLayers.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /misc/OpenLayers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/feeds_show_map.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:12 +0200
+Served asset /misc/feeds_show_map.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/hideplate.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:13 +0200
+Served asset /misc/hideplate.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-1.9.1.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:13 +0200
+Served asset /misc/jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/endless_page.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:13 +0200
+Served asset /misc/endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui.custom.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:13 +0200
+Served asset /misc/jquery-ui.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui-1.10.1.custom.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:13 +0200
+Served asset /misc/jquery-ui-1.10.1.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui-1.10.1.custom.min.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:13 +0200
+Served asset /misc/jquery-ui-1.10.1.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery.ui.effect-blind.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:13 +0200
+Served asset /misc/jquery.ui.effect-blind.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/leaflet.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:13 +0200
+Served asset /misc/leaflet.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/showplates.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:13 +0200
+Served asset /misc/showplates.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:13 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/f.png" for 127.0.0.1 at 2013-07-20 16:41:13 +0200
+Served asset /f.png - 304 Not Modified (0ms)
+
+
+Started GET "/identities/new" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Processing by IdentitiesController#new as HTML
+  Rendered identities/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 78ms (Views: 77.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friendships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /friendships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feeds.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /feeds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/identities.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /identities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plate.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /plate.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/leaflet.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /leaflet.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/relationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /relationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/platerelationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /platerelationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new_feed_form.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /new_feed_form.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /searches.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plates.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /plates.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/suggestions.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /suggestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/settings.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /settings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userplaterelationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /userplaterelationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/OpenLayers.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /misc/OpenLayers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/comments_pagination.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /misc/comments_pagination.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/endless_page.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /misc/endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/hideplate.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /misc/hideplate.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/feeds_show_map.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /misc/feeds_show_map.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui-1.10.1.custom.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /misc/jquery-ui-1.10.1.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-1.9.1.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /misc/jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui-1.10.1.custom.min.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /misc/jquery-ui-1.10.1.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui.custom.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /misc/jquery-ui.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery.ui.effect-blind.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:14 +0200
+Served asset /misc/jquery.ui.effect-blind.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/leaflet.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:15 +0200
+Served asset /misc/leaflet.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/showplates.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:15 +0200
+Served asset /misc/showplates.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:15 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/f.png" for 127.0.0.1 at 2013-07-20 16:41:15 +0200
+Served asset /f.png - 304 Not Modified (0ms)
+
+
+Started POST "/auth/identity/register" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mIdentity Exists (0.2ms)[0m  SELECT 1 AS one FROM "identities" WHERE "identities"."email" = 'ny@gfs.com' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "identities" ("created_at", "email", "name", "password_digest", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sat, 20 Jul 2013 14:41:29 UTC +00:00], ["email", "ny@gfs.com"], ["name", "New York"], ["password_digest", "$2a$10$5bur9y1j3Gn/mT73jaiSlOE2Ng7VHKxBo4ES1N53clmSCbYUVBJ1C"], ["updated_at", Sat, 20 Jul 2013 14:41:29 UTC +00:00]]
+  [1m[35m (2.7ms)[0m  commit transaction
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c6OUz8oWv/f+R5Am+pqsQWIpaxy87pgQw3E19oMtakQ=", "name"=>"New York", "email"=>"ny@gfs.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "commit"=>"Register", "provider"=>"identity"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'identity' AND "users"."uid" = '1' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "settings" ("created_at", "email", "firstname", "image_choice", "languages", "languages_choice", "lastname", "location", "location_choice", "primary_language", "primary_language_choice", "profilepicture_content_type", "profilepicture_file_name", "profilepicture_file_size", "profilepicture_updated_at", "show_rating", "updated_at", "user_id", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 20 Jul 2013 14:41:29 UTC +00:00], ["email", "ny@gfs.com"], ["firstname", "New"], ["image_choice", nil], ["languages", nil], ["languages_choice", nil], ["lastname", "York"], ["location", nil], ["location_choice", nil], ["primary_language", nil], ["primary_language_choice", nil], ["profilepicture_content_type", nil], ["profilepicture_file_name", nil], ["profilepicture_file_size", nil], ["profilepicture_updated_at", nil], ["show_rating", nil], ["updated_at", Sat, 20 Jul 2013 14:41:29 UTC +00:00], ["user_id", nil], ["username", nil]]
+[paperclip] Saving attachments.
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  UPDATE "settings" SET "user_id" = 2, "updated_at" = '2013-07-20 14:41:29.561659' WHERE "settings"."id" = 2
+[paperclip] Saving attachments.
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("created_at", "down_votes", "email", "firstname", "image", "image_small", "language", "lastname", "location", "name", "provider", "uid", "up_votes", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 20 Jul 2013 14:41:29 UTC +00:00], ["down_votes", 0], ["email", "ny@gfs.com"], ["firstname", "New"], ["image", nil], ["image_small", nil], ["language", nil], ["lastname", "York"], ["location", nil], ["name", "New York"], ["provider", "identity"], ["uid", "1"], ["up_votes", 0], ["updated_at", Sat, 20 Jul 2013 14:41:29 UTC +00:00]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Processing by HomeController#index as HTML
+  [1m[36mFeed Load (0.7ms)[0m  [1mSELECT "feeds".* FROM "feeds" ORDER BY created_at DESC[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.587810')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 25 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.589578')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 1 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.590990')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.592332')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.593328')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 24 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.594287')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.595583')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 23 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.596588')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.598071')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 22 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.599241')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.600527')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 21 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.601456')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.602621')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 20 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.603542')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.605048')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 19 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.606118')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.607712')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 18 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.608986')[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.612044')
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 17 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.613700')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.617676')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 16 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.620165')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.622652')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 15 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.623735')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.625160')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 14 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.626356')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.627665')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 12 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.628689')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.629983')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 11 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.631154')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.633491')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 10 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.634860')[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.636371')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 9 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.638095')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.639882')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 8 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.641431')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.643031')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 7 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.644029')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.645248')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 6 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.646172')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.647451')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 5 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.648625')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.649992')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 4 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.650943')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.652239')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 3 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.653221')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 13 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.654608')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "impressions" WHERE "impressions"."impressionable_id" = 2 AND "impressions"."impressionable_type" = 'Feed' AND (created_at>='2013-07-20 13:41:29.584717' and created_at<='2013-07-20 14:41:29.655589')[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE (location IS NOT NULL) ORDER BY created_at DESC
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSetting Load (0.1ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = 1 LIMIT 1
+  Rendered home/_feeds.html.erb (23.0ms)
+  Rendered home/index.html.erb within layouts/application (26.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mSetting Load (0.1ms)[0m  [1mSELECT "settings".* FROM "settings" WHERE "settings"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 121ms (Views: 46.6ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feeds.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Served asset /feeds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friendships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Served asset /friendships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/identities.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Served asset /identities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/leaflet.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Served asset /leaflet.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new_feed_form.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Served asset /new_feed_form.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plate.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Served asset /plate.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plates.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Served asset /plates.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/platerelationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Served asset /platerelationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Served asset /searches.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/relationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Served asset /relationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/suggestions.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Served asset /suggestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/settings.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Served asset /settings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userplaterelationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Served asset /userplaterelationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:29 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/OpenLayers.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:30 +0200
+Served asset /misc/OpenLayers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/comments_pagination.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:30 +0200
+Served asset /misc/comments_pagination.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/endless_page.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:30 +0200
+Served asset /misc/endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/feeds_show_map.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:30 +0200
+Served asset /misc/feeds_show_map.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/hideplate.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:30 +0200
+Served asset /misc/hideplate.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui-1.10.1.custom.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:30 +0200
+Served asset /misc/jquery-ui-1.10.1.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-1.9.1.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:30 +0200
+Served asset /misc/jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui-1.10.1.custom.min.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:30 +0200
+Served asset /misc/jquery-ui-1.10.1.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui.custom.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:30 +0200
+Served asset /misc/jquery-ui.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/showplates.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:30 +0200
+Served asset /misc/showplates.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:30 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery.ui.effect-blind.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:30 +0200
+Served asset /misc/jquery.ui.effect-blind.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/leaflet.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:30 +0200
+Served asset /misc/leaflet.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home_top_background.png" for 127.0.0.1 at 2013-07-20 16:41:30 +0200
+Served asset /home_top_background.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/f.png" for 127.0.0.1 at 2013-07-20 16:41:30 +0200
+Served asset /f.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home_top_feeds.png" for 127.0.0.1 at 2013-07-20 16:41:30 +0200
+Served asset /home_top_feeds.png - 304 Not Modified (0ms)
+
+
+Started GET "/identities/2" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Processing by IdentitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mSetting Load (0.1ms)[0m  [1mSELECT "settings".* FROM "settings" WHERE "settings"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mPlate Load (0.2ms)[0m  [1mSELECT "plates".* FROM "plates" WHERE "plates"."user_id" = 2[0m
+  [1m[35mPlate Load (0.2ms)[0m  SELECT "plates".* FROM "plates" INNER JOIN "userplaterelationships" ON "plates"."id" = "userplaterelationships"."secondaryplate_id" WHERE "userplaterelationships"."user_id" = 2
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = 2[0m
+  Rendered identities/_platemenu.html.erb (13.9ms)
+  Rendered identities/show.html.erb within layouts/application (16.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mSetting Load (0.1ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = ? LIMIT 1  [["id", 2]]
+Completed 200 OK in 159ms (Views: 111.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/identities.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /identities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friendships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /friendships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feeds.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /feeds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/leaflet.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /leaflet.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new_feed_form.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /new_feed_form.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plate.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /plate.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/platerelationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /platerelationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plates.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /plates.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /searches.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/relationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /relationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/suggestions.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /suggestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userplaterelationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /userplaterelationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/settings.css?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /settings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/comments_pagination.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /misc/comments_pagination.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/endless_page.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /misc/endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/OpenLayers.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /misc/OpenLayers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-1.9.1.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /misc/jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/feeds_show_map.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /misc/feeds_show_map.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui-1.10.1.custom.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /misc/jquery-ui-1.10.1.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui-1.10.1.custom.min.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /misc/jquery-ui-1.10.1.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery.ui.effect-blind.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /misc/jquery.ui.effect-blind.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/leaflet.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /misc/leaflet.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/hideplate.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /misc/hideplate.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui.custom.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:32 +0200
+Served asset /misc/jquery-ui.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/showplates.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:33 +0200
+Served asset /misc/showplates.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-20 16:41:33 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/profilepictures/original/missing.png" for 127.0.0.1 at 2013-07-20 16:41:33 +0200
+
+ActionController::RoutingError (No route matches [GET] "/profilepictures/original/missing.png"):
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (8.3ms)
+
+
+Started GET "/profilepictures/original/missing.png" for 127.0.0.1 at 2013-07-20 16:41:33 +0200
+
+ActionController::RoutingError (No route matches [GET] "/profilepictures/original/missing.png"):
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/arrowright.png" for 127.0.0.1 at 2013-07-20 16:41:33 +0200
+Served asset /arrowright.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/arrowdown.png" for 127.0.0.1 at 2013-07-20 16:41:33 +0200
+Served asset /arrowdown.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/f.png" for 127.0.0.1 at 2013-07-20 16:41:33 +0200
+Served asset /f.png - 304 Not Modified (0ms)
+
+
+Started GET "/identities/2" for 127.0.0.1 at 2013-07-20 16:44:52 +0200
+Processing by IdentitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mSetting Load (0.2ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mPlate Load (0.1ms)[0m  SELECT "plates".* FROM "plates" WHERE "plates"."user_id" = 2
+  [1m[36mPlate Load (0.1ms)[0m  [1mSELECT "plates".* FROM "plates" INNER JOIN "userplaterelationships" ON "plates"."id" = "userplaterelationships"."secondaryplate_id" WHERE "userplaterelationships"."user_id" = 2[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = 2
+  Rendered identities/_platemenu.html.erb (64.3ms)
+  Rendered identities/show.html.erb within layouts/application (65.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mSetting Load (0.1ms)[0m  [1mSELECT "settings".* FROM "settings" WHERE "settings"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 213ms (Views: 98.9ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friendships.css?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /friendships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/identities.css?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /identities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feeds.css?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /feeds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/leaflet.css?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /leaflet.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new_feed_form.css?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /new_feed_form.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plate.css?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /plate.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plates.css?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /plates.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/platerelationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /platerelationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /searches.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/relationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /relationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/settings.css?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /settings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userplaterelationships.css?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /userplaterelationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/suggestions.css?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /suggestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/OpenLayers.js?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /misc/OpenLayers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/comments_pagination.js?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /misc/comments_pagination.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/misc/endless_page.js?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /misc/endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui.custom.js?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /misc/jquery-ui.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui-1.10.1.custom.js?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /misc/jquery-ui-1.10.1.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery.ui.effect-blind.js?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /misc/jquery.ui.effect-blind.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/leaflet.js?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /misc/leaflet.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/showplates.js?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /misc/showplates.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/feeds_show_map.js?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /misc/feeds_show_map.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/hideplate.js?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /misc/hideplate.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui-1.10.1.custom.min.js?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /misc/jquery-ui-1.10.1.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-1.9.1.js?body=1" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /misc/jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/profilepictures/original/missing.png" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+
+ActionController::RoutingError (No route matches [GET] "/profilepictures/original/missing.png"):
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/profilepictures/original/missing.png" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+
+ActionController::RoutingError (No route matches [GET] "/profilepictures/original/missing.png"):
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/arrowright.png" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /arrowright.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/f.png" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /f.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/arrowdown.png" for 127.0.0.1 at 2013-07-20 16:44:53 +0200
+Served asset /arrowdown.png - 304 Not Modified (0ms)
