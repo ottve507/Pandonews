@@ -27863,3 +27863,438 @@ Served asset /f.png - 304 Not Modified (1ms)
 
 Started GET "/assets/arrowright.png" for 127.0.0.1 at 2013-07-20 17:23:21 +0200
 Served asset /arrowright.png - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/identities/2" for 127.0.0.1 at 2013-07-20 17:47:54 +0200
+Processing by IdentitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mSetting Load (0.2ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mPlate Load (0.2ms)[0m  SELECT "plates".* FROM "plates" WHERE "plates"."user_id" = 2
+  [1m[36mPlate Load (0.1ms)[0m  [1mSELECT "plates".* FROM "plates" INNER JOIN "userplaterelationships" ON "plates"."id" = "userplaterelationships"."secondaryplate_id" WHERE "userplaterelationships"."user_id" = 2[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = 2
+  Rendered identities/_platemenu.html.erb (64.4ms)
+  Rendered identities/show.html.erb within layouts/application (77.1ms)
+  [1m[36mUser Load (4.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mSetting Load (0.1ms)[0m  [1mSELECT "settings".* FROM "settings" WHERE "settings"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 520ms (Views: 261.6ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-20 17:47:54 +0200
+Served asset /application.css - 304 Not Modified (80ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-20 17:47:54 +0200
+Served asset /comments.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-07-20 17:47:54 +0200
+Served asset /home.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/feeds.css?body=1" for 127.0.0.1 at 2013-07-20 17:47:54 +0200
+Served asset /feeds.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/friendships.css?body=1" for 127.0.0.1 at 2013-07-20 17:47:54 +0200
+Served asset /friendships.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/identities.css?body=1" for 127.0.0.1 at 2013-07-20 17:47:54 +0200
+Served asset /identities.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2013-07-20 17:47:54 +0200
+Served asset /layout.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/leaflet.css?body=1" for 127.0.0.1 at 2013-07-20 17:47:54 +0200
+Served asset /leaflet.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/new_feed_form.css?body=1" for 127.0.0.1 at 2013-07-20 17:47:54 +0200
+Served asset /new_feed_form.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/plate.css?body=1" for 127.0.0.1 at 2013-07-20 17:47:54 +0200
+Served asset /plate.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/platerelationships.css?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /platerelationships.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/plates.css?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /plates.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/relationships.css?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /relationships.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /searches.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/settings.css?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /settings.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/suggestions.css?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /suggestions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/userplaterelationships.css?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /userplaterelationships.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/misc/endless_page.js?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /misc/endless_page.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/misc/OpenLayers.js?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /misc/OpenLayers.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/misc/feeds_show_map.js?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /misc/feeds_show_map.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/misc/comments_pagination.js?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /misc/comments_pagination.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/misc/hideplate.js?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /misc/hideplate.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/misc/jquery-1.9.1.js?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /misc/jquery-1.9.1.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/misc/jquery-ui-1.10.1.custom.js?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /misc/jquery-ui-1.10.1.custom.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/misc/jquery-ui-1.10.1.custom.min.js?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /misc/jquery-ui-1.10.1.custom.min.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/misc/jquery-ui.custom.js?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /misc/jquery-ui.custom.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/misc/leaflet.js?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /misc/leaflet.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/misc/jquery.ui.effect-blind.js?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /misc/jquery.ui.effect-blind.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/misc/showplates.js?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /misc/showplates.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /application.js - 304 Not Modified (108ms)
+
+
+Started GET "/profilepictures/original/missing.png" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+
+ActionController::RoutingError (No route matches [GET] "/profilepictures/original/missing.png"):
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/profilepictures/original/missing.png" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+
+ActionController::RoutingError (No route matches [GET] "/profilepictures/original/missing.png"):
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/f.png" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /f.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/arrowright.png" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /arrowright.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/arrowdown.png" for 127.0.0.1 at 2013-07-20 17:47:55 +0200
+Served asset /arrowdown.png - 304 Not Modified (1ms)
+
+
+Started GET "/identities/2" for 127.0.0.1 at 2013-07-20 17:48:07 +0200
+Processing by IdentitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mSetting Load (0.3ms)[0m  [1mSELECT "settings".* FROM "settings" WHERE "settings"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mPlate Load (0.1ms)[0m  [1mSELECT "plates".* FROM "plates" WHERE "plates"."user_id" = 2[0m
+  [1m[35mPlate Load (0.1ms)[0m  SELECT "plates".* FROM "plates" INNER JOIN "userplaterelationships" ON "plates"."id" = "userplaterelationships"."secondaryplate_id" WHERE "userplaterelationships"."user_id" = 2
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = 2[0m
+  Rendered identities/_platemenu.html.erb (11.1ms)
+  Rendered identities/show.html.erb within layouts/application (12.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mSetting Load (0.1ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."id" = ? LIMIT 1  [["id", 2]]
+Completed 200 OK in 289ms (Views: 107.5ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feeds.css?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /feeds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friendships.css?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /friendships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/identities.css?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /identities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new_feed_form.css?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /new_feed_form.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/leaflet.css?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /leaflet.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plate.css?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /plate.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/platerelationships.css?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /platerelationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plates.css?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /plates.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /searches.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/relationships.css?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /relationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/suggestions.css?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /suggestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userplaterelationships.css?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /userplaterelationships.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/settings.css?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /settings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/comments_pagination.js?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /misc/comments_pagination.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/OpenLayers.js?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /misc/OpenLayers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-1.9.1.js?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /misc/jquery-1.9.1.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/hideplate.js?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /misc/hideplate.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui-1.10.1.custom.min.js?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /misc/jquery-ui-1.10.1.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui-1.10.1.custom.js?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /misc/jquery-ui-1.10.1.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/feeds_show_map.js?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /misc/feeds_show_map.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/endless_page.js?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /misc/endless_page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery.ui.effect-blind.js?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /misc/jquery.ui.effect-blind.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/leaflet.js?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /misc/leaflet.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/jquery-ui.custom.js?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /misc/jquery-ui.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/misc/showplates.js?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /misc/showplates.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/profilepictures/original/missing.png" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+
+ActionController::RoutingError (No route matches [GET] "/profilepictures/original/missing.png"):
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/profilepictures/original/missing.png" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+
+ActionController::RoutingError (No route matches [GET] "/profilepictures/original/missing.png"):
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/arrowright.png" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /arrowright.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/arrowdown.png" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /arrowdown.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/f.png" for 127.0.0.1 at 2013-07-20 17:48:08 +0200
+Served asset /f.png - 304 Not Modified (0ms)

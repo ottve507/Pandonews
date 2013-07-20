@@ -22,17 +22,17 @@ class IdentitiesController < ApplicationController
    if params[:plates]!=nil
        @myp = params[:plates]
      else
-       @myp = [nil]
+       @myp = Array.new
    end  
    if params[:secondaryplates]!=nil
        @sp = params[:secondaryplates]
     else
-      @sp = [nil]
+      @sp = Array.new
    end
    if params[:friends]!=nil
        @f = params[:friends]  
    else
-       @f = [nil]
+       @f = Array.new
    end
 
    if params[:commit] == 'update'
