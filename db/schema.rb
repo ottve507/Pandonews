@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130718115425) do
+ActiveRecord::Schema.define(:version => 20130720074633) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(:version => 20130718115425) do
   end
 
   add_index "comments", ["ancestry"], :name => "index_comments_on_ancestry"
+
+  create_table "cronfeeds", :force => true do |t|
+    t.string   "address"
+    t.integer  "plate_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "feeds", :force => true do |t|
     t.string   "title"

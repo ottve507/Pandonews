@@ -66,7 +66,10 @@ class FeedsController < ApplicationController
     
     #Feedzira!
     if @feed.url !=nil
+      if !Cronfeed.where(:plate_id=>@feed.original_plate_id, :user_id => current_user.id, :address => @feed.url).exists?
+      c = Cronfeed.create(:plate_id => @feed.original_plate_id, :address => @feed.url, :user_id =>current_user.id)
       Feed.update_from_feed(@feed.url, current_user.id, @feed.original_plate_id)
+      end
     end
     
     #tags :P

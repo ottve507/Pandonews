@@ -53,7 +53,7 @@ class Feed < ActiveRecord::Base
 
       def self.add_entries(entries, userid, feedurl, originalplateid)
         entries.reverse_each do |entry|
-         # unless exists? :guid => entry.id
+          unless exists? :guid => entry.id, :user_id => userid 
            @f = create!(
               :title => entry.title,
               :content => entry.summary,
@@ -68,7 +68,7 @@ class Feed < ActiveRecord::Base
               :original_plate_id => originalplateid,
             )
            p = Platerelationship.create(:plate_id => originalplateid, :feed_id => @f.id)
-        # end
+        end
         end
       end
   end
