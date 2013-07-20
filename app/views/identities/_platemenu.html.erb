@@ -1,14 +1,27 @@
 <%if params[:plates]!=nil%>
     <%@myp = params[:plates]%>
   <%else%>
-    <%@myp = Array.new%>
+    <%@myp = Array.new
 <%end%>
+<%if params[:secondaryplates]!=nil%>
+    <%@sp = params[:secondaryplates]%>
+ <%else%>
+   <%@sp = Array.new%>
+<%end%>
+<%if params[:friends]!=nil%>
+    <%@f = params[:friends]%>
+<%else%>
+    <%@f = Array.new%>
+<%end%>
+
+
+
+
 
 
 <div id="profile_plates">
 		<%= form_tag(@user, :method => "get") do %>
 <div id="profile_plates_interaction_area">
-
 <div id="arrow_box">
 	<a href="" id="myplatesbutton"><img src="/assets/arrowright.png"></a>
 	<a href="" id="myplatesbutton2"><img src="/assets/arrowdown.png"></a>

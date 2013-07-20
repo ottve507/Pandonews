@@ -19,17 +19,6 @@ class IdentitiesController < ApplicationController
     
    #For partial_____________________________
    
- 
-   if params[:secondaryplates]!=nil
-       @sp = params[:secondaryplates]
-    else
-      @sp = Array.new
-   end
-   if params[:friends]!=nil
-       @f = params[:friends]  
-   else
-       @f = Array.new
-   end
 
    if params[:commit] == 'update'
      @startup = 0

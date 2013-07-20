@@ -28490,3 +28490,4 @@ Served asset /arrowdown.png - 304 Not Modified (1ms)
 
 Started GET "/assets/f.png" for 127.0.0.1 at 2013-07-20 22:47:57 +0200
 Served asset /f.png - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
