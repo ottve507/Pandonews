@@ -27,7 +27,8 @@
 
 <div id="navigation">
 	<div id="navigation_image">
-<a href="http://localhost:3000"><img src="/assets/f.png" class="logo"></a></div>
+		<%= link_to image_tag("/assets/f.png", :class=>"logo"), root_url %> 
+</div>
 
 <% @search = Search.new %>
 <%= form_for @search, :class => "inlines" do |f| %>
