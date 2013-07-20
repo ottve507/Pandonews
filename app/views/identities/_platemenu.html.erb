@@ -10,8 +10,11 @@
 <div id="plate_heading_box">
 	<p class="plates_head">
 			
+			<%unless @myp==nil%>
 			<%@params=@myp.collect{|i| i.to_i}%>
+			<%end%><%unless @plates==nil%>
 		 	<%@allsecondary=@plates.collect(&:id)%>
+			<%end%>
 
 			<%if @startup != 1%>
 				<%if ifAllChecked(@params,@allsecondary) %>
