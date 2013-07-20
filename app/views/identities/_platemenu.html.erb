@@ -1,3 +1,9 @@
+<%if params[:plates]!=nil%>
+    <%@myp = params[:plates]%>
+  <%else%>
+    <%@myp = Array.new%>
+<%end%>
+
 
 <div id="profile_plates">
 		<%= form_tag(@user, :method => "get") do %>

@@ -19,11 +19,7 @@ class IdentitiesController < ApplicationController
     
    #For partial_____________________________
    
-   if params[:plates]!=nil
-       @myp = params[:plates]
-     else
-       @myp = Array.new
-   end  
+ 
    if params[:secondaryplates]!=nil
        @sp = params[:secondaryplates]
     else
