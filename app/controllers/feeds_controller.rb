@@ -31,8 +31,8 @@ class FeedsController < ApplicationController
       redirect_to new_plate_path
     else
     @language_setting = detectLanguage
-    ## @location_setting = Geocoder.search(request.remote_ip)
-    @location_setting = Geocoder.search("85.226.139.5")
+    @location_setting = Geocoder.search(request.remote_ip)
+    ##@location_setting = Geocoder.search("85.226.139.5")
       
        
     @plates = current_user.plates
@@ -53,8 +53,8 @@ class FeedsController < ApplicationController
       else
       @plates = current_user.plates
       @language_setting = detectLanguage
-      ## @location_setting = Geocoder.search(request.remote_ip)
-      @location_setting = Geocoder.search("85.226.139.5")
+      @location_setting = Geocoder.search(request.remote_ip)
+      ##@location_setting = Geocoder.search("85.226.139.5")
       @feed = Feed.find(params[:id])
     end
     

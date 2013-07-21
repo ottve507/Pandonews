@@ -13,25 +13,7 @@ $(document).ready(function() {
 <%end%>
 
 
-<div id="feed_profile_box">
-	<p class="identity_name"><%=@user.name%></p>
-	
-	<%if @user.provider=='facebook' || @user.provider=='twitter' %>
-		<%if @setting.profilepicture.url != '/profilepictures/original/missing.png' %>
-			<img src="<%=@setting.profilepicture.url%>" class="identity_resize">
-		<% else %>
-			<img src="<%=@user.image%>" class="identity_resize">
-		<%end%>
-	<%else%>
-		<img src="<%=@setting.profilepicture.url%>" class="identity_resize">
-	<%end%>
-	
-	
-	<hr style="width:50%; margin-left:5%;"/>
-	<p class="identity_info">Location: <%=@setting.location%></p> 
-	<p class="identity_info">Language: <%=@setting.primary_language%></p> 
-</div>
-
+<%=render :partial => 'profilebox'%>
 <%=render :partial => 'platemenu'%>
 
 <div id="identity_main">
