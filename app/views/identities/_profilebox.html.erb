@@ -1,0 +1,25 @@
+<div id="feed_profile_box">
+	
+	<div id="identity_profile_box_photo">
+	<%if @user.provider=='facebook' || @user.provider=='twitter' %>
+		<%if @setting.profilepicture.url != '/profilepictures/original/missing.png' %>
+			<img src="<%=@setting.profilepicture.url%>" class="identity_resize">
+		<% else %>
+			<img src="<%=@user.image%>" class="identity_resize">
+		<%end%>
+	<%else%>
+		<%if @setting.profilepicture.url != '/profilepictures/original/missing.png' %>
+		<img src="<%=@setting.profilepicture.url%>" class="identity_resize">
+		<%else%>
+		<img src='/assets/nopic.png' class="identity_resize">
+		<%end%>
+	<%end%>
+	</div>
+	
+	<div id="identity_profile_box_info">	
+	<p class="identity_name"><%=@user.name%></p>
+	<hr style="width:50%; margin-left:5%;"/>
+	<p class="identity_info">Location: <%=@setting.location%></p> 
+	<p class="identity_info">Language: <%=@setting.primary_language%></p> 
+	</div>
+</div>

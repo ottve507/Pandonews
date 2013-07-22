@@ -30,7 +30,23 @@ position:relative;
 padding-top:20px;
 padding-bottom:20px;
 box-shadow: 0 0 2px 2px #888;
-background: url('/assets/home_top_feeds.png') repeat-x scroll center bottom rgb(255, 255, 255);
+
+
+background-image: linear-gradient(left bottom, rgb(245,245,245) 0%, rgb(255,255,255) 67%, rgb(245,245,245) 100%);
+background-image: -o-linear-gradient(left bottom, rgb(245,245,245) 0%, rgb(255,255,255) 67%, rgb(245,245,245) 100%);
+background-image: -moz-linear-gradient(left bottom, rgb(245,245,245) 0%, rgb(255,255,255) 67%, rgb(245,245,245) 100%);
+background-image: -webkit-linear-gradient(left bottom, rgb(245,245,245) 0%, rgb(255,255,255) 67%, rgb(245,245,245) 100%);
+background-image: -ms-linear-gradient(left bottom, rgb(245,245,245) 0%, rgb(255,255,255) 67%, rgb(245,245,245) 100%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	right top,
+	color-stop(0, rgb(245,245,245)),
+	color-stop(0.67, rgb(255,255,255)),
+	color-stop(1, rgb(245,245,245))
+);
+
 }
 
 #home_top{
