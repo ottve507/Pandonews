@@ -19,16 +19,16 @@ class IdentitiesController < ApplicationController
     
     #INFO from and to PARTIAL__________
     if params[:plates]!=nil
-     myp = params[:plates]
+     @myp = params[:plates]
      else
-     myp = []
+     @myp = [-1]
     end
     
     if params[:secondaryplates]!=nil
      @sp = params[:secondaryplates]
     else
      #@sp = @secondaryplates.collect(&:id)
-     @sp = []
+     @sp = [-1]
     end
     
     
