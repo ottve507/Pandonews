@@ -12,8 +12,11 @@
 	<p class="plates_head">
 		<%if @myp == nil%>
 		<%@myp = []%>
+		<%@params = @myp%>
+		<%else%>
+		<%@params=@myp.collect{|i| i.to_i}%>
 		<%end%>
-	    <%@params=@myp.collect{|i| i.to_i}%>
+	   
 	 	<%@allsecondary=@plates.collect(&:id)%>
 
 			<%if @startup != 1%>
