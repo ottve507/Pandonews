@@ -1,0 +1,13 @@
+<%if @startup==1%>
+<script>
+function clickDefault() {
+	var secondary= document.getElementsByClassName('secondary_plates_check_all');
+	var myPlates= document.getElementsByClassName('plates_check_all');
+    secondary[0].checked = true;
+	myPlates[0].checked = true;
+		};
+$(document).ready(function() {  
+	clickDefault(); 
+});
+</script>
+<%end%>

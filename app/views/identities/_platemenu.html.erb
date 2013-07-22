@@ -1,69 +1,4 @@
-<script>
-
-checked=false;
-secondarychecked=false;
-
-function checkAllPlates() {
-
-	var cp = document.getElementsByClassName('plates_check_all');
-	var aa = document.getElementsByClassName('plates_check');
-	checked=cp[0].checked;
-	 if (checked == true)
-          {
-           checked = true
-          }
-        else
-          {
-          checked = false
-          }
-	for (var i=0; i < aa.length; i++) 
-	{
-	 
-	 aa[i].checked = checked;
-	}
-}
-
-
-
-
-function checkAllSecondaryPlates() {
-	var sp= document.getElementsByClassName('secondary_plates_check');
-    var scp= document.getElementsByClassName('secondary_plates_check_all');
-	secondarychecked=scp[0].checked;
-	 if (secondarychecked == true)
-          {
-           secondarychecked = true
-          }
-        else
-          {
-          secondarychecked = false
-          }
-	for (var i =0; i < sp.length; i++) 
-	{
-	 sp[i].checked = secondarychecked;
-	}
-}
-
-
-</script>
-
-
-<%if params[:plates]!=nil%>
-    <%@myp = params[:plates]%>
-  <%else%>
-    <%@myp = Array.new%>
-<%end%>
-<%if params[:secondaryplates]!=nil%>
-    <%@sp = params[:secondaryplates]%>
- <%else%>
-   <%@sp = Array.new%>
-<%end%>
-<%if params[:friends]!=nil%>
-    <%@f = params[:friends]%>
-<%else%>
-    <%@f = Array.new%>
-<%end%>
-
+<%=render :partial => 'initializescript'%>
 
 <div id="profile_plates">
 	<%= form_tag(@user, :method => "get") do %>
@@ -98,7 +33,7 @@ function checkAllSecondaryPlates() {
 	<% @plates.each do |p| %>
 	
 	<%if @startup == 1 %>
-      <%= check_box_tag "plates[]", p.id, false, :class => 'plates_check' %>
+      <%= check_box_tag "plates[]", p.id, true, :class => 'plates_check' %>
 	<%else%>
 		<%= check_box_tag "plates[]", p.id,	@myp.include?(p.id.to_s), :class =>'plates_check'%>
 	<%end%>
@@ -139,7 +74,7 @@ function checkAllSecondaryPlates() {
 	
 	<% @secondaryplates.each do |p| %>
 	<%if @startup == 1 %>
-      <%= check_box_tag "secondaryplates[]", p.id, false, :class =>'secondary_plates_check'%>
+      <%= check_box_tag "secondaryplates[]", p.id, true, :class =>'secondary_plates_check'%>
 	<%else%>
 	  <%= check_box_tag "secondaryplates[]", p.id, @sp.include?(p.id.to_s), :class =>'secondary_plates_check'%>
 	<%end%>
