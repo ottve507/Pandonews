@@ -1,7 +1,7 @@
 module IdentitiesHelper
   
   def ifAllChecked(allsecplates,params)
-  x = false
+  x = true
   (0..allsecplates.size-1).each do |i|
     x = params.include? allsecplates[i]
     if x == false

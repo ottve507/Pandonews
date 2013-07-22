@@ -17,22 +17,23 @@ class IdentitiesController < ApplicationController
     @secondaryplates = @user.secondaryplates 
     @friends = User.find(:all)
     
-    #PARTIAL__________
+    #INFO from and to PARTIAL__________
     if params[:plates]!=nil
      @myp = params[:plates]
      else
-     @myp = [0]
+     @myp = []
     end
+    
     if params[:secondaryplates]!=nil
      @sp = params[:secondaryplates]
     else
-     @sp = Array.new
+     #@sp = @secondaryplates.collect(&:id)
+     @sp = []
     end
-    if params[:friends]!=nil
-     @f = params[:friends]
-    else
-     @f = Array.new
-    end
+    
+    
+    
+  
 
     if params[:commit] == 'update'
      @startup = 0
@@ -41,7 +42,6 @@ class IdentitiesController < ApplicationController
      @startup = 1
      @allfeeds = getFeedsStartup(@plates.collect(&:id),@secondaryplates.collect(&:id))
     end
-
 
     if @allfeeds
      @feeds = @allfeeds.sort_by &:created_at

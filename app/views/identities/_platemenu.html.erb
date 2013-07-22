@@ -10,6 +10,9 @@
 </div>
 <div id="plate_heading_box">
 	<p class="plates_head">
+		<%if @myp == nil%>
+		<%@myp = []%>
+		<%end%>
 	    <%@params=@myp.collect{|i| i.to_i}%>
 	 	<%@allsecondary=@plates.collect(&:id)%>
 
@@ -52,6 +55,9 @@
 </div>
 <div id="plate_heading_box">
 	<p class="plates_head">
+		<%if @sp == nil%>
+		<%@myp = []%>
+		<%end%>
 		<%@params=@sp.collect{|i| i.to_i}%>
 	 	<%@allsecondary=@secondaryplates.collect(&:id)%>
 	
