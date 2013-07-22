@@ -21,7 +21,7 @@ class IdentitiesController < ApplicationController
     if params[:plates]!=nil
      @myp = params[:plates]
      else
-     @myp = Array.new
+     @myp = [0]
     end
     if params[:secondaryplates]!=nil
      @sp = params[:secondaryplates]
@@ -60,7 +60,7 @@ class IdentitiesController < ApplicationController
     
     
     
-    
+   
     
     #@feeds = @allfeeds.sort_by { |obj| obj.published_at } sorted = @records.sort_by &:created_at
     #@allfeeds = @feeds.sort { |p1, p2| p2.impressionist_count(:filter=>:all, :start_date=>@t) <=> p1.impressionist_count(:filter=>:all, :start_date=>@h1)}

@@ -10,12 +10,10 @@
 </div>
 <div id="plate_heading_box">
 	<p class="plates_head">
-			
-
+	    <%@params=@myp.collect{|i| i.to_i}%>
+	 	<%@allsecondary=@plates.collect(&:id)%>
 
 			<%if @startup != 1%>
-			    <%@params=@myp.collect{|i| i.to_i}%>
-			 	<%@allsecondary=@plates.collect(&:id)%>
 				<%if ifAllChecked(@params,@allsecondary) %>
 				<input type='checkbox' onclick='checkAllPlates();' class="plates_check_all" checked="checked">
 				<%else%>
