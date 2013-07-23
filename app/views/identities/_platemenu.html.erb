@@ -12,21 +12,18 @@
 	<p class="plates_head">
 		<%if @myp == nil%>
 		<%@myp = []%>
-		<%@params = @myp%>
-		<%else%>
-		<%@params=@myp%>
 		<%end%>
-	   
+		<%@params=@myp%>	   
 	 	<%@allsecondary=@plates.collect(&:id)%>
 
 			<%if @startup != 1%>
-				<%if ifAllChecked(@params,@allsecondary) %>
+				<%if @myp!= [] || @plates == nil %>
 				<input type='checkbox' onclick='checkAllPlates();' class="plates_check_all" checked="checked">
 				<%else%>
 				<input type='checkbox' onclick='checkAllPlates();' class="plates_check_all">  
 				<%end%>
 			<%else%>
-			<input type='checkbox' onclick='checkAllPlates();' class="plates_check_all"> 
+				<input type='checkbox' onclick='checkAllPlates();' class="plates_check_all"> 
 			<%end%> 
 	
 		my plates
@@ -35,17 +32,18 @@
 </div>
 <div id ="myplates">
 	<%if @plates.any?%>
-	<% @plates.each do |p| %>
-	
-	<%if @startup == 1 %>
-      <%= check_box_tag "plates[]", p.id, true, :class => 'plates_check' %>
-	<%else%>
-		<%= check_box_tag "plates[]", p.id,	@myp.include?(p.id.to_s), :class =>'plates_check'%>
-	<%end%>
-      <%= link_to p.name, showplate_identities_path(p), :class => "plates_links" %>
-      <br />
+		<% @plates.each do |p| %>	
 
-    <% end %>
+			<%if @startup == 1 %>
+      			<%= check_box_tag "plates[]", p.id, true, :class => 'plates_check' %>
+			<%else%>
+				<%= check_box_tag "plates[]", p.id,	@myp.include?(p.id.to_s), :class =>'plates_check'%>
+			<%end%>
+
+      		<%= link_to p.name, showplate_identities_path(p), :class => "plates_links" %>
+      		<br />
+
+    	<% end %>
 	<%else%>
 		no plates yet.
 	<%end%>
@@ -65,7 +63,7 @@
 	 	<%@allsecondary=@secondaryplates.collect(&:id)%>
 	
 		<%if @startup != 1%>
-			<%if ifAllChecked(@params,@allsecondary) %>
+			<%if @sp!= [] || @secondaryplates == nil %>
 			<input type='checkbox' onclick='checkAllSecondaryPlates();' class="secondary_plates_check_all" checked="checked">
 			<%else%>
 			<input type='checkbox' onclick='checkAllSecondaryPlates();' class="secondary_plates_check_all">
@@ -77,25 +75,33 @@
 	</input>	
 	</p>
 </div>
+
 <div id ="secondaryplates">
-	<%if @secondaryplates.any?%>
-	
-	<% @secondaryplates.each do |p| %>
-	<%if @startup == 1 %>
-      <%= check_box_tag "secondaryplates[]", p.id, true, :class =>'secondary_plates_check'%>
-	<%else%>
-	  <%= check_box_tag "secondaryplates[]", p.id, @sp.include?(p.id.to_s), :class =>'secondary_plates_check'%>
-	<%end%>
-      <%= link_to p.name, showplate_identities_path(p), :class => "plates_links" %>
-      <br />
-    <% end %>
-	
+	<%if @secondaryplates.any?%>	
+		<% @secondaryplates.each do |p| %>
+		<br>
+			<%if @startup == 1 %>
+      			<%= check_box_tag "secondaryplates[]", p.id, true, :class =>'secondary_plates_check'%>
+			<%else%>
+	  			<%= check_box_tag "secondaryplates[]", p.id, @sp.include?(p.id.to_s), :class =>'secondary_plates_check'%>
+			<%end%>
+      		<%= link_to p.name, showplate_identities_path(p), :class => "plates_links" %>
+      		<br />
+    	<% end %>	
 	<%else%>
 		no subscriptions.
 	<%end%>
+</div>
+</div>
 
-</div>
-</div>
+<p class="identity_sortingmethod"><%= radio_button_tag 'sortingmethod', 'mostdisc',  'mostdisc'==@sortingmethod %> Most discussed</p>
+<p class="identity_sortingmethod"><%= radio_button_tag 'sortingmethod', 'mostrecent', 'mostrecent'==@sortingmethod %> Most recent</p>
+<p class="identity_sortingmethod"><%= radio_button_tag 'sortingmethod', 'mostviewed', 'mostviewed'==@sortingmethod %> Most viewed</p>
+
+
+<br>
+<p class="identity_nearme"><%=check_box_tag 'sortnearme', 'true', @location_setting!=nil%> Near me</p>
+<br>
 
 <%= submit_tag "update", :class => "submitbutton_identity" %>
 

@@ -15,24 +15,35 @@ class IdentitiesController < ApplicationController
     @setting = Setting.find(params[:id])
     @plates = @user.plates
     @secondaryplates = @user.secondaryplates 
-    @friends = User.find(:all)
+    @friends = User.find(:all)  
+    
     
     #INFO from and to PARTIAL__________
     if params[:plates]!=nil
      @myp = params[:plates]
      else
-     @myp = [-1]
+     @myp = []
     end
     
     if params[:secondaryplates]!=nil
      @sp = params[:secondaryplates]
     else
      #@sp = @secondaryplates.collect(&:id)
-     @sp = [-1]
+     @sp = []
     end
     
+    if params[:sortingmethod]=='mostdisc' || params[:sortingmethod] == 'mostviewed'
+      @sortingmethod = params[:sortingmethod]
+    else
+      @sortingmethod = 'mostrecent'
+    end
     
-    
+    if params[:sortnearme]!=nil
+      #@location_setting = Geocoder.search(request.remote_ip)
+      @location_setting = Geocoder.search("85.226.139.5")
+    else
+      @location_setting = nil
+    end
   
 
     if params[:commit] == 'update'
