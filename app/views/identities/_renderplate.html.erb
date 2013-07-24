@@ -3,33 +3,37 @@
 
 <div id="feedbox">
   <div id="feedbox_content_identity">
-  
-<div id ="info">
 	<div id="userinfo_identity">
+		<div id="identity_photo_box_after_resize">
 		<%= link_to(@anv) do %>		
 		<%if @anv.provider=='facebook' || @anv.provider=='twitter' %>
 			<%if @set.profilepicture.url != '/profilepictures/original/missing.png' %>
 				<img src="<%=@set.profilepicture.url%>" class="pictureresizing">
 			<% else %>
-				<img src="<%=@anv.image%>" class="pictureresizing">
+				<img src="<%=@anv.image%>" class="identity_resize">
 			<%end%>
 		<%else%>
-			<img src="<%=@set.profilepicture.url%>" class="pictureresizing">
+			<%if @setting.profilepicture.url != '/profilepictures/original/missing.png' %>
+				<img src="<%=@set.profilepicture.url%>" class="pictureresizing">
+			<%else%>
+				<img src='/assets/nopic.png' class="identity_resize">
+			<%end%>
 		<%end%>
-		<br>
 	   <% end %>
-
+	</div>
+			<br>
 		<p class="linkstyle">
 		<%= link_to @anv.name, @anv%>
 		</p>
 	</div>
 	
-	
-	<div id="headerboxtext_identity">
+	<div id="identity_feedbox_shadow">
+		<div id="headerboxtext_identity">		
 		<p class="headerlinkstyle"> <%= link_to renderplate.title, renderplate %>
 		</p>
-	</div>
-</div>		
+		</div>
+		
 	<p class="feedtext_identity"><%=renderplate.content.html_safe %></p>
+	</div>	
 	</div>
 </div>

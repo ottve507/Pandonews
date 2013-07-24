@@ -132,7 +132,8 @@ function displayMap() {
 			<p class="location_feeds">Nearby happenings</p>
 			<% for f in @localfeeds %>
 			  <ul><%= link_to f.location, f %> (<%= f.distance.round(2) %> miles)</ul>
-			<% end %>			
+			<% end %>
+	
 		</div>
 	</div>
 </p>

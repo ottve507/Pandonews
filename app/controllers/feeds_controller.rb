@@ -143,6 +143,8 @@ class FeedsController < ApplicationController
     @localfeeds = @localfeeds.reverse.first(5)
 
     @localfeeds = @localfeeds.sort { |p1, p2| p2.impressionist_count(:filter=>:all, :start_date=>@h1) <=> p1.impressionist_count(:filter=>:all, :start_date=>@h1)}
+
+ 
     end
     respond_to do |format|
       format.html # show.html.erb

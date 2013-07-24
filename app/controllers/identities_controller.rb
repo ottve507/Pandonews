@@ -14,8 +14,7 @@ class IdentitiesController < ApplicationController
     @user = User.find(params[:id])
     @setting = Setting.find(params[:id])
     @plates = @user.plates
-    @secondaryplates = @user.secondaryplates 
-    @friends = User.find(:all)  
+    @secondaryplates = @user.secondaryplates  
     
     
     #INFO from and to PARTIAL__________
@@ -53,6 +52,8 @@ class IdentitiesController < ApplicationController
      @startup = 1
      @allfeeds = getFeedsStartup(@plates.collect(&:id),@secondaryplates.collect(&:id))
     end
+    
+    @allfeedz = getFeedz(@plates.collect(&:id),@secondaryplates.collect(&:id),@myp,@sp,@sortingmethod,@location_setting,@startup)
 
     if @allfeeds
      @feeds = @allfeeds.sort_by &:created_at
@@ -63,7 +64,8 @@ class IdentitiesController < ApplicationController
     @h1 = @t - 1.hour
 
     @allfeeds = @feeds
-
+    @allfeeds = @allfeedz
+    
     if @allfeeds
     @feeds = @allfeeds.paginate(:page => params[:page], :per_page => 7)
     end
