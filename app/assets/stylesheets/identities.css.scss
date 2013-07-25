@@ -55,6 +55,7 @@ width:82%;
 #identity_profile_box_photo{
 float:left;
 width:13%;
+width:13%;
 margin:1%;
 margin-left:3%;
 margin-top:3%;
@@ -118,6 +119,7 @@ float:left;
 margin-left:5%;
 width:90%;
 display: inline-block;
+margin-bottom:10px;
 }
 
 #userinfo_identity {
@@ -272,8 +274,8 @@ margin-top:20px;
 }
 
 .identity_resize{
-	max-width:100%;
-	max-height:200px;
+	width:100%;
+	max-height:300px;
 	float:left;
 	display: inline-block;
 }
@@ -320,7 +322,7 @@ font-size: 90%;
 margin-left:3%;
 padding: 2px;
 border-radius: 4px;
-margin-top: 40px;
+margin-top: 10px;
 width: 65px;
 text-align: center;
 

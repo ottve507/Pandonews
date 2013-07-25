@@ -95,11 +95,8 @@ module IdentitiesHelper
           end 
         end
       end
-
-      ##clear multiple entries of same feed
-      if @collectedfeeds
-        @collectedfeeds = @collectedfeeds.uniq
-      end
+      
+      @collectedfeeds = @collectedfeeds.sort_by(&:created_at).reverse
           
     else
   
@@ -138,29 +135,25 @@ module IdentitiesHelper
       
       if sortingmethod == 'mostviewed'
         @t = Time.now
-        @h1 = @t - 1.hour       
-        @collectedfeeds = @collectedfeeds.sort { |p1, p2| p2.impressionist_count(:filter=>:all, :start_date=>@h1) <=> p1.impressionist_count(:filter=>:all, :start_date=>@h1)}
+        @h1 = @t - 1.hour
+        @collectedfeeds = @collectedfeeds.sort_by(&:created_at).reverse
+        @collectedfeeds = @collectedfeeds.sort { |p1, p2| p2.impressionist_count(:filter=>:created_at, :start_date=>@h1)   <=> p1.impressionist_count(:filter=>:created_at, :start_date=>@h1) }
       elsif sortingmethod == 'mostdisc'
         #@collectedfeeds.sort_by { |f| f.comments.count }
-       @collectedmodified = @collectedfeeds.reject{|x| x.created_at < 1.hour.ago}.collect{|x| x}
+       @collectedmodified = @collectedfeeds.reject{|x| x.created_at < 1.day.ago}.collect{|x| x}
        if @collectedmodified
           @collectedfeeds = @collectedmodified.sort { |p1, p2| p2.comments.count <=> p1.comments.count }
        end
+      else
+        @collectedfeeds = @collectedfeeds.sort_by(&:created_at).reverse
       end
-      
-      
-      
-      
-      
-      
-      ##clear multiple entries of same feed
-      if @collectedfeeds
-        @collectedfeeds = @collectedfeeds.uniq
-      end
-    
+          
     end
     
-
+    ##clear multiple entries of same feed
+    if @collectedfeeds
+      @collectedfeeds = @collectedfeeds.uniq
+    end
     
    return @collectedfeeds
   end

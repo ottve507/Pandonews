@@ -26,6 +26,7 @@ gem "paperclip", "~> 3.0"
 gem 'sqlite3'
 gem 'jquery-rails'
 gem 'whenever', :require => false
+gem 'sanitize'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'ancestry'

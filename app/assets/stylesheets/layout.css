@@ -67,8 +67,8 @@ text-decoration: none;
 
 #navigation_text_options{
 	float:left;
+	text-align:left;
 	position:relative;
-	border-right:1px solid gray;
 	display:inline-block;
 	width:10%;
 	margin-left:3%;	
@@ -169,6 +169,7 @@ nav a {
 
 .logo {
 	float:left;
-	margin-right:20px;
-	width: 100%;	
+	margin-left:10%;
+	width: 90%;
+	margin-top:5px;
 }
