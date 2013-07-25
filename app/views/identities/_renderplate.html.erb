@@ -25,6 +25,9 @@
 		<p class="linkstyle">
 		<%= link_to @anv.name, @anv%>
 		</p>
+		<p class="linkstyle">
+		<%= link_to Plate.find(renderplate.original_plate_id).name, Plate.find(renderplate.original_plate_id)%>
+		</p>
 	</div>
 	
 	<div id="identity_feedbox_shadow">

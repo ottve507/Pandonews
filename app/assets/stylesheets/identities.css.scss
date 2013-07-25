@@ -71,14 +71,7 @@ box-shadow: 0 0 1px 1px #888;
 #identity_photo_box_after_resize{
 float:left;
 width:100%;
-
-border-top-right-radius: 2px;
-border-top-left-radius: 2px;
-border-bottom-right-radius: 2px;
-border-bottom-left-radius: 2px;
--moz-box-shadow: 0 0 1px 1px #888;
--webkit-box-shadow: 0 0 1px 1px #888;
-box-shadow: 0 0 1px 1px #888;
+border-bottom:solid 1px gray;
 }
 
 #identity_feedbox_shadow{
@@ -87,19 +80,19 @@ width:87%;
 margin-left:2%;
 margin-bottom:2%;
 
-background-image: linear-gradient(bottom, rgb(240,240,240) 35%, rgb(255,255,255) 68%, rgb(250,250,250) 84%);
-background-image: -o-linear-gradient(bottom, rgb(240,240,240) 35%, rgb(255,255,255) 68%, rgb(250,250,250) 84%);
-background-image: -moz-linear-gradient(bottom, rgb(240,240,240) 35%, rgb(255,255,255) 68%, rgb(250,250,250) 84%);
-background-image: -webkit-linear-gradient(bottom, rgb(240,240,240) 35%, rgb(255,255,255) 68%, rgb(250,250,250) 84%);
-background-image: -ms-linear-gradient(bottom, rgb(240,240,240) 35%, rgb(255,255,255) 68%, rgb(250,250,250) 84%);
+background-image: linear-gradient(bottom, rgb(255,255,255) 0%, rgb(245,245,245) 52%, rgb(255,255,255) 100%);
+background-image: -o-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(245,245,245) 52%, rgb(255,255,255) 100%);
+background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(245,245,245) 52%, rgb(255,255,255) 100%);
+background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(245,245,245) 52%, rgb(255,255,255) 100%);
+background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(245,245,245) 52%, rgb(255,255,255) 100%);
 
 background-image: -webkit-gradient(
 	linear,
 	left bottom,
 	left top,
-	color-stop(0.35, rgb(240,240,240)),
-	color-stop(0.68, rgb(255,255,255)),
-	color-stop(0.84, rgb(250,250,250))
+	color-stop(0, rgb(255,255,255)),
+	color-stop(0.52, rgb(245,245,245)),
+	color-stop(1, rgb(255,255,255))
 );
 
 border-top-right-radius: 2px;
@@ -124,17 +117,38 @@ margin-right:auto;
 float:left;
 margin-left:5%;
 width:90%;
-overflow:hidden;
 display: inline-block;
 }
 
 #userinfo_identity {
 float:left;
-width:11%;
+width:10%;
 font-family:Optima;
-overflow:hidden;
 font-size:20px;
 display: inline-block;
+
+background-image: linear-gradient(bottom, rgb(255,255,255) 0%, rgb(245,245,245) 52%, rgb(255,255,255) 100%);
+background-image: -o-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(245,245,245) 52%, rgb(255,255,255) 100%);
+background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(245,245,245) 52%, rgb(255,255,255) 100%);
+background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(245,245,245) 52%, rgb(255,255,255) 100%);
+background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(245,245,245) 52%, rgb(255,255,255) 100%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0, rgb(255,255,255)),
+	color-stop(0.52, rgb(245,245,245)),
+	color-stop(1, rgb(255,255,255))
+);
+
+border-top-right-radius: 2px;
+border-top-left-radius: 2px;
+border-bottom-right-radius: 2px;
+border-bottom-left-radius: 2px;
+-moz-box-shadow: 0 0 1px 1px #888;
+-webkit-box-shadow: 0 0 1px 1px #888;
+box-shadow: 0 0 1px 1px #888;
 }
 
 
@@ -259,8 +273,7 @@ margin-top:20px;
 
 .identity_resize{
 	max-width:100%;
-	min-width:100%;
-	max-height:300px;
+	max-height:200px;
 	float:left;
 	display: inline-block;
 }
