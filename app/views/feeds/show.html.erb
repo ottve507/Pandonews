@@ -128,13 +128,16 @@ function displayMap() {
 		<div id="googleMap"></div>
 		</div>
 		
+		<%if @localfeeds?%>
 		<div id="feed_show_map_right">
 			<p class="location_feeds">Nearby happenings</p>
 			<% for f in @localfeeds %>
 			  <ul><%= link_to f.location, f %> (<%= f.distance.round(2) %> miles)</ul>
-			<% end %>
-	
+			<% end %>	
 		</div>
+		<%end%>
+		
+		
 	</div>
 </p>
 <%end%>		

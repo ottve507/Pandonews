@@ -11,10 +11,11 @@ class Cronfeed < ActiveRecord::Base
   def self.updatefeedswithlocation
     @feeds = Feed.where(:location => nil)
     @feeds.each do |f|
-     sanitizedString = Sanitize.clean(f.content)
+     sanitizedString = Sanitize.clean(f.content) + Sanitize.clean(f.title)
      arrayOfWords = sanitizedString.split(' ')
      arrayOfCountries = Array.new
      arrayOfCities = Array.new
+     returnLocation = nil
      
      ##Finding locations from word
      if arrayOfWords.count < 30
@@ -31,7 +32,7 @@ class Cronfeed < ActiveRecord::Base
        end              
      
        for i in (0..arrayOfWords.count-1)
-         if !arrayOfWords[i+1]
+         if arrayOfWords[i+1] == nil
            break
          end         
          searchedLocation = Geocoder.search(arrayOfWords[i] + ' ' + arrayOfWords[i+1] , :lookup => :nominatim)        
@@ -44,7 +45,6 @@ class Cronfeed < ActiveRecord::Base
             end
           sleep 1
        end              
-     end
      
     ##Pairing city and country if possible
       arrayOfCountries.each do |co|
@@ -55,8 +55,13 @@ class Cronfeed < ActiveRecord::Base
           end
         end
       end
+     end
       
-      f.location = returnLocation.city
+      if returnLocation != nil
+        f.location = returnLocation.city
+      else
+        f.location = "Not specified"
+      end
       f.save
        
     end
