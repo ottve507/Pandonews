@@ -8,7 +8,7 @@ class Cronfeed < ActiveRecord::Base
      end
   end
   
-  def self.updatefeedswithlocation
+  def self.updatefeedswithlocationOLD
     @feeds = Feed.where(:location => nil)
     @feeds.each do |f|
      sanitizedString = Sanitize.clean(f.content) + Sanitize.clean(f.title)
@@ -66,5 +66,20 @@ class Cronfeed < ActiveRecord::Base
        
     end
   end
+  
+  def self.updatefeedswithlocation
+     @feeds = Feed.where(:location => nil)
+     @feeds.each do |f|
+        @plate = Plate.find(f.original_plate_id)
+        searchedLocation = Geocoder.search(@plate.location, :lookup => :nominatim) 
+        f.location = @plate.location
+        f.latitude = searchedLocation[0].latitude
+        f.longitude = searchedLocation[0].longitude
+        f.save
+        sleep 1
+     end  
+          
+  end
+  
   
 end
