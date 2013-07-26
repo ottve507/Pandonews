@@ -77,8 +77,7 @@ class Cronfeed < ActiveRecord::Base
         f.longitude = searchedLocation[0].longitude
         f.save
         sleep 1
-     end  
-          
+     end           
   end
   
   

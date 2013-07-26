@@ -11,7 +11,7 @@ every 5.minutes do
   runner "Cronfeed.updatefeedswithcron"
 end
 
-every 1.minutes do
+every 2.minutes do
   runner "Cronfeed.updatefeedswithlocation"
 end
 
