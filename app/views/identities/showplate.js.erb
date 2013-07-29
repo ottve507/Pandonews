@@ -1,0 +1,9 @@
+var $j = jQuery.noConflict();
+	$j('#identity_main').append('<%= j render :partial => 'renderplate', :collection => @feeds %>');
+	<% if @feeds.next_page %>
+  	$j('.pagination').replaceWith('<%= j will_paginate(@feeds) %>');
+	<% else %>
+  	$j('.pagination').remove();
+	$j('#lastpage_identity').remove();
+	<% end %>
+<% sleep 1 %>

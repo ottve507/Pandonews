@@ -52,13 +52,96 @@ float:left;
 width:82%;
 }
 
+#identity_show_plate_box_info{
+padding:0px;
+float:left;
+width:100%;
+text-align:center;
+}
+
+#identity_plate_info_box{
+float:left;
+width:50%;
+margin:1%;
+margin-left:25%;
+margin-top:3%;
+
+border-top-right-radius: 2px;
+border-top-left-radius: 2px;
+border-bottom-right-radius: 2px;
+border-bottom-left-radius: 2px;
+-moz-box-shadow: 0 0 1px 1px #888;
+-webkit-box-shadow: 0 0 1px 1px #888;
+box-shadow: 0 0 1px 1px #888;
+
+background-image: linear-gradient(bottom, rgb(255,255,255) 0%, rgb(237,237,237) 50%, rgb(255,255,255) 100%);
+background-image: -o-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(237,237,237) 50%, rgb(255,255,255) 100%);
+background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(237,237,237) 50%, rgb(255,255,255) 100%);
+background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(237,237,237) 50%, rgb(255,255,255) 100%);
+background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(237,237,237) 50%, rgb(255,255,255) 100%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0, rgb(255,255,255)),
+	color-stop(0.5, rgb(237,237,237)),
+	color-stop(1, rgb(255,255,255))
+);
+}
+
+#identity_plate_sort_box{
+float:left;
+width:50%;
+margin-left:25%;
+margin-top:0.5%;
+
+border-top-right-radius: 2px;
+border-top-left-radius: 2px;
+border-bottom-right-radius: 2px;
+border-bottom-left-radius: 2px;
+-moz-box-shadow: 0 0 1px 1px #888;
+-webkit-box-shadow: 0 0 1px 1px #888;
+box-shadow: 0 0 1px 1px #888;
+
+background-image: linear-gradient(bottom, rgb(255,255,255) 0%, rgb(237,237,237) 50%, rgb(255,255,255) 100%);
+background-image: -o-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(237,237,237) 50%, rgb(255,255,255) 100%);
+background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(237,237,237) 50%, rgb(255,255,255) 100%);
+background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(237,237,237) 50%, rgb(255,255,255) 100%);
+background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(237,237,237) 50%, rgb(255,255,255) 100%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0, rgb(255,255,255)),
+	color-stop(0.5, rgb(237,237,237)),
+	color-stop(1, rgb(255,255,255))
+);
+}
+
+
 #identity_profile_box_photo{
 float:left;
-width:13%;
 width:13%;
 margin:1%;
 margin-left:3%;
 margin-top:3%;
+
+border-top-right-radius: 2px;
+border-top-left-radius: 2px;
+border-bottom-right-radius: 2px;
+border-bottom-left-radius: 2px;
+-moz-box-shadow: 0 0 1px 1px #888;
+-webkit-box-shadow: 0 0 1px 1px #888;
+box-shadow: 0 0 1px 1px #888;
+}
+
+#identity_profile_box_photo_showplate{
+float:left;
+width:20%;
+margin-left:40%;
+margin-top:0%;
 
 border-top-right-radius: 2px;
 border-top-left-radius: 2px;
@@ -264,6 +347,15 @@ margin-top:50px;
 display: inline-block;
 }
 
+.identity_name_showplate {
+font-size:60px;
+margin:0px;
+margin-top:30px;
+padding:0px;
+margin-left:5%;
+display: inline-block;
+}
+
 .identity_info {
 
 font-size:13px;
@@ -336,4 +428,15 @@ text-align: center;
 	-ms-transition: all .1s ease;
 	-o-transition: all .1s ease;
 	  transition: all .1s ease;
+}
+
+.submitbutton_identity_showplate {
+    background:none!important;
+     border:none;
+	color:orange;
+     padding:0!important;
+	cursor: pointer; 
+	cursor: hand;
+	font-family: Helvetica;
+	 font-size: 14px;
 }

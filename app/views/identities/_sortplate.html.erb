@@ -1,0 +1,10 @@
+<%= form_tag(showplate_identities_path(@plate), :method => "get") do %>
+
+<p class="identity_sortingmethod"><%= radio_button_tag 'sortingmethod', 'mostdisc',  'mostdisc'==@sortingmethod %>Most discussed <%= radio_button_tag 'sortingmethod', 'mostrecent', 'mostrecent'==@sortingmethod %>Most recent 
+<%= radio_button_tag 'sortingmethod', 'mostviewed', 'mostviewed'==@sortingmethod %>Most viewed </p>
+<br>
+<p class="identity_nearme"><%=check_box_tag 'sortnearme', 'true', @location_setting!=nil%>Near me </p>
+<br>
+<%= submit_tag "update", :class => "submitbutton_identity" %>
+<% end %>
+<br>

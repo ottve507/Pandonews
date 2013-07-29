@@ -86,12 +86,36 @@ class IdentitiesController < ApplicationController
      end
   end
   
-  def showplate
+  def showplate    
     @upr = Userplaterelationship.new
     @plate = Plate.find(params[:id])
     @platerelationship = Platerelationship.find_by_plate_id(@plate.id)
-    @feeds = @plate.feeds
-    @feeds = @feeds.paginate(:page => params[:page], :per_page => 7)    
+    @feeds = @plate.feeds   
+    @user = User.find(@plate.user_id)
+    @setting = Setting.find(@plate.user_id)
+    
+    if params[:sortingmethod]=='mostdisc' || params[:sortingmethod] == 'mostviewed'
+      @sortingmethod = params[:sortingmethod]
+    else
+      @sortingmethod = 'mostrecent'
+    end
+    
+    if params[:sortnearme]!=nil
+      #@location_setting = Geocoder.search(request.remote_ip)
+      @location_setting = Geocoder.search("85.226.139.5")
+    else
+      @location_setting = nil
+    end
+    
+    if params[:commit] == 'update'
+     @startup = 0
+    else
+     @startup = 1
+    end
+    
+    @feeds = getFeedsForPlate(@feeds,@sortingmethod,@location_setting,@startup)
+    @feeds = @feeds.paginate(:page => params[:page], :per_page => 7) 
+       
   end
   
 end

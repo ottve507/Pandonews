@@ -34,7 +34,7 @@ class HomeController < ApplicationController
  def findLocatedFeeds()
    @t = Time.now
    @h1 = @t - 1.hour
-   locate = Feed.find(:all, :conditions => "location IS NOT NULL",:order => "created_at DESC")
+   locate = Feed.find(:all, :conditions => "latitude IS NOT NULL",:order => "created_at DESC")
    locate = locate.sort { |p1, p2| p2.impressionist_count(:filter=>:all, :start_date=>@h1) <=> p1.impressionist_count(:filter=>:all, :start_date=>@h1)}
    return locate
  end

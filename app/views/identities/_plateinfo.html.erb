@@ -1,0 +1,57 @@
+<div id="feed_profile_box">
+	<div id="identity_plate_info_box">
+		<br>
+
+		<div id="identity_profile_box_photo_showplate">
+		<%if @user.provider=='facebook' || @user.provider=='twitter' %>
+			<%if @setting.profilepicture.url != '/profilepictures/original/missing.png' %>
+				<img src="<%=@setting.profilepicture.url%>" class="identity_resize">
+			<% else %>
+				<img src="<%=@user.image%>" class="identity_resize">
+			<%end%>
+		<%else%>
+			<%if @setting.profilepicture.url != '/profilepictures/original/missing.png' %>
+			<img src="<%=@setting.profilepicture.url%>" class="identity_resize">
+			<%else%>
+			<img src='/assets/nopic.png' class="identity_resize">
+			<%end%>
+		<%end%>
+		</div>
+
+		<div id="identity_show_plate_box_info">	
+			<p class="identity_name_showplate"><%=@plate.name%></p> by <%=link_to @user.name, @user%>
+		
+
+<% if current_user%>
+	<% if current_user.id != @plate.user_id%>
+		<hr style="width:50%;"/>
+		<% if current_user.secondaryplates.any?%>
+			<%@sp = current_user.secondaryplates%>
+			<%if @sp.include? @plate%>
+				<% @currentupr = Userplaterelationship.find_by_secondaryplate_id(@plate.id) %>
+				<%= link_to "Unsubscribe ", @currentupr, :method => :delete %>
+			<%else%>
+				<%= form_for(@upr) do |upr| %>
+					<%=upr.hidden_field :secondaryplate_id, :value=>@plate.id%>
+					<%=upr.hidden_field :user_id, :value=>current_user.id%>
+					<%=upr.submit "Subscribe"%>
+				<%end%>
+			<%end%>	
+		<%else%>
+			<%= form_for(@upr, :class => "identity_subscription_button_to_link") do |upr| %>
+				<%=upr.hidden_field :secondaryplate_id, :value=>@plate.id%>
+				<%=upr.hidden_field :user_id, :value=>current_user.id%>
+				<%=upr.submit "Subscribe", :class=>"submitbutton_identity_showplate"%>
+			<%end%>		
+		<%end%>	
+	<%end%>
+<%end%>
+     	</div>
+
+</div>
+
+<div id="identity_plate_sort_box">
+	<%=render :partial => 'sortplate'%>
+</div>
+	
+</div>
