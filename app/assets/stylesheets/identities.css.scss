@@ -159,9 +159,9 @@ border-bottom:solid 1px gray;
 }
 
 #identity_feedbox_shadow{
-float:left;
+float:right;
 width:87%;
-margin-left:2%;
+margin-right:2%;
 margin-bottom:2%;
 
 background-image: linear-gradient(bottom, rgb(255,255,255) 0%, rgb(245,245,245) 52%, rgb(255,255,255) 100%);
@@ -335,6 +335,12 @@ box-shadow: 0 0 1px 1px #888;
 margin:0;
 padding:0;
 margin-left:2%;
+}
+
+.identity_feedtext_logo_and_title{
+margin-bottom:1px;
+margin-right: 1%;
+float:right;
 }
 
 

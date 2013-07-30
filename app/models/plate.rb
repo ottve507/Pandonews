@@ -5,4 +5,8 @@ class Plate < ActiveRecord::Base
   has_many :userplaterelationships
   has_many :subscribers, :through => :userplaterelationships
   has_many :feeds, :through => :platerelationships
+ 
+  has_many :cronfeedplaterelationships
+  has_many :cronfeeds, :through => :cronfeedplaterelationships
+  
 end

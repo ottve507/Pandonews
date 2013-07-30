@@ -1,0 +1,192 @@
+<script
+src="http://maps.googleapis.com/maps/api/js?sensor=false">
+</script>
+
+<script>
+function initialize()
+{
+var myLatlng = new google.maps.LatLng(<%=@feed.latitude%>,<%=@feed.longitude%>);
+var mapProp = {
+  center:myLatlng,
+  zoom:13,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker = new google.maps.Marker({
+    position: myLatlng,
+    map: map,
+});
+
+
+
+}
+
+function displayMap() {
+             document.getElementById('feed_show_map').style.display="block";
+             initialize();
+         }
+</script>
+
+
+<div id="show_feed_wrapper">
+	<div id="show_feed">
+		
+		<p>
+		  <h2 class="show_link">
+		 <center> <%= link_to @feed.title, @feed.url %></center>
+		 </h2>
+		</p>
+		<p id="notice"><%= notice %></p>
+
+  		<%= @feed.content.html_safe if @feed.content?%>
+<br>
+<img src="<%=@feed.feedpic%>">
+
+<center>
+<img src="<%= @feed.thumbnail_url %>">
+</center>
+
+		
+		
+			<hr class="style-two">
+		
+		<div id="show_feed_wrapper_bottom">
+
+			<div id="title_divider_left">
+				<%  @user = User.find_by_id(@feed.user_id) %>
+				<% @setting = Setting.find(@user.id) %>
+
+
+			
+					<%if @feed.location%>
+					<p class="location_feeds">
+					Location: </p><%=@feed.location%>
+					<%end%>
+				
+<p>
+				<p class="info_feeds">
+					comments 
+				</p>
+				<p class="info_feeds_color">
+					<%=@feed.comments.count%>
+				</p>	
+				<p class="info_feeds">
+					read count
+				</p>	
+				<p class="info_feeds_color">
+					<%=@article.impression_count %> 
+				</p>
+				<p class="info_feeds">
+					rating
+				</p>	
+				<p class="info_feeds_color">
+					<%=@feed.votes%>
+				</p>
+				</div>
+
+				<div id="title_divider_right">
+					<%= link_to(@user) do %>	
+					<center>
+				<%if @user.provider=='facebook' || @user.provider=='twitter' %>
+					<%if @setting.profilepicture.url != '/profilepictures/original/missing.png' %>
+						<img src="<%=@setting.profilepicture.url%>">
+					<% else %>
+						<img src="<%=@user.image_small%>">
+					<%end%>
+				<%else%>
+					<img src="<%=@setting.profilepicture.url%>" class="pictureresizing">
+			
+				<%end%>
+				<br>
+				<%=@user.name%>
+				</center>
+				<%end%>
+				</div>
+
+				<% if current_user %>
+				  	<%if current_user.up_voted?(@feed)%>
+					up
+					<%else%>
+					<%= link_to "up", vote_path(:type=>"up") %>
+					<%end%>
+					|
+					<%if current_user.down_voted?(@feed)%>
+					down
+					<%else%>
+					<%= link_to "down", vote_path(:type=>"down") %>
+					<%end%>
+				<% end %>
+
+
+		</div>
+	
+<%if @feed.location!=nil%>	
+<p style="margin-top:40px;">
+	<button onclick="displayMap()">Show Map</button>
+	<div id ="feed_show_map">
+		<div id="feed_show_map_left">
+		<div id="googleMap"></div>
+		</div>
+		
+		<%if @localfeeds != nil%>
+		<div id="feed_show_map_right">
+			<p class="location_feeds">Nearby happenings</p>
+			<% for f in @localfeeds %>
+			  <ul><%= link_to f.location, f %> (<%= f.distance.round(2) %> miles)</ul>
+			<% end %>	
+		</div>
+		<%end%>
+		
+		
+	</div>
+</p>
+<%end%>		
+		
+	</div>
+
+
+		<% @relatedFeeds.first(5).each do |f| %>
+			<%if f.id != @feed.id%>
+				<%= link_to f.title, f %>
+				<hr>
+			<%end%>	
+		<%end%>
+
+<%if current_user%>
+<% if current_user.plates %>
+	Plates:
+	<% @p = current_user.plates %>
+	<% @p.each do |p| %>
+	<% @currentpr = Platerelationship.find_by_plate_id(p.id) %>
+	<%if @currentpr==nil%>
+			<%= form_for(@pr) do |pr| %>
+				<%=pr.hidden_field :plate_id, :value=>p.id%>
+				<%=pr.hidden_field :feed_id, :value=>@feed.id%>
+				<%=pr.submit "Add to "+p.name%>
+			<%end%>
+	<%else%>
+		<%= link_to "Delete from"+p.name, @currentpr, :method => :delete %>
+	<%end%>
+	<br>
+	<%end%>
+<%end%>
+<%end%>
+
+</div>
+
+
+<div id="bottom_stuff_feeds">
+	<div id="commenting_area"> <%if current_user%> <%= render "comments/form"%> <%else%> <%= link_to "login to
+		comment.", sessions_path %> <%end%> </div>
+		<%if @comments%>
+			<%= nested_comments @comments%>
+		<%end%>
+
+		<%= will_paginate @comments, :class => 'pagination_comments', :page_links => false, :next_label => 'load more comments' %>
+		
+		</div>
+
+
+
+

@@ -66,9 +66,23 @@ class FeedsController < ApplicationController
     
     #Feedzira!
     if @feed.url !=nil
-      if !Cronfeed.where(:plate_id=>@feed.original_plate_id, :user_id => current_user.id, :address => @feed.url).exists?
-      c = Cronfeed.create(:plate_id => @feed.original_plate_id, :address => @feed.url, :user_id =>current_user.id)
-      Feed.update_from_feed(@feed.url, current_user.id, @feed.original_plate_id)
+      if !Cronfeed.where(:address => @feed.url).exists?
+        @feedsFromAddress = Feedzirra::Feed.fetch_and_parse(@feed.url)
+        @urlFeedInfo = Domainatrix.parse(@feed.url)
+        @urlToIcon = @urlFeedInfo.scheme + '://' + @urlFeedInfo.domain + '.' + @urlFeedInfo.public_suffix + '/favicon.ico'                
+        
+        c = Cronfeed.create(:plate_id => @feed.original_plate_id, :address => @feed.url, :user_id =>current_user.id, :feedpic => @urlToIcon, :feed_title => @feedsFromAddress.title)
+        c =  Cronfeedplaterelationship.create(:plate_id => @feed.original_plate_id, :cronfeed_id => c.id)
+        #Feed.update_from_feed(@feed.url, current_user.id, @feed.original_plate_id)
+        Feed.update_from_feed_new(@feed.url, Plate.where(:id =>@feed.original_plate_id), @feedsFromAddress.title, @urlToIcon)    
+      else
+        c =  Cronfeedplaterelationship.create(:plate_id => @feed.original_plate_id, :cronfeed_id => Cronfeed.where(:address => @feed.url)[0].id)
+        @alreadyAddedFeeds = Feed.where(:url_to_feed => @feed.url).last(10)
+        @alreadyAddedFeeds.each do |f|
+          if !Platerelationship.where(:feed_id => f.id, :plate_id => @feed.original_plate_id).exists?
+            Platerelationship.create(:feed_id => f.id, :plate_id => @feed.original_plate_id)
+          end
+        end
       end
     end
     
@@ -101,9 +115,9 @@ class FeedsController < ApplicationController
      elsif current_user.plates.blank? 
        redirect_to new_plate_path
      else
-     @feed = Feed.new
-     @plates = current_user.plates
-   end
+       @feed = Feed.new
+       @plates = current_user.plates
+     end
   end
 
   def update

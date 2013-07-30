@@ -30,7 +30,6 @@ function displayMap() {
 
 
 <div id="show_feed_wrapper">
-	<div id="show_feed">
 		
 		<p>
 		  <h2 class="show_link">
@@ -39,8 +38,7 @@ function displayMap() {
 		</p>
 		<p id="notice"><%= notice %></p>
 
-  		<%= @feed.content.html_safe %>
-<br>
+  		<%= @feed.content.html_safe if @feed.content?%>
 
 <center>
 <img src="<%= @feed.thumbnail_url %>">
@@ -74,7 +72,7 @@ function displayMap() {
 					read count
 				</p>	
 				<p class="info_feeds_color">
-					<%=@article.impression_count %> 
+					<%=@article.unique_impression_count%> 
 				</p>
 				<p class="info_feeds">
 					rating
@@ -85,22 +83,7 @@ function displayMap() {
 				</div>
 
 				<div id="title_divider_right">
-					<%= link_to(@user) do %>	
-					<center>
-				<%if @user.provider=='facebook' || @user.provider=='twitter' %>
-					<%if @setting.profilepicture.url != '/profilepictures/original/missing.png' %>
-						<img src="<%=@setting.profilepicture.url%>">
-					<% else %>
-						<img src="<%=@user.image_small%>">
-					<%end%>
-				<%else%>
-					<img src="<%=@setting.profilepicture.url%>" class="pictureresizing">
-			
-				<%end%>
-				<br>
-				<%=@user.name%>
-				</center>
-				<%end%>
+					<img src="<%=@feed.feedpic%>"> <%=@feed.type_of_feed%>
 				</div>
 
 				<% if current_user %>
@@ -118,7 +101,7 @@ function displayMap() {
 				<% end %>
 
 
-		</div>
+	
 	
 <%if @feed.location!=nil%>	
 <p style="margin-top:40px;">
@@ -143,35 +126,6 @@ function displayMap() {
 <%end%>		
 		
 	</div>
-
-
-		<% @relatedFeeds.first(5).each do |f| %>
-			<%if f.id != @feed.id%>
-				<%= link_to f.title, f %>
-				<hr>
-			<%end%>	
-		<%end%>
-
-<%if current_user%>
-<% if current_user.plates %>
-	Plates:
-	<% @p = current_user.plates %>
-	<% @p.each do |p| %>
-	<% @currentpr = Platerelationship.find_by_plate_id(p.id) %>
-	<%if @currentpr==nil%>
-			<%= form_for(@pr) do |pr| %>
-				<%=pr.hidden_field :plate_id, :value=>p.id%>
-				<%=pr.hidden_field :feed_id, :value=>@feed.id%>
-				<%=pr.submit "Add to "+p.name%>
-			<%end%>
-	<%else%>
-		<%= link_to "Delete from"+p.name, @currentpr, :method => :delete %>
-	<%end%>
-	<br>
-	<%end%>
-<%end%>
-<%end%>
-
 </div>
 
 

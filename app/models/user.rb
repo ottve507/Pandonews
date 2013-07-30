@@ -4,10 +4,9 @@ class User < ActiveRecord::Base
   
   #geocoded_by :location
   #after_validation :geocode, :if => :location_changed?
-  
+  # has_many :feeds
 
-  has_many :settings    
-  has_many :feeds
+  has_many :settings     
   has_many :friendships
   has_many :friends, :through => :friendships
   has_many :plates

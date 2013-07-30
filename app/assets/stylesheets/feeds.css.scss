@@ -4,15 +4,15 @@
 
 #bottom_stuff_feeds {
 float:left;
-width:76%;
-margin-left:10%;
+width:70%;
+margin-left:15%;
 background-color:white;
 margin-top:20px;
 -moz-box-shadow: 0 0 1px 1px #888;
 -webkit-box-shadow: 0 0 1px 1px #888;
 box-shadow: 0 0 1px 1px #888;
 overflow:auto;
-padding:2%;
+padding:1%;
 display: inline-block;
 }
 
@@ -157,16 +157,17 @@ width:10%;
 
 #show_feed_wrapper{
 display: inline-block;
-border-top-right-radius: 10px;
-border-top-left-radius: 10px;
-width:80%;
+border-top-right-radius: 1px;
+border-top-left-radius: 1px;
+width:70%;
 background-color:white;
-margin-left:10%;
+margin-left:15%;
 -moz-box-shadow: 0 0 1px 1px #888;
 -webkit-box-shadow: 0 0 1px 1px #888;
 box-shadow: 0 0 1px 1px #888;
 overflow:auto; 
 margin-top:60px;
+padding:1%;
 }
 
 #show_feed_wrapper_bottom {
@@ -175,16 +176,6 @@ width:100%;
 float:left;
 }
 
-#show_feed {
-display: inline-block;
-float:left;
-background-color:white;
-width:64%;
-padding:1%;
-padding-left:7%;
-padding-right:7%;
-box-shadow: 5px 0 7px -5px black;
-}
 
 #show_feed_related_feeds {
 display: inline-block;
@@ -195,13 +186,13 @@ float:left;
 
 #title_divider_left{
 display: inline-block;
-width:90%;
+width:70%;
 float:left;
 }
 
 #title_divider_right{
 display: inline-block;
-width:10%;
+width:30%;
 float:left;
 }
 

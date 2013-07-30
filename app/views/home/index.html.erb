@@ -87,9 +87,12 @@
 	    <%= render :partial => 'feeds', :collection => @feeds %>		
 </div>
 
-
-<div id="lastpage" type="<%=@feeds.total_pages%>"><%= will_paginate(@feeds)%></div>
 </div>
+<%if @feeds%>
+<div id="lastpage_identity" type="<%=@feeds.total_pages%>">
+<center>
+<%= will_paginate(@feeds)%></center></div>	
+<%end%>
 
 
 

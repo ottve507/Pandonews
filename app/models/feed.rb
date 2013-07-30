@@ -1,5 +1,5 @@
 class Feed < ActiveRecord::Base
-  attr_accessible :content, :guid, :language, :latitude, :location, :longitude, :original_plate_id, :published_at, :thumbnail_url, :title, :type_of_feed, :url, :url_to_feed, :user_id
+  attr_accessible :content, :guid, :language, :latitude, :location, :longitude, :original_plate_id, :published_at, :thumbnail_url, :title, :type_of_feed, :url, :url_to_feed, :user_id, :feedpic
 
   geocoded_by :location
   after_validation :geocode, :if => :location_changed? 
@@ -20,14 +20,12 @@ class Feed < ActiveRecord::Base
       Feedzirra::Feed.add_common_feed_entry_element("media:content",
       :value => :width, :as => :thumbnail_width)
 
-     # after_create { |feed| Feed.update_from_feed(feed.url) }
-
       def impression_count
        impressions.size
       end
-
+      
       def unique_impression_count
-      impressions.group(:ip_address).size
+        impressions.count(:ip_address,:distinct =>true)
       end
 
       def self.input(last)
@@ -36,7 +34,12 @@ class Feed < ActiveRecord::Base
 
       def self.update_from_feed(feed_url, userid, originalplateid)
         feed = Feedzirra::Feed.fetch_and_parse(feed_url)
-        add_entries(feed.entries, userid, feed.feed_url, originalplateid)
+        add_entries(feed.entries, userid, feed_url, originalplateid)
+      end
+      
+      def self.update_from_feed_new(feed_url, plates, feed_title, feedpic)
+        feed = Feedzirra::Feed.fetch_and_parse(feed_url)
+        add_entries_new(feed.entries, plates, feed_url, feed_title,feedpic)
       end
 
       def self.update_from_feed_continuously(feed_url, delay_interval = 15.minutes)
@@ -71,4 +74,28 @@ class Feed < ActiveRecord::Base
         end
         end
       end
+      
+      def self.add_entries_new(entries, plates, feedurl, feed_title, feedpic)
+        entries.reverse_each do |entry|
+          unless exists? :guid => entry.id
+           @f = create!(
+              :title => entry.title,
+              :content => entry.summary,
+              :thumbnail_url => entry.thumbnail,
+              :published_at => entry.published,
+              :url => entry.url,
+              :url_to_feed => feedurl,
+              :type_of_feed => feed_title,
+              :feedpic => feedpic,
+              :guid => entry.id,
+              :user_id => 1,
+              :tag_list => entry.title.split(" ").first(10),
+            )
+          plates.each do |p|
+           newPr = Platerelationship.create(:plate_id => p.id, :feed_id => @f.id)
+          end
+        end
+        end
+      end
+      
   end

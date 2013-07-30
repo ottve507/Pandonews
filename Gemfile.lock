@@ -40,6 +40,7 @@ GEM
       multi_json (~> 1.0)
     acts-as-taggable-on (2.4.1)
       rails (>= 3, < 5)
+    addressable (2.3.5)
     ancestry (2.0.0)
       activerecord (>= 3.0.0)
     arel (3.0.2)
@@ -58,6 +59,8 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     curb (0.8.4)
+    domainatrix (0.0.11)
+      addressable
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -192,6 +195,7 @@ DEPENDENCIES
   ancestry
   bcrypt-ruby (~> 3.0.0)
   coffee-rails (~> 3.2.1)
+  domainatrix
   feedzirra!
   geocoder
   haml
