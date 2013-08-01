@@ -80,12 +80,7 @@ function displayMap() {
 				<p class="info_feeds_color">
 					<%=@feed.votes%>
 				</p>
-				</div>
-
-				<div id="title_divider_right">
-					<img src="<%=@feed.feedpic%>"> <%=@feed.type_of_feed%>
-				</div>
-
+				<br>
 				<% if current_user %>
 				  	<%if current_user.up_voted?(@feed)%>
 					up
@@ -99,6 +94,15 @@ function displayMap() {
 					<%= link_to "down", vote_path(:type=>"down") %>
 					<%end%>
 				<% end %>
+				
+				</div>
+
+				<div id="title_divider_right">
+					<img src="<%=@feed.feedpic%>"> <%=@feed.type_of_feed%><br>
+					<%=@feed.language%>
+				</div>
+
+
 
 
 	

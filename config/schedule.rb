@@ -9,6 +9,7 @@
 #
 every 5.minutes do
   runner "Cronfeed.updatefeedswithcron"
+  runner "Cronfeed.updatefeedswithlanguage"
 end
 
 every 2.minutes do

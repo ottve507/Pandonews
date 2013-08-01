@@ -28,6 +28,7 @@ gem 'jquery-rails'
 gem 'whenever', :require => false
 gem 'sanitize'
 gem 'domainatrix'
+gem 'whatlanguage'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'ancestry'
