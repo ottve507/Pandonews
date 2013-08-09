@@ -2,7 +2,7 @@ class Cronfeed < ActiveRecord::Base
   attr_accessible :address, :plate_id, :user_id, :feed_title, :feedpic, :language, :location
   has_many :cronfeedplaterelationships
   has_many :plates, :through => :cronfeedplaterelationships
-  require_relative '../../lib/locationcandidates/Stage1' #from lib/ folder
+  require_relative '../../lib/locationcandidates/stage1.rb' #from lib/ folder
   
   def self.updatefeedswithcronold
     @allJobs = Cronfeed.all
