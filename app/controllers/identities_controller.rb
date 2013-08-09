@@ -27,7 +27,6 @@ class IdentitiesController < ApplicationController
     if params[:secondaryplates]!=nil
      @sp = params[:secondaryplates]
     else
-     #@sp = @secondaryplates.collect(&:id)
      @sp = []
     end
     

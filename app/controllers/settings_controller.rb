@@ -11,6 +11,7 @@ end
 
 def edit
 @setting = Setting.find(params[:id])
+@user = User.find(params[:id])
 end
 
 def create
@@ -57,6 +58,13 @@ respond_to do |format|
 format.html # show.html.erb
 format.json { render json: @feed }
 end
+end
+
+def plate_settings
+  @user = User.find(params[:id])
+  @setting = Setting.find(params[:id])
+  @plates = @user.plates
+  @secondaryplates = @user.secondaryplates
 end
 
 end

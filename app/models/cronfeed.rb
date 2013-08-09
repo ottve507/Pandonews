@@ -2,6 +2,7 @@ class Cronfeed < ActiveRecord::Base
   attr_accessible :address, :plate_id, :user_id, :feed_title, :feedpic, :language, :location
   has_many :cronfeedplaterelationships
   has_many :plates, :through => :cronfeedplaterelationships
+  require 'locationcandidates/Stage1' #from lib/ folder
   
   def self.updatefeedswithcronold
     @allJobs = Cronfeed.all
@@ -52,17 +53,33 @@ class Cronfeed < ActiveRecord::Base
     end    
   end
   
+  def self.test
+      @feeds = Feed.where(:location => nil)
+      @feeds.each do |f|
+      @c=Stage1.findcandidatesstage1(@feeds)
+      end        
+  end
+  
   
   def self.updatefeedswithlocation
-     @feeds = Feed.where(:location => nil)
-     @feeds.each do |f|
-        @plate = Plate.find(f.original_plate_id)
-        searchedLocation = Geocoder.search(@plate.location, :lookup => :nominatim) 
-        f.location = @plate.location
-        f.latitude = searchedLocation[0].latitude
-        f.longitude = searchedLocation[0].longitude
-        f.save
-        sleep 1
-     end           
+        @feeds = Feed.where(:location => nil)
+        
+        @feeds.each do |f|
+          @c = Stage1.findcandidatesstage1(f)
+          
+          if !@c.nil?
+            if !@c.location.nil?
+              puts @c.location
+              f.location = @c.location
+              f.longitude = @c.longitude
+              f.latitude = @c.latitude
+              f.save
+            end
+          end
+                            
+        end           
+        
   end
+  
+  
 end

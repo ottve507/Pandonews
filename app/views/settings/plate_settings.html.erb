@@ -1,0 +1,10 @@
+
+
+<div id="settings_menu">
+<div id="settings_menu_light"><%=link_to "user settings", edit_setting_path(@setting)%></div>
+<div id="settings_menu_dark"><%=link_to "plate settings", plate_settings_path(@setting)%></div>
+</div>
+
+<div id="settings_wrap">
+<%= render 'plates'%>
+</div>

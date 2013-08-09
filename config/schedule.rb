@@ -10,11 +10,12 @@
 every 5.minutes do
   runner "Cronfeed.updatefeedswithcron"
   runner "Cronfeed.updatefeedswithlanguage"
-end
-
-every 2.minutes do
   runner "Cronfeed.updatefeedswithlocation"
 end
+
+#every 2.minutes do
+ # runner "Cronfeed.updatefeedswithlocation"
+#end
 
 #
 # every 4.days do

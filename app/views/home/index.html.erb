@@ -19,9 +19,9 @@
 
 		var LeafIcon = L.Icon.extend({
 			options: {
-				iconSize:     [48, 48],
-				iconAnchor:   [33, 50],
-				popupAnchor:  [-20, -48]
+				iconSize:     [16, 16],
+				iconAnchor:   [16, 16],
+				popupAnchor:  [-5, -16]
 			}
 		});
 		
@@ -31,7 +31,7 @@
 		
 		<%@feedsWithLocations.each do |f|%>			
 			markers[count] = new L.LatLng(<%=f.latitude%>,<%=f.longitude%>);
-			var userIcon = new LeafIcon({iconUrl: '<%=find_profile_pic(f.user_id)%>'});			
+			var userIcon = new LeafIcon({iconUrl: '<%=f.feedpic%>'});			
 			L.marker(markers[count], {icon: userIcon}).bindPopup('<%=link_to f.title, f%>').addTo(map);			
 			count = count + 1;
 		<%end%>
@@ -43,9 +43,6 @@
 		map.setZoom(zoomLevel-1);
 	
 </script>
-
-
-
 
 
 

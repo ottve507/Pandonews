@@ -4,6 +4,7 @@ Auth::Application.routes.draw do
     resources :comments
   end
 
+  match "/settings/:id/plate_settings", to: "settings#plate_settings", :as => "plate_settings"
   match "/feeds/add_feed", to: "feeds#add_feed", :as => "add_feed"
   resources :feeds do
     resources :comments
@@ -39,6 +40,7 @@ Auth::Application.routes.draw do
   resources :searches
   resources :platerelationships
   resources :userplaterelationships
+  resources :cronfeedplaterelationships
   resources :plates
   resources :comments
 

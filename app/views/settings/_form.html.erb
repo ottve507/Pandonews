@@ -1,3 +1,31 @@
+<div id="settings_photo_option">
+<div id="settings_photo">
+	<%if @user.provider=='facebook' || @user.provider=='twitter' %>
+		<%if @setting.profilepicture.url != '/profilepictures/original/missing.png' %>
+			<img src="<%=@setting.profilepicture.url%>" class="identity_resize">
+		<% else %>
+			<img src="<%=@user.image%>" class="identity_resize">
+		<%end%>
+	<%else%>
+		<%if @setting.profilepicture.url != '/profilepictures/original/missing.png' %>
+		<img src="<%=@setting.profilepicture.url%>" class="identity_resize">
+		<%else%>
+		<img src='/assets/nopic.png' class="identity_resize">
+		<%end%>
+	<%end%>
+</div>
+<%= form_for @setting do |t| %>
+	<%if @setting.profilepicture.url != '/profilepictures/original/missing.png' %>
+		<%= t.hidden_field :image_choice, :value=>"1"%>
+		<%= t.submit "Remove picture", :class=>"submitbutton_identity_showplate" %>
+	<%end%>
+<% end %>
+</div>
+
+
+
+
+<div id ="settings_wrap_input_pusher">
 <%= form_for @setting, :html => { :multipart => true} do |f| %>
   <% if @setting.errors.any? %>
     <div id="error_explanation">
@@ -11,55 +39,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+	<div id="settings_wrap_input"><p class="settings_text">profile picture</p> <%= f.file_field :profilepicture, :class=>"settings_file_button" %>
   </div>
-
-  <div class="field">
-    <%= f.label :firstname %><br />
-    <%= f.text_field :firstname %>
-  </div>
-
-  <div class="field">
-    <%= f.label :lastname %><br />
-    <%= f.text_field :lastname %>
-  </div>
-
-  <div class="field">
-    <%= f.label :location %><br />
-    <%= f.text_field :location %>
-  </div>
-
-  <div class="field">
-    <%= f.label :location_choice%><br />
-    <%= f.check_box :location_choice %>
-  </div>
-
-  <div class="field">
-    <%= f.label :primary_language %><br />
-    <%= f.text_field :primary_language %>
-  </div>
-
-  <div class="field">
-    <%= f.label :languages %><br />
-    <%= f.text_field :languages %>
-  </div>
-
-  <div class="field">
-    <%= f.label :profilepicture %><br />
-    <%= f.file_field :profilepicture %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	<div id="settings_wrap_input"><p class="settings_text">e-mail:</p> <%= f.text_field :email, :class=>"settings_field" %></div>
+	<div id="settings_wrap_input"><p class="settings_text">first name:</p> <%= f.text_field :firstname, :class=>"settings_field" %></div>
+    <div id="settings_wrap_input"><p class="settings_text">last name:</p> <%= f.text_field :lastname, :class=>"settings_field" %></div>
+    <div id="settings_wrap_input"><p class="settings_text">languages:</p><%= f.text_field :languages, :class=>"settings_field" %></div>
+	<div id="settings_wrap_input"><p class="settings_text">location:</p><%= f.text_field :location, :class=>"settings_field" %></div>
+	
+  <div id="settings_wrap_input"><p class="settings_text"><%= f.submit %></p></div>
 <% end %>
 
-<%= form_for @setting do |t| %>
-	<%if @setting.profilepicture.url != '/profilepictures/original/missing.png' %>
-	    <%= t.label 'DELETE IMAGE!' %><br />
-		<%= t.hidden_field :image_choice, :value=>"1"%>
-		<%= t.submit "Remove picture" %>
-	<%end%>
-<% end %>
+</div>
+
