@@ -57,7 +57,7 @@ class Charactervalidation < ActiveRecord::Base
       if checkCharacters(array[0][i])          
         if @countedCAPS/(@countedCAPS+@countedNONCAPS) >= 0.5          
           for i in (i-(@countedCAPS-@countedNONCAPS-1.0).to_i)..i
-            array[2][i] -= 1
+            array[2][i] -= 2
           end                    
         end
         @countedCAPS=0.0

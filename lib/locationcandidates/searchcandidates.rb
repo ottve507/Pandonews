@@ -15,15 +15,13 @@ class Searchcandidates < ActiveRecord::Base
     
     array.delete_if do |a|
       
-       if (@nonAString.include? a[0]) || Charactervalidation.checkInvalidNames(a[0])
+       if (@nonAString.include? a[0]) || Charactervalidation.checkInvalidNames(a[0]) || Knownbadwords.loadBadWords(a[0])
          true
        else
          false
        end    
     end
     
-    
- 
     if array.length > 1
       @searchField = 1
     else
@@ -32,12 +30,13 @@ class Searchcandidates < ActiveRecord::Base
     
     for i in 0..@searchField 
       
-      @approvedWords.each do |a|
-        if (array[i][0].include? a.location.downcase) || (array[i][0].include? a.altname.downcase)
-          @returnLocation = a 
-          break   
+        @approvedWords.each do |a|
+          if (array[i][0].include? a.location.downcase) || (array[i][0].include? a.altname.downcase)
+            @returnLocation = a 
+            break   
+          end
+  
         end
-      end
       
       if !@returnlocation.nil?
         break
@@ -46,14 +45,15 @@ class Searchcandidates < ActiveRecord::Base
       @l=Geocoder.search(array[i][0])[0]
       sleep 1
       @returnLocation = nil
+      @importance = 0.35
   
       if !@l.nil?
-        if @l.display_name.split(',')[0] == @l.city ||  @l.display_name.split(',')[0] == @l.county
+        if @l.display_name.split(',')[0] == @l.city && @l.data['importance'] > @importance
           @returnLocation = Searchedword.create(:altname => array[i][0], :longitude => @l.longitude, :latitude=>@l.latitude, :location=>@l.city, :good => true)
-          break
+          @importance = @l.data['importance']
         elsif @l.display_name.split(',')[0] == @l.country
           @returnLocation = Searchedword.create(:altname => array[i][0], :longitude => @l.longitude, :latitude=>@l.latitude, :location=>@l.country, :good => true) 
-          break
+          @importance = @l.data['importance']
         else
           @returnLocation = Searchedword.create(:altname => array[i][0], :good => false)        
         end

@@ -80,16 +80,4 @@ class Cronfeed < ActiveRecord::Base
         end                   
   end
   
-  def self.loadBadWords   
-    text=File.open('./lib/assets/badwords.txt').read
-    text.gsub!("\n", "\n")
-    puts text
-     text.each_line do |line|
-       Searchedword.create(:good=>false,:altname=>line.gsub!("\n", ""))     
-       puts line
-       puts " "       
-     end  
-     text  
-  end
-  
 end

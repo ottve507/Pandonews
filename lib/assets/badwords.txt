@@ -438,7 +438,6 @@ briggs
 parsons
 mclaughlin
 zimmerman
-french
 buchanan
 moran
 copeland
@@ -2274,7 +2273,6 @@ fay
 craven
 beverly
 baum
-spain
 littlefield
 linn
 humphreys
@@ -6311,7 +6309,6 @@ hollister
 hofer
 hatten
 hagler
-germany
 falgoust
 engelhardt
 eberle
@@ -39350,7 +39347,6 @@ ruzzo
 ruthstrom
 ruta
 russin
-russian
 russak
 rusko
 ruskin
@@ -41609,6 +41605,7 @@ wisman
 wirch
 wippert
 wineberg
+wine
 wimpee
 wilusz
 wiltsey
@@ -42015,6 +42012,26 @@ sorrow
 soros
 sorola
 sorbello
+monday
+tuesday
+wednesday
+thursday
+friday
+saturday
+sunday
+january
+febuary
+march
+april
+may
+june
+july
+august
+september
+october
+november
+december
+city
 sonner
 sonday
 somes
