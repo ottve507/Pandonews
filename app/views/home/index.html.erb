@@ -1,7 +1,7 @@
 <div id ="home_top"><center><div id="home_frontpagemap">
 </div><div id="home_top_feeds">
 	<%@feedsWithLocations.each do |f|%>
-	<%=link_to User.find_by_id(f.user_id).name, User.find_by_id(f.user_id)%>:<p class="home_top_feeds_titles"> <%=link_to f.title, f%></p>, <%=f.location%> <br>
+	<p class="home_top_feeds_titles"> <%=link_to f.title, f%></p>, <%=f.location%> <br>
 	<%end%>
 	
 	
@@ -27,12 +27,15 @@
 		
 		var markers = new Array(<%=@feedsWithLocations.count%>);
 		var count = 0;
+
 	
 		
 		<%@feedsWithLocations.each do |f|%>			
 			markers[count] = new L.LatLng(<%=f.latitude%>,<%=f.longitude%>);
-			var userIcon = new LeafIcon({iconUrl: '<%=f.feedpic%>'});			
-			L.marker(markers[count], {icon: userIcon}).bindPopup('<%=link_to f.title, f%>').addTo(map);			
+			var pic = '<%= f.feedpic%>';
+			var link = "<%=f.title%>";
+			var userIcon = new LeafIcon({iconUrl: pic});			
+			L.marker(markers[count], {icon: userIcon}).bindPopup('<a href="/feeds/'+'<%=f.id%>' +'">' + link +' </a>').addTo(map);			
 			count = count + 1;
 		<%end%>
 		

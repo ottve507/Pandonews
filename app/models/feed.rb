@@ -19,6 +19,8 @@ class Feed < ActiveRecord::Base
       :value => :height, :as => :thumbnail_height)
       Feedzirra::Feed.add_common_feed_entry_element("media:content",
       :value => :width, :as => :thumbnail_width)
+      Feedzirra::Feed.add_common_feed_entry_element('geo:lat', :as => :lat)
+      Feedzirra::Feed.add_common_feed_entry_element('geo:long', :as => :lon)
 
       def impression_count
        impressions.size
@@ -89,8 +91,22 @@ class Feed < ActiveRecord::Base
               :feedpic => feedpic,
               :guid => entry.id,
               :user_id => 1,
+              :longitude => entry.lon,
+              :latitude => entry.lat,
               :tag_list => entry.title.split(" ").first(10),
             )
+            
+            if !@f.longitude.nil? && !@f.latitude.nil?
+              @g = Geocoder.search(@f.latitude.to_s + ' ,' + @f.longitude.to_s)[0]
+             
+              if !@g.city.nil?
+                @f.location = @g.city +", " + @g.country
+              else
+                @f.location = @g.country
+              end      
+              @f.save              
+            end
+            
           plates.each do |p|
            newPr = Platerelationship.create(:plate_id => p.id, :feed_id => @f.id)
           end
