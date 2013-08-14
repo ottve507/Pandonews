@@ -100,7 +100,7 @@ class Feed < ActiveRecord::Base
               @g = Geocoder.search(@f.latitude.to_s + ' ,' + @f.longitude.to_s)[0]
              
               if !@g.city.nil?
-                @f.location = @g.city +", " + @g.country
+                @f.location = @g.city + ", " + @g.country
               else
                 @f.location = @g.country
               end      
