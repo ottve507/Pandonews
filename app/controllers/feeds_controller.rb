@@ -68,12 +68,12 @@ class FeedsController < ApplicationController
     if @feed.url !=nil
       if !Cronfeed.where(:address => @feed.url).exists?
         @feedsFromAddress = Feedzirra::Feed.fetch_and_parse(@feed.url)
-        @urlFeedInfo = Domainatrix.parse(@feed.url)
+        #@urlFeedInfo = Domainatrix.parse(Feedzirra::Feed.fetch_and_parse(@feedsFromAddress.entries[0].url)
+        @urlFeedInfo = Domainatrix.parse(@feedsFromAddress.entries[0].url)
         @urlToIcon = @urlFeedInfo.scheme + '://' + @urlFeedInfo.domain + '.' + @urlFeedInfo.public_suffix + '/favicon.ico'                
         
         c = Cronfeed.create(:plate_id => @feed.original_plate_id, :address => @feed.url, :user_id =>current_user.id, :feedpic => @urlToIcon, :feed_title => @feedsFromAddress.title)
         c =  Cronfeedplaterelationship.create(:plate_id => @feed.original_plate_id, :cronfeed_id => c.id)
-        #Feed.update_from_feed(@feed.url, current_user.id, @feed.original_plate_id)
         Feed.update_from_feed_new(@feed.url, Plate.where(:id =>@feed.original_plate_id), @feedsFromAddress.title, @urlToIcon)    
       else
         c =  Cronfeedplaterelationship.create(:plate_id => @feed.original_plate_id, :cronfeed_id => Cronfeed.where(:address => @feed.url)[0].id)
