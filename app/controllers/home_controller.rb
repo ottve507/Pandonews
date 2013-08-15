@@ -30,6 +30,7 @@ class HomeController < ApplicationController
      end
  end
  
+ 
  private
  def findLocatedFeeds()
    @t = Time.now
