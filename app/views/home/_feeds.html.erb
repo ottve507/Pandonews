@@ -1,4 +1,4 @@
-<%@content = renderplate.summary ||= renderplate.content ||= ""  %>
+<%@content = feeds.summary ||= feeds.content ||= ""  %>
 
 <%  @anv = User.find_by_id(feeds.user_id) %>
 <%  @set = Setting.find_by_id(feeds.user_id) %>
