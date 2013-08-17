@@ -32,11 +32,11 @@ class Cronfeed < ActiveRecord::Base
         end
         
       else
-        
         wl = WhatLanguage.new(:all)
         text = ""
         @feedsWithSpecificFeed.each do |merge|
-          text = Sanitize.clean(merge.content) + ' ' + Sanitize.clean(merge.title) + ' ' + text
+          content = merge.content ||= merge.summary ||= ""
+          text = Sanitize.clean(content) + ' ' + Sanitize.clean(merge.title) + ' ' + text
         end
         
         @lang = wl.language(text)

@@ -37,8 +37,9 @@ function displayMap() {
 		 </h2>
 		</p>
 		<p id="notice"><%= notice %></p>
+		<p><%= @feed.summary.html_safe if !@feed.summary.nil?%></p>
 
-  		<%= @feed.content.html_safe if @feed.content?%>
+  		<%= @feed.content.html_safe if !@feed.content.nil?%>
 
 <center>
 <img src="<%= @feed.thumbnail_url %>">
