@@ -88,11 +88,11 @@ class Cronfeed < ActiveRecord::Base
     
     @feedsWI.each do |f|
     
-      if !f.thumbnail_url.nil?
+      if !f.thumbnail_url.nil? && f.location.nil?
         findImageInfo(f.thumbnail_url, f)
-      elsif !f.linkobject.nil?
+      elsif !f.linkobject.nil? && f.location.nil?
         findImageInfo(f.linkobject, f)
-      elsif !f.linkobject.nil? && !f.thumbnail_url.nil?
+      elsif !f.linkobject.nil? && !f.thumbnail_url.nil? && f.location.nil?
         findImageInfo(f.linkobject, f)
         findImageInfo(f.thumbnail_url, f) if f.location.nil?
       else
@@ -120,8 +120,8 @@ class Cronfeed < ActiveRecord::Base
         if !@g.city.nil?
           f.location = @g.city + ", " + @g.country
         else
-          f.location = @g.country
-        end      
+          f.location = @g.address
+        end   
         f.save
         sleep 1              
       end
