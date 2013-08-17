@@ -11,7 +11,11 @@ class CommentsController < ApplicationController
     @commentable = find_commentable
     @comment = @commentable.comments.build(params[:comment])
     if @comment.save
-      redirect_to @commentable
+      if @commentable = Suggestion.find(1)
+        redirect_to suggestion_path
+      else
+        redirect_to @commentable
+      end
     else
     end
   end

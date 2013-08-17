@@ -1,9 +1,10 @@
-<%= @suggestion.title%>
-<%= @suggestion.content%>
+<div id="bottom_stuff_feeds" style="margin-top:100px;">
 
-<%= link_to 'Edit', edit_suggestion_path(@suggestion)%>
-<%= link_to 'Back', suggestions_path%>
-
+	<p class="headerlinkstyle">
+	<%= @suggestion.title%></p>
+	<p class="feedtext_identity"><%= @suggestion.content%></p>
+	
+	</div>
 
 <div id="bottom_stuff_feeds">
 	<div id="commenting_area"> <%if current_user%> <%= render "comments/form"%> <%else%> <%= link_to "login to

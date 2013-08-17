@@ -2,7 +2,7 @@ class SuggestionsController < ApplicationController
   # GET /suggestions
   # GET /suggestions.json
   
-  include CommentsMod
+  include CommentsMods
   
   def index
     @suggestion = Suggestion.find(1)
