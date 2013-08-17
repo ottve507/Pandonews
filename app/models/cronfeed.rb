@@ -152,7 +152,7 @@ class Cronfeed < ActiveRecord::Base
           if !@g.city.nil?
             @location = @g.city + ", " + @g.country
           else
-            @location = @g.country
+            @location = @g.address
           end
 
           feed.location = @location
@@ -174,7 +174,7 @@ class Cronfeed < ActiveRecord::Base
           if !@g.city.nil?
             @location = @g.city + ", " + @g.country
           else
-            @location = @g.country
+            @location = @g.address
           end
 
           feed.location = @location
