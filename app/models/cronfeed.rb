@@ -111,9 +111,7 @@ class Cronfeed < ActiveRecord::Base
   #Run first, otherwise location will be set to none!
   def self.updatefeedswithlocationfromgeotag
     
-    @feedsWI1 = Feed.where("linkobject IS NOT NULL" && "location IS NULL")
-    @feedsWI2 = Feed.where("thumbnail_url IS NOT NULL" && "location IS NULL")
-    @feedsWI = (@feedsWI1 + @feedsWI2).uniq
+    @feedsWI = Feed.where("location IS NULL")
     
     @feedsWI.each do |f|   
       if !f.longitude.nil? && !f.latitude.nil?

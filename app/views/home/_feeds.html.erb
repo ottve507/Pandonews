@@ -4,10 +4,15 @@
 
 <div id="feedbox">
   <div id="feedbox_content_identity">
-	<%if feeds.thumbnail_url?%>
+	<%if !feeds.thumbnail_url.nil? || !feeds.linkobject.nil? %>
 	<div id="userinfo_identity">
 		<div id="identity_photo_box_after_resize">
-				<img src='<%=feeds.thumbnail_url%>' class="identity_resize">				
+			<%if feeds.thumbnail_url.nil?%>
+				<img src='<%=feeds.linkobject %>' class="identity_resize">
+			<%else%>
+				<img src='<%=feeds.thumbnail_url %>' class="identity_resize">
+			<%end%>
+
 		</div>
 	</div>
 	<%end%>
