@@ -22,6 +22,12 @@ class HomeController < ApplicationController
  
   
     @feedsWithLocations = findLocatedFeeds().first(7)
+    @feedsWithLocations.each do |f|
+      if remote_file_exists?(f.feedpic) == false
+        f.feedpic = "/favicon.ico"
+        f.save
+      end    
+    end
 
     respond_to do |format|
        format.html 
@@ -38,6 +44,16 @@ class HomeController < ApplicationController
    locate = Feed.find(:all, :conditions => "latitude IS NOT NULL",:order => "created_at DESC")
    locate = locate.sort { |p1, p2| p2.impressionist_count(:filter=>:all, :start_date=>@h1) <=> p1.impressionist_count(:filter=>:all, :start_date=>@h1)}
    return locate
+ end
+ 
+ def remote_file_exists?(url)
+   @return = true
+   begin
+     Nokogiri::HTML(open(url))
+   rescue Exception => e
+     @return = false     
+   end
+   return @return
  end
  
   

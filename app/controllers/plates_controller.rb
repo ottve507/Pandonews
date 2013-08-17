@@ -20,8 +20,11 @@ class PlatesController < ApplicationController
        end
      end
 
-     def edit
+     def edit       
        @plate = Plate.find(params[:id])
+       if current_user.id != @plate.user_id
+          redirect_to user_path(current_user.id)
+       end        
      end
 
      def create
@@ -30,7 +33,7 @@ class PlatesController < ApplicationController
 
        respond_to do |format|
          if @plate.save      
-           format.html { redirect_to @plate, notice: 'Plate was successfully created.' }
+           format.html { redirect_to user_path(current_user.id), notice: 'Plate was successfully created.' }
            format.json { render json: @plate, status: :created, location: @plate}
          else
            format.html { render action: "new" }

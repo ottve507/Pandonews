@@ -12,6 +12,11 @@ end
 def edit
 @setting = Setting.find(params[:id])
 @user = User.find(params[:id])
+
+if current_user.id != @user.id
+   redirect_to user_path(current_user.id)
+end
+
 end
 
 def create
@@ -65,6 +70,11 @@ def plate_settings
   @setting = Setting.find(params[:id])
   @plates = @user.plates
   @secondaryplates = @user.secondaryplates
+  
+  if current_user.id != @user.id
+     redirect_to user_path(current_user.id)
+  end
+  
 end
 
 end

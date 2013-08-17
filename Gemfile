@@ -19,7 +19,7 @@ end
 
   #gem "feedzirra", "~> 0.1.3"
   #WORKING ON version (0.2.0.rc2) 
-gem 'feedzirra', :git => 'https://github.com/pauldix/feedzirra.git'
+gem 'feedzirra' #, :git => 'https://github.com/pauldix/feedzirra.git'
 gem "paperclip", "~> 3.0"
 
 # To use ActiveModel has_secure_password
@@ -29,6 +29,7 @@ gem 'whenever', :require => false
 gem 'sanitize'
 gem 'domainatrix'
 gem 'whatlanguage'
+gem 'mini_exiftool'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'ancestry'

@@ -53,7 +53,7 @@ class Cronfeed < ActiveRecord::Base
     end    
   end
   
-  def self.test
+  def self.testlocation
       @feeds = Feed.where(:location => nil)
       @feeds.each do |f|
       @c=Stage1.findcandidatesstage1(@feeds)
@@ -61,7 +61,7 @@ class Cronfeed < ActiveRecord::Base
   end
   
   
-  def self.updatefeedswithlocation
+  def self.updatefeedswithlocation_old
         @feeds = Feed.where(:location => nil)
         
         @feeds.each do |f|
@@ -79,5 +79,117 @@ class Cronfeed < ActiveRecord::Base
                             
         end                   
   end
+  
+  #Last step, after this location will be set to "none"
+  def self.updatefeedswithlocationfromimage    
+    @feedsWI1 = Feed.where("linkobject IS NOT NULL" && "location IS NULL")
+    @feedsWI2 = Feed.where("thumbnail_url IS NOT NULL" && "location IS NULL")
+    @feedsWI = (@feedsWI1 + @feedsWI2).uniq
+    
+    @feedsWI.each do |f|
+    
+      if !f.thumbnail_url.nil?
+        findImageInfo(f.thumbnail_url, f)
+      elsif !f.linkobject.nil?
+        findImageInfo(f.linkobject, f)
+      elsif !f.linkobject.nil? && !f.thumbnail_url.nil?
+        findImageInfo(f.linkobject, f)
+        findImageInfo(f.thumbnail_url, f) if f.location.nil?
+      else
+        f.location = "none"
+        f.save
+      end
+      
+      if f.location.nil?
+        f.location = "none"
+        f.save
+      end
+      
+    end
+  end
+  
+  #Run first, otherwise location will be set to none!
+  def self.updatefeedswithlocationfromgeotag
+    
+    @feedsWI1 = Feed.where("linkobject IS NOT NULL" && "location IS NULL")
+    @feedsWI2 = Feed.where("thumbnail_url IS NOT NULL" && "location IS NULL")
+    @feedsWI = (@feedsWI1 + @feedsWI2).uniq
+    
+    @feedsWI.each do |f|   
+      if !f.longitude.nil? && !f.latitude.nil?
+        @g = Geocoder.search(f.latitude.to_s + ' ,' + f.longitude.to_s)[0]
+     
+        if !@g.city.nil?
+          f.location = @g.city + ", " + @g.country
+        else
+          f.location = @g.country
+        end      
+        f.save
+        sleep 1              
+      end
+    end
+    
+  end
+  
+  
+  def self.findImageInfo(url, feed)
+    require 'open-uri'
+    
+    open('./app/assets/temp/image.jpg', 'wb') do |file|
+      file << open(url).read
+    end
+      pI = MiniExiftool.new './app/assets/temp/image.jpg'
+      @location = nil
+      
+        if !pI.gpslatitude.nil? && !pI.gpslongitude.nil?
+          @latitude_unformatted = pI.gpslatitude.split(' ')
+          @longitude_unformatted = pI.gpslongitude.split(' ')
+
+          @latitude = (@latitude_unformatted[0]).to_f  + (@latitude_unformatted[2][0..-2]).to_f/60 + (@latitude_unformatted[2][0..-2]).to_f/3600
+          @longitude = (@longitude_unformatted[0]).to_f  + (@longitude_unformatted[2][0..-2]).to_f/60 + (@longitude_unformatted[2][0..-2]).to_f/3600
+
+          @gps = (@latitude_unformatted[0] + "."  + @latitude_unformatted[2][0..-2]) + ' ' + (@longitude_unformatted[0] + "."  + @longitude_unformatted[2][0..-2])              
+          @g = Geocoder.search(@gps)[0]
+
+          if !@g.city.nil?
+            @location = @g.city + ", " + @g.country
+          else
+            @location = @g.country
+          end
+
+          feed.location = @location
+          feed.latitude = @latitude
+          feed.longitude = @longitude
+          feed.save
+
+          sleep 1               
+        end
+
+        if @location.nil? && (!pI.city.nil? || !pI.country.nil? || !pI.countryprimarylocationname.nil? || !pI.provincestate.nil?)      
+          @city = pI.city || ""
+          @state = pI.provincestate || ""
+          @country = pI.countryprimarylocationname || pI.country || ""            
+          @location = @city + ' ' + @state + ' ' + @country
+
+          @g = Geocoder.search(@location)[0]
+
+          if !@g.city.nil?
+            @location = @g.city + ", " + @g.country
+          else
+            @location = @g.country
+          end
+
+          feed.location = @location
+          feed.latitude = @latitude
+          feed.longitude = @longitude
+          feed.save
+
+          sleep 1                      
+        end
+      
+      
+      File.delete('./app/assets/temp/image.jpg')
+    
+  end  
   
 end

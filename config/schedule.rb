@@ -10,7 +10,9 @@
 every 5.minutes do
   runner "Cronfeed.updatefeedswithcron"
   runner "Cronfeed.updatefeedswithlanguage"
-  #runner "Cronfeed.updatefeedswithlocation"
+  runner "Cronfeed.updatefeedswithlocationfromgeotag"
+  runner "Cronfeed.updatefeedswithlocationfromimage"
+  
 end
 
 #every 2.minutes do

@@ -1,5 +1,5 @@
 class Feed < ActiveRecord::Base
-  attr_accessible :content, :guid, :language, :latitude, :location, :longitude, :original_plate_id, :published_at, :thumbnail_url, :title, :type_of_feed, :url, :url_to_feed, :user_id, :feedpic
+  attr_accessible :content, :guid, :language, :latitude, :location, :longitude, :original_plate_id, :published_at, :thumbnail_url, :title, :type_of_feed, :url, :url_to_feed, :user_id, :feedpic, :summary, :linkobject
 
   geocoded_by :location
   after_validation :geocode, :if => :location_changed? 
@@ -19,6 +19,7 @@ class Feed < ActiveRecord::Base
       :value => :height, :as => :thumbnail_height)
       Feedzirra::Feed.add_common_feed_entry_element("media:content",
       :value => :width, :as => :thumbnail_width)
+      Feedzirra::Feed.add_common_feed_entry_element("link", :as => :linkobject, :value => :src, :with => {:type => "image/jpeg"})
       Feedzirra::Feed.add_common_feed_entry_element('geo:lat', :as => :lat)
       Feedzirra::Feed.add_common_feed_entry_element('geo:long', :as => :lon)
 
@@ -82,7 +83,7 @@ class Feed < ActiveRecord::Base
           unless exists? :guid => entry.id
            @f = create!(
               :title => entry.title,
-              :content => entry.summary,
+              :content => entry.content,
               :thumbnail_url => entry.thumbnail,
               :published_at => entry.published,
               :url => entry.url,
@@ -94,19 +95,9 @@ class Feed < ActiveRecord::Base
               :longitude => entry.lon,
               :latitude => entry.lat,
               :tag_list => entry.title.split(" ").first(10),
-            )
-            
-            if !@f.longitude.nil? && !@f.latitude.nil?
-              @g = Geocoder.search(@f.latitude.to_s + ' ,' + @f.longitude.to_s)[0]
-             
-              if !@g.city.nil?
-                @f.location = @g.city + ", " + @g.country
-              else
-                @f.location = @g.country
-              end      
-              @f.save              
-            end
-            
+              :summary => entry.summary,
+              :linkobject => entry.linkobject,
+            )            
           plates.each do |p|
            newPr = Platerelationship.create(:plate_id => p.id, :feed_id => @f.id)
           end

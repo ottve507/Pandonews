@@ -44,9 +44,8 @@ class FeedsController < ApplicationController
   end
   end
 
-  def edit
-    
-     if current_user.blank?
+  def edit   
+     if current_user.id != 1
         redirect_to sessions_path
       elsif current_user.plates.blank? 
         redirect_to new_plate_path
@@ -94,7 +93,7 @@ class FeedsController < ApplicationController
 
     respond_to do |format|
       if @feed.save      
-        format.html { redirect_to @feed, notice: 'Feed was successfully created.' }
+        format.html { redirect_to user_path(current_user.id), notice: 'Feed was successfully created.' }
         format.json { render json: @feed, status: :created, location: @feed }
         if @feed.url != nil
            @feed.destroy
