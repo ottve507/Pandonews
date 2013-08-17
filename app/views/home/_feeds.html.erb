@@ -1,6 +1,8 @@
+<%@content = renderplate.summary ||= renderplate.content ||= ""  %>
+
 <%  @anv = User.find_by_id(feeds.user_id) %>
 <%  @set = Setting.find_by_id(feeds.user_id) %>
-<% @sanitized_content = Sanitize.clean(feeds.summary).first(500) if !feeds.content.nil? %>
+<% @sanitized_content = Sanitize.clean(@content).first(500) %>
 
 <div id="feedbox">
   <div id="feedbox_content_identity">
