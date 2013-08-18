@@ -168,14 +168,25 @@ class Cronfeed < ActiveRecord::Base
           @state = pI.provincestate || ""
           @country = pI.countryprimarylocationname || pI.country || ""            
           @location = @city + ' ' + @state + ' ' + @country
+          puts '_______________________________'
+          puts '_______________________________'
+          puts '_______________________________'
+          puts '_______________________________'
+          puts '_______________________________'
+          puts '_______________________________'
+          puts '_______________________________'
+          puts @location
 
           @g = Geocoder.search(@location)[0]
+          puts @g
 
           if !@g.city.nil?
             @location = @g.city + ", " + @g.country
           else
             @location = @g.address
           end
+          
+          puts @location
 
           feed.location = @location
           feed.latitude = @latitude
