@@ -199,6 +199,17 @@ class Cronfeed < ActiveRecord::Base
       
       File.delete('./app/assets/temp/image.jpg')
     
-  end  
+  end
+  
+  def self.cleanbug
+    f = Feed.where(:location=>'none', :latitude => !nil, :longitude => !nil)
+    f.each do |p|
+      p.latitude = nil
+      p.longitude = nil
+      p.save
+    end
+    
+  end
+    
   
 end

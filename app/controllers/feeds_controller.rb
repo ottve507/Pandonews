@@ -152,11 +152,11 @@ class FeedsController < ApplicationController
     @t = Time.now
     @h1 = @t - 1.hour
     @localfeeds = @feed.nearbys(100)
-    @localfeeds = @localfeeds.sort_by &:created_at
-    @localfeeds = @localfeeds.reverse.first(5)
-
-    @localfeeds = @localfeeds.sort { |p1, p2| p2.impressionist_count(:filter=>:all, :start_date=>@h1) <=> p1.impressionist_count(:filter=>:all, :start_date=>@h1)}
-
+    if !@localfeeds.nil?
+      @localfeeds = @localfeeds.sort_by &:created_at
+      @localfeeds = @localfeeds.reverse.first(5)
+      @localfeeds = @localfeeds.sort { |p1, p2| p2.impressionist_count(:filter=>:all, :start_date=>@h1) <=> p1.impressionist_count(:filter=>:all, :start_date=>@h1)}
+    end
  
     end
     respond_to do |format|
