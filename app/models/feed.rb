@@ -34,11 +34,6 @@ class Feed < ActiveRecord::Base
       def self.input(last)
         self.where("created_at < ? ", last).order('created_at desc').limit(5)
       end
-
-      def self.update_from_feed(feed_url, userid, originalplateid)
-        feed = Feedzirra::Feed.fetch_and_parse(feed_url)
-        add_entries(feed.entries, userid, feed_url, originalplateid)
-      end
       
       def self.update_from_feed_new(feed_url, plates, feed_title, feedpic)
         feed = Feedzirra::Feed.fetch_and_parse(feed_url)
