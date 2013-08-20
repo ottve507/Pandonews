@@ -117,7 +117,7 @@ class Cronfeed < ActiveRecord::Base
       if !f.longitude.nil? && !f.latitude.nil?
         @g = Geocoder.search(f.latitude.to_s + ' ,' + f.longitude.to_s)[0]
      
-        if !@g.city.nil?
+        if !@g.city.nil? && !@g.country.nil?
           f.location = @g.city + ", " + @g.country
         else
           f.location = @g.address

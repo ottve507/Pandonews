@@ -15,13 +15,8 @@ class HomeController < ApplicationController
   end
     @feeds = feed.paginate(:page => params[:page], :per_page => 14)
   
-    @feedsWithLocations = findLocatedFeeds().first(7)
-    @feedsWithLocations.each do |f|
-      if remote_file_exists?(f.feedpic) == false
-        f.feedpic = "/favicon.ico"
-        f.save
-      end    
-    end
+    @feedsWithLocations = map_feeds_cached
+
 
     respond_to do |format|
        format.html 
@@ -33,10 +28,13 @@ class HomeController < ApplicationController
  
  private
  def findLocatedFeeds()
-   @t = Time.now
-   @h1 = @t - 1.hour
-   locate = Feed.find(:all, :conditions => "latitude IS NOT NULL",:order => "created_at DESC")
-   locate = locate.sort { |p1, p2| p2.impressionist_count(:filter=>:all, :start_date=>@h1) <=> p1.impressionist_count(:filter=>:all, :start_date=>@h1)}
+   locate = Feed.find(:all, :conditions => "latitude IS NOT NULL",:order => "created_at DESC").first(7)
+   locate.each do |f|
+     if remote_file_exists?(f.feedpic) == false
+       f.feedpic = "/favicon.ico"
+       f.save
+     end  
+   end
    return locate
  end
  
@@ -64,6 +62,20 @@ class HomeController < ApplicationController
      return Rails.cache.read('mostviewed')
    end
  end
+ 
+ def map_feeds_cached
+   #Shows hottest feeds this hour!    
+   readCache = Rails.cache.read('map')
+   if readCache.nil?
+     feed = findLocatedFeeds()
+     Rails.cache.write('map', feed, :expires_in=> 300.seconds, :raw=>true)
+     Rails.cache.write('map', feed, :expires_in=> 300.seconds, :raw=>true) #bug in rails, needs to be called twice
+     return feed
+   else    
+     return Rails.cache.read('map')
+   end
+ end
+ 
  
  def recent_cached
    Rails.cache.fetch('Category.all') { all }
