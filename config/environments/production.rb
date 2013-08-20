@@ -2,7 +2,8 @@ Auth::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
-  config.cache_classes = false
+  #config.cache_classes = false
+  config.cache_classes = true
 
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = true
@@ -40,7 +41,6 @@ Auth::Application.configure do
   # config.logger = SyslogLogger.new
 
   # Use a different cache store in production
-  #config.cache_store = :mem_cache_store
   #config.cache_store = :mem_cache_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
