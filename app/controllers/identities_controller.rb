@@ -37,8 +37,8 @@ class IdentitiesController < ApplicationController
     end
     
     if params[:sortnearme]!=nil
-      #@location_setting = Geocoder.search(request.remote_ip)
-      @location_setting = Geocoder.search("85.226.139.5")
+      @location_setting = Geocoder.search(request.remote_ip)
+      #@location_setting = Geocoder.search("85.226.139.5")
     else
       @location_setting = nil
     end
@@ -46,23 +46,15 @@ class IdentitiesController < ApplicationController
 
     if params[:commit] == 'update'
      @startup = 0
-     @allfeeds = getFeeds(@myp,@sp,@f)
     else
      @startup = 1
-     @allfeeds = getFeedsStartup(@plates.collect(&:id),@secondaryplates.collect(&:id))
     end
     
     @allfeedz = getFeedz(@plates.collect(&:id),@secondaryplates.collect(&:id),@myp,@sp,@sortingmethod,@location_setting,@startup)
 
-    if @allfeeds
-     @feeds = @allfeeds.sort_by &:created_at
-     @feeds = @allfeeds.reverse
-    end
-
     @t = Time.now
     @h1 = @t - 1.hour
 
-    @allfeeds = @feeds
     @allfeeds = @allfeedz
     
     if @allfeeds

@@ -187,7 +187,6 @@ module IdentitiesHelper
         @collectedfeeds = @collectedfeeds.sort_by(&:created_at).reverse if @collectedfeeds != nil
         @collectedfeeds = @collectedfeeds.sort { |p1, p2| p2.impressionist_count(:filter=>:created_at, :start_date=>@h1)   <=> p1.impressionist_count(:filter=>:created_at, :start_date=>@h1) } if @collectedfeeds != nil
       elsif sortingmethod == 'mostdisc'
-        #@collectedfeeds.sort_by { |f| f.comments.count }
        @collectedmodified = @collectedfeeds.reject{|x| x.created_at < 1.day.ago}.collect{|x| x} if @collectedfeeds != nil
        if @collectedmodified
           @collectedfeeds = @collectedmodified.sort { |p1, p2| p2.comments.count <=> p1.comments.count }

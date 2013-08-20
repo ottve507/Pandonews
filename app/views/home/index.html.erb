@@ -64,16 +64,16 @@
 		
 		<%case @link_feed_type %>
 		  <%when 'mostread' || ''%>
-			<%= link_to "Most recent", root_path(:feed_type => "mostrecent") %> |
 			<%= link_to content_tag(:b, "Most read"), root_path(:feed_type => "mostread") %> |
+			<%= link_to "Most recent", root_path(:feed_type => "mostrecent") %> |
 			<%= link_to "Most discussed", root_path(:feed_type => "mostcommented") %>		    
 		  <%when 'mostrecent'%>
-			<%= link_to content_tag(:b, "Most recent"), root_path(:feed_type => "mostrecent") %> |
 			<%= link_to "Most read", root_path(:feed_type => "mostread") %> |
+			<%= link_to content_tag(:b, "Most recent"), root_path(:feed_type => "mostrecent") %> |
 			<%= link_to "Most discussed", root_path(:feed_type => "mostcommented") %>	    
 		  <%else%>
-			<%= link_to "Most recent", root_path(:feed_type => "mostrecent") %> |
 			<%= link_to "Most read", root_path(:feed_type => "mostread") %> |
+			<%= link_to "Most recent", root_path(:feed_type => "mostrecent") %> |
 			<%= link_to content_tag(:b, "Most discussed"), root_path(:feed_type => "mostcommented") %>		
 		<%end%>
 		</nav>

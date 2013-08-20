@@ -189,8 +189,8 @@ class Cronfeed < ActiveRecord::Base
           puts @location
 
           feed.location = @location
-          feed.latitude = @latitude
-          feed.longitude = @longitude
+          feed.latitude = @g.latitude
+          feed.longitude = @g.longitude
           feed.save
 
           sleep 1                      
