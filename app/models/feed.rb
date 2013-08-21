@@ -2,7 +2,7 @@ class Feed < ActiveRecord::Base
   attr_accessible :content, :guid, :language, :latitude, :location, :longitude, :original_plate_id, :published_at, :thumbnail_url, :title, :type_of_feed, :url, :url_to_feed, :user_id, :feedpic, :summary, :linkobject
 
   geocoded_by :location
-  after_validation :geocode, :if => :location_changed? 
+  #after_validation :geocode, :if => :location_changed? 
   
     has_many :impressions, :as=>:impressionable
      has_many :comments, :as => :commentable, :dependent => :destroy
