@@ -95,13 +95,10 @@ class Cronfeed < ActiveRecord::Base
       elsif !f.linkobject.nil? && !f.thumbnail_url.nil? && f.location.nil?
         findImageInfo(f.linkobject, f)
         findImageInfo(f.thumbnail_url, f) if f.location.nil?
-      else
-        f.location = "none"
-        f.save
       end
       
       if f.location.nil?
-        f.location = "none"
+        f.location = "0"
         f.save
       end
       
