@@ -159,16 +159,13 @@ class Cronfeed < ActiveRecord::Base
           @gps = (@latitude_unformatted[0] + "."  + @latitude_unformatted[2][0..-2]) + ' ' + (@longitude_unformatted[0] + "."  + @longitude_unformatted[2][0..-2])              
           @g = Geocoder.search(@gps)[0]
 
-          if !@g.city.nil?
-            @location = @g.city + ", " + @g.country
-          else
-            @location = @g.address
+          if !@g.nil?
+            feed.location = @g.address
+            feed.latitude = @g.latitude
+            feed.longitude = @g.longitude
+            feed.save
+            puts @g.address
           end
-
-          feed.location = @location
-          feed.latitude = @latitude
-          feed.longitude = @longitude
-          feed.save
           
           puts '____________________________________'
           puts '____________________________________'
@@ -178,9 +175,9 @@ class Cronfeed < ActiveRecord::Base
           puts '____________________________________'
           puts '____________________________________'
           puts 'imagetag'
-          puts f.location
-          puts f.longitude
-          puts f.latitude
+          puts feed.location
+          puts feed.longitude
+          puts feed.latitude
           
 
           sleep 1               
@@ -204,19 +201,14 @@ class Cronfeed < ActiveRecord::Base
           @g = Geocoder.search(@location)[0]
           puts @g
 
-          if !@g.city.nil?
-            @location = @g.city + ", " + @g.country
-          else
-            @location = @g.address
+          if !@g.nil?
+            feed.location = @g.address
+            feed.latitude = @g.latitude
+            feed.longitude = @g.longitude
+            feed.save
+            puts @g.address
           end
           
-          puts @location
-
-          feed.location = @location
-          feed.latitude = @g.latitude
-          feed.longitude = @g.longitude
-          feed.save
-
           sleep 1                      
         end
       
