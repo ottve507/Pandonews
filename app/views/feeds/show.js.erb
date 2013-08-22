@@ -3,9 +3,8 @@ $j('.pagination_comments').remove();
 $j("#bottom_stuff_feeds").append("<%=escape_javascript(render :partial=> 'comments/comment', :collection=>@comments) %>");
 <% if @comments.next_page %>
 $j("#bottom_stuff_feeds").append("<%=escape_javascript(will_paginate @comments, :class => 'pagination_comments', :page_links => false, :next_label => 'load more comments' ) %>");
-$('.pagination_comments a').attr('data-remote', 'true');
+$j('.pagination_comments a').attr('data-remote', 'true');
 <%else%>
 $j('.pagination_comments').remove();
 <%end%>
-
 

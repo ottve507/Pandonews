@@ -1,5 +1,6 @@
 <%@content = @feed.content ||= @feed.summary ||= ""  %>
 
+
 <script
 src="http://maps.googleapis.com/maps/api/js?sensor=false">
 </script>
@@ -30,8 +31,23 @@ function displayMap() {
          }
 </script>
 
-
 <div id="show_feed_wrapper">
+	<div id="dialog">
+		<center><img src="<%=@feed.feedpic%>"><br>
+		<%=@feed.type_of_feed%><br>
+		<%if current_user && !current_user.plates.nil?%>		
+		<%= form_for(@cpr) do |cpr| %>
+			<%= cpr.collection_select :plate_id, current_user.plates, :id, :name%>
+			<%=cpr.hidden_field :cronfeed_id, :value=>Cronfeed.find_by_address(@feed.url_to_feed).id%>
+			<%=cpr.submit "Subscribe"%>
+		<%end%>
+		<%elsif current_user && current_user.plates.nil? %>
+		<%=link_to "Create a plate in order\n to subscribe!", '/plates/new'%>
+		<%else%>
+		<%=link_to "Login in order to create\n a plate and subscribe!", sessions_path%>
+		<%end%>	
+		</center>		
+	</div>
 		
 		<p>
 		  <h2 class="show_link">
@@ -100,7 +116,8 @@ function displayMap() {
 				</div>
 
 				<div id="title_divider_right">
-					<img src="<%=@feed.feedpic%>"> <%=@feed.type_of_feed%><br>
+					<a href="#" id="create-user"><img src="<%=@feed.feedpic%>"> <%=@feed.type_of_feed%></a>
+					<br><%=@feed.created_at.strftime("%H:%M %d/%m/%Y")%><br>
 					<%=@feed.language%>
 				</div>
 

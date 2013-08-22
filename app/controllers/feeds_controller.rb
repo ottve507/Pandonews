@@ -1,4 +1,5 @@
 class FeedsController < ApplicationController
+  autocomplete :cronfeed, :address
   before_filter :log_impression, :only => [:show]
   require 'rubygems'
   require 'nokogiri'
@@ -65,7 +66,7 @@ class FeedsController < ApplicationController
     
     #Feedzira!
     if @feed.url !=nil
-      if !Cronfeed.where(:address => @feed.url).exists?
+      if !Cronfeed.where(:address => @feed.url).exists? && !Cronfeed.where(:feed_title => @feed.url).exists?
         @feedsFromAddress = Feedzirra::Feed.fetch_and_parse(@feed.url)
         #@urlFeedInfo = Domainatrix.parse(Feedzirra::Feed.fetch_and_parse(@feedsFromAddress.entries[0].url)
         @urlFeedInfo = Domainatrix.parse(@feedsFromAddress.entries[0].url)
@@ -73,7 +74,15 @@ class FeedsController < ApplicationController
         
         c = Cronfeed.create(:plate_id => @feed.original_plate_id, :address => @feed.url, :user_id =>current_user.id, :feedpic => @urlToIcon, :feed_title => @feedsFromAddress.title)
         c =  Cronfeedplaterelationship.create(:plate_id => @feed.original_plate_id, :cronfeed_id => c.id)
-        Feed.update_from_feed_new(@feed.url, Plate.where(:id =>@feed.original_plate_id), @feedsFromAddress.title, @urlToIcon)    
+        Feed.update_from_feed_new(@feed.url, Plate.where(:id =>@feed.original_plate_id), @feedsFromAddress.title, @urlToIcon)
+      elsif Cronfeed.where(:feed_title => @feed.url).exists? 
+        c =  Cronfeedplaterelationship.create(:plate_id => @feed.original_plate_id, :cronfeed_id => Cronfeed.where(:feed_title => @feed.url)[0].id)
+        @alreadyAddedFeeds = Feed.where(:url_to_feed => @feed.url).last(10)
+        @alreadyAddedFeeds.each do |f|
+          if !Platerelationship.where(:feed_id => f.id, :plate_id => @feed.original_plate_id).exists?
+            Platerelationship.create(:feed_id => f.id, :plate_id => @feed.original_plate_id)
+          end
+        end        
       else
         c =  Cronfeedplaterelationship.create(:plate_id => @feed.original_plate_id, :cronfeed_id => Cronfeed.where(:address => @feed.url)[0].id)
         @alreadyAddedFeeds = Feed.where(:url_to_feed => @feed.url).last(10)
@@ -143,6 +152,7 @@ class FeedsController < ApplicationController
   end
   
   def show
+    @cpr = Cronfeedplaterelationship.new
     @feed = Feed.find(params[:id])
     @pr = Platerelationship.new
     @relatedFeeds = Feed.tagged_with(@feed.tag_list, :any => true).tagged_with(["the", "on", "by", "and", "in", "is", "are", "to"], :exclude => true)

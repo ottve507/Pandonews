@@ -17,6 +17,7 @@ Auth::Application.routes.draw do
   get "comments/index"
   get "comments/show"
   get "comments/create"
+  get 'feeds/autocomplete_cronfeed_address'
 
   root to: "home#index"
   match "/auth/:provider/callback", to: "sessions#create"
@@ -43,5 +44,6 @@ Auth::Application.routes.draw do
   resources :cronfeedplaterelationships
   resources :plates
   resources :comments
+  resources :cronfeeds
 
 end

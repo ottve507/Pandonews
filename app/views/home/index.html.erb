@@ -3,12 +3,7 @@
 	<%@feedsWithLocations.each do |f|%>
 	<p class="home_top_feeds_titles"> <%=link_to f.title, f%></p>, <%=f.location%> <br>
 	<%end%>
-	
-	
-</div></center>
 
-
-</div>
 <script>
 		var map = L.map('home_frontpagemap');
 
@@ -49,18 +44,21 @@
 
 
 
+	
+</div></center>
+</div>
+
+
 <div id="home_middle_menu">
 		<center>
 			
 
 			<p class="logoText">
-				top feed entries		
+				top feed entries	
 		</p></center>
 		<hr style="width:50%;"/>
 		<center>
 		<nav>
-
-	
 		
 		<%case @link_feed_type %>
 		  <%when 'mostread' || ''%>

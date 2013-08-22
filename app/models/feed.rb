@@ -1,17 +1,17 @@
 class Feed < ActiveRecord::Base
   attr_accessible :content, :guid, :language, :latitude, :location, :longitude, :original_plate_id, :published_at, :thumbnail_url, :title, :type_of_feed, :url, :url_to_feed, :user_id, :feedpic, :summary, :linkobject
-
   geocoded_by :location
-  #after_validation :geocode, :if => :location_changed? 
+  #after_validation :geocode, :if => :location_changed?  FIXAR NONE BUGG, KANSKE MÅSTE TILLBAKA!
   
     has_many :impressions, :as=>:impressionable
-     has_many :comments, :as => :commentable, :dependent => :destroy
-     validates_length_of :tag_list, :maximum => 10
-     make_voteable
-     # validates :title, :presence => true
-      acts_as_taggable
-      has_many :platerelationships
-      has_many :plates, :through => :platerelationships
+    has_many :comments, :as => :commentable, :dependent => :destroy
+    validates_length_of :tag_list, :maximum => 10
+    make_voteable
+    # validates :title, :presence => true
+    acts_as_taggable
+    has_many :platerelationships
+    has_many :plates, :through => :platerelationships
+    belongs_to :cronfeed
 
       Feedzirra::Feed.add_common_feed_entry_element("media:content",
       :value => :url, :as => :thumbnail)
@@ -33,6 +33,14 @@ class Feed < ActiveRecord::Base
 
       def self.input(last)
         self.where("created_at < ? ", last).order('created_at desc').limit(5)
+      end
+      
+      def cronfeed_address
+        cronfeed.try(:address)
+      end
+
+      def category_name=(address)
+        self.cronfeed = Cronfeed.find_or_create_by_name(address) if address.present?
       end
       
       def self.update_from_feed_new(feed_url, plates, feed_title, feedpic)

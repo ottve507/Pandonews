@@ -1,0 +1,2 @@
+module CronfeedsHelper
+end

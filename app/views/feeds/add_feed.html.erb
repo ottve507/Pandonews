@@ -7,13 +7,16 @@
 		<div id="add_feed_input_field">
 			<div id="add_feed_input_field_part1">
   				<p class="label_text">1. enter feed url:
-  					<%= f.text_field :url, :class => "add_url_text" %> <p class="label_text_small">psst! for example: "http://rss.nytimes.com/services/xml/rss/nyt/Europe.xml"</p>
+					<%= f.text_field :url, data: {autocomplete_source: cronfeeds_path}, :class => "add_url_text"  %>
+  					 <p class="label_text_small">psst! for example: http://rss.nytimes.com/services/xml/rss/nyt/Europe.xml</p>
 				</p>
 			</div>
 			<div id="add_feed_input_field_part2">
 				<p class="label_text_right">Input the url to your feed, this will be added to your plate and its settings</p>
 			</div>
 		</div>
+		
+				
 		
 		<div id="add_feed_input_field">
 		<p class="label_text">2. choose which plate to add feed to:</p>

@@ -5,9 +5,13 @@
 // the compiled file.
 //
 
-//= require jquery
+//= require jquery-1.9.1
 //= require jquery_ujs
 // require_tree .
 //= require_tree ./misc/
+//= require_tree ./jquery-ui/
+//= require autocompletehack
+
+
 
 
