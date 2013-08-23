@@ -21,7 +21,9 @@ class SuggestionsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @suggestion }
+      format.js
     end
+  
   end
 
   # GET /suggestions/new

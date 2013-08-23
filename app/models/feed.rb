@@ -19,6 +19,8 @@ class Feed < ActiveRecord::Base
       :value => :height, :as => :thumbnail_height)
       Feedzirra::Feed.add_common_feed_entry_element("media:content",
       :value => :width, :as => :thumbnail_width)
+      Feedzirra::Feed.add_common_feed_entry_element("enclosure",
+      :value => :url, :as => :thumbnail)      
       Feedzirra::Feed.add_common_feed_entry_element("link", :as => :linkobject, :value => :src, :with => {:type => "image/jpeg"})
       Feedzirra::Feed.add_common_feed_entry_element('geo:lat', :as => :lat)
       Feedzirra::Feed.add_common_feed_entry_element('geo:long', :as => :lon)

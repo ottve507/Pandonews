@@ -28,7 +28,7 @@ class HomeController < ApplicationController
  
  private
  def findLocatedFeeds()
-   locate = Feed.find(:all, :conditions => "latitude IS NOT NULL",:order => "created_at DESC").first(7)
+   locate = Feed.find(:all, :conditions => "latitude IS NOT NULL and location IS NOT NULL",:order => "created_at DESC").first(7)
    locate.each do |f|
      if remote_file_exists?(f.feedpic) == false
        f.feedpic = "/favicon.ico"
@@ -56,7 +56,7 @@ class HomeController < ApplicationController
      @h1 = @t - 1.hour
      feed = Feed.find(:all, :order => "created_at DESC").sort { |p1, p2| p2.impressionist_count(:filter=>:all, :start_date=>@h1) <=> p1.impressionist_count(:filter=>:all, :start_date=>@h1)}
      Rails.cache.write('mostviewed', feed, :expires_in=> 120.seconds, :raw=>true)
-     Rails.cache.write('mostviewed', feed, :expires_in=> 120.seconds, :raw=>true) #bug in rails, needs to be called twice
+     Rails.cache.write('mostviewed', feed, :expires_in=> 120.seconds, :raw=>true) #bug in rails, needs to be written twice
      return feed
    else    
      return Rails.cache.read('mostviewed')
