@@ -217,7 +217,7 @@ class Cronfeed < ActiveRecord::Base
   end
   
   def self.cleanbug
-    f = Feed.where(:location=>"0", :latitude => !nil, :longitude => !nil)
+    f = Feed.where("location IS 0 and latitude IS NOT NULL and longitude IS NOT NULL")
     f.each do |p|
       p.location = nil
       p.save
