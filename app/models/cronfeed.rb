@@ -97,7 +97,7 @@ class Cronfeed < ActiveRecord::Base
         findImageInfo(f.thumbnail_url, f) if f.location.nil?
       end
       
-      if f.location.nil?
+      if f.location.nil? && f.latitude == nil && f.longitude == nil
         f.location = "0"
         f.save
       end
@@ -114,10 +114,10 @@ class Cronfeed < ActiveRecord::Base
       if !f.longitude.nil? && !f.latitude.nil?
         @g = Geocoder.search(f.latitude.to_s + ' ,' + f.longitude.to_s)[0]
      
-        if !@g.city.nil? && !@g.country.nil?
-          f.location = @g.city + ", " + @g.country
-        else
+        if !@g.nil?
           f.location = @g.address
+          f.save
+          puts @g.address
         end
         
         puts '____________________________________'
@@ -131,8 +131,7 @@ class Cronfeed < ActiveRecord::Base
         puts f.location
         puts f.longitude
         puts f.latitude
-           
-        f.save
+    
         sleep 1              
       end
     end
@@ -218,10 +217,9 @@ class Cronfeed < ActiveRecord::Base
   end
   
   def self.cleanbug
-    f = Feed.where(:location=>'none', :latitude => !nil, :longitude => !nil)
+    f = Feed.where(:location=>0, :latitude => !nil, :longitude => !nil)
     f.each do |p|
-      p.latitude = nil
-      p.longitude = nil
+      p.location = nil
       p.save
     end
     
