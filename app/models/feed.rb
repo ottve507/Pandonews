@@ -99,7 +99,6 @@ class Feed < ActiveRecord::Base
               :user_id => 1,
               :longitude => entry.lon,
               :latitude => entry.lat,
-              :tag_list => entry.title.split(" ").first(10),
               :summary => entry.summary,
               :linkobject => entry.linkobject,
             )            
