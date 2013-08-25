@@ -33,7 +33,7 @@ function displayMap() {
 
 <div id="show_feed_wrapper">
 	<div id="dialog">
-		<center><img src="<%=@feed.feedpic%>"><br>
+		<center><img src="<%=@feed.feedpic%>" class="home_feed_pic_size"><br>
 		<%=@feed.type_of_feed%><br>
 		<%if current_user && !current_user.plates.nil?%>		
 		<%= form_for(@cpr) do |cpr| %>

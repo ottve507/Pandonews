@@ -79,9 +79,7 @@ class FeedsController < ApplicationController
         c =  Cronfeedplaterelationship.create(:plate_id => @feed.original_plate_id, :cronfeed_id => Cronfeed.where(:feed_title => @feed.url)[0].id)
         @alreadyAddedFeeds = Feed.where(:type_of_feed => @feed.url).last(10)
         @alreadyAddedFeeds.each do |f|
-          if !Platerelationship.where(:feed_id => f.id, :plate_id => @feed.original_plate_id).exists?
-            Platerelationship.create(:feed_id => f.id, :plate_id => @feed.original_plate_id)
-          end
+          Platerelationship.create(:feed_id => f.id, :plate_id => @feed.original_plate_id)
         end        
       elsif Cronfeed.where(:address => @feed.url).exists? 
         c =  Cronfeedplaterelationship.create(:plate_id => @feed.original_plate_id, :cronfeed_id => Cronfeed.where(:address => @feed.url)[0].id)

@@ -57,14 +57,14 @@ class PlatesController < ApplicationController
 
      def destroy
        @plate = Plate.find(params[:id])
-       @plate.destroy
-       @c=Cronfeedplaterelationship.find_by_plate_id(c.id)
+       @c=Cronfeedplaterelationship.where(:plate_id=>@plate.id)
        @c.each do |cr|
          cr.destroy
        end
+       @plate.destroy
 
        respond_to do |format|
-         format.html { redirect_to plates_url }
+         format.html { redirect_to :back }
          format.json { head :no_content }
        end
      end
