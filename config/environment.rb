@@ -7,3 +7,4 @@ require 'will_paginate'
 # Initialize the rails application
 Auth::Application.initialize!
 #RAILS_ENV = 'production'
+ENV['RAILS_ENV'] ||= 'production'
