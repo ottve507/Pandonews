@@ -63,35 +63,42 @@ class FeedsController < ApplicationController
   def create
     @feed = Feed.new(params[:feed])
     @feed.user_id = current_user.id
+    @feed.save
     
     #Feedzira!
-    if @feed.url !=nil
-      if !Cronfeed.where(:address => @feed.url).exists? && !Cronfeed.where(:feed_title => @feed.url).exists? && Feedzirra::Feed.fetch_and_parse(@feed.url) != 0
-        @feedsFromAddress = Feedzirra::Feed.fetch_and_parse(@feed.url)
-        #@urlFeedInfo = Domainatrix.parse(Feedzirra::Feed.fetch_and_parse(@feedsFromAddress.entries[0].url)
-        @urlFeedInfo = Domainatrix.parse(@feedsFromAddress.entries[0].id)
-        @urlToIcon = @urlFeedInfo.scheme + '://' + @urlFeedInfo.domain + '.' + @urlFeedInfo.public_suffix + '/favicon.ico'                
+    if @feed.type_of_feed !=nil
+      @byAddress = Cronfeed.find_by_address(@feed.type_of_feed)
+      @byTitle = Cronfeed.find_by_feed_title(@feed.type_of_feed)
+      
+      if !@byAddress.nil?
         
-        c = Cronfeed.create(:plate_id => @feed.original_plate_id, :address => @feed.url, :user_id =>current_user.id, :feedpic => @urlToIcon, :feed_title => @feedsFromAddress.title)
-        c =  Cronfeedplaterelationship.create(:plate_id => @feed.original_plate_id, :cronfeed_id => c.id)
-        Feed.update_from_feed_new(@feed.url, Plate.where(:id =>@feed.original_plate_id), @feedsFromAddress.title, @urlToIcon)
-      elsif Cronfeed.where(:feed_title => @feed.url).exists? 
-        c =  Cronfeedplaterelationship.create(:plate_id => @feed.original_plate_id, :cronfeed_id => Cronfeed.where(:feed_title => @feed.url)[0].id)
-        @alreadyAddedFeeds = Feed.where(:type_of_feed => @feed.url).last(10)
+        @c =  Cronfeedplaterelationship.create(:plate_id => @feed.original_plate_id, :cronfeed_id => @byAddress.id)
+        @alreadyAddedFeeds = Feed.where(:type_of_feed => @byAddress.address).last(10)
+        @alreadyAddedFeeds.each do |f|
+          Platerelationship.create(:feed_id => f.id, :plate_id => @feed.original_plate_id)
+        end
+        
+      elsif !@byTitle.nil? && @feed.url.to_i == @byTitle.id
+
+        @c =  Cronfeedplaterelationship.create(:plate_id => @feed.original_plate_id, :cronfeed_id => @byTitle.id)
+        @alreadyAddedFeeds = Feed.where(:type_of_feed => @byTitle.address).last(10)
         @alreadyAddedFeeds.each do |f|
           Platerelationship.create(:feed_id => f.id, :plate_id => @feed.original_plate_id)
         end        
-      elsif Cronfeed.where(:address => @feed.url).exists? 
-        c =  Cronfeedplaterelationship.create(:plate_id => @feed.original_plate_id, :cronfeed_id => Cronfeed.where(:address => @feed.url)[0].id)
-        @alreadyAddedFeeds = Feed.where(:url_to_feed => @feed.url).last(10)
-        @alreadyAddedFeeds.each do |f|
-          if !Platerelationship.where(:feed_id => f.id, :plate_id => @feed.original_plate_id).exists?
-            Platerelationship.create(:feed_id => f.id, :plate_id => @feed.original_plate_id)
-          end
-        end
+    
+      elsif @byAddress.nil? && @byTitle.nil? && Feedzirra::Feed.fetch_and_parse(@feed.type_of_feed) == 0
+        #redirect?
       else
-        #reroute to back?        
-      end
+        
+        @feedsFromAddress = Feedzirra::Feed.fetch_and_parse(@feed.type_of_feed)
+        @urlFeedInfo = Domainatrix.parse(@feedsFromAddress.entries[0].id)
+        @urlToIcon = @urlFeedInfo.scheme + '://' + @urlFeedInfo.domain + '.' + @urlFeedInfo.public_suffix + '/favicon.ico'                        
+        @c = Cronfeed.create(:plate_id => @feed.original_plate_id, :address => @feed.type_of_feed, :user_id =>current_user.id, :feedpic => @urlToIcon, :feed_title => @feedsFromAddress.title)
+        @c =  Cronfeedplaterelationship.create(:plate_id => @feed.original_plate_id, :cronfeed_id => @c.id)
+        Feed.update_from_feed_new(@feed.type_of_feed, Plate.where(:id =>@feed.original_plate_id), @feedsFromAddress.title, @urlToIcon)                
+
+      end 
+          
     end
     
     #tags :P
@@ -104,7 +111,7 @@ class FeedsController < ApplicationController
       if @feed.save      
         format.html { redirect_to user_path(current_user.id), notice: 'Feed was successfully created.' }
         format.json { render json: @feed, status: :created, location: @feed }
-        if @feed.url != nil
+        if @feed.type_of_feed != nil
            @feed.destroy
         else
           @p = Platerelationship.create(:plate_id => @feed.original_plate_id, :feed_id => @feed.id)

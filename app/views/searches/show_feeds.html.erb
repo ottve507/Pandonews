@@ -1,0 +1,31 @@
+<div id="home_middle_menu" style="padding-top:1px;">
+	<center>
+		<p class="magic_font">search again?</p>
+	<%= form_for @newsearch do |f| %>
+		<div class ="field">
+			<%=f.text_field :keywords, :placeholder => "keywords (users, content, titles etc.)"%>
+		</div>
+		<div class ="field">
+			<%=f.text_field :language, :placeholder => "language? (optional)"%>
+		</div>
+		<div class ="field">	
+			<%=f.text_field :location, :placeholder => "location? (optional)" %>
+		</div>
+		<%=f.submit "Search" %>
+	<%end%>
+	</center>
+</div>
+
+<center><p class="magic_font">feed results</p></center>
+
+<div id="home_feedboxes_wrap">	
+	<div id="feedboxes">
+	<%=render :partial=> 'fr', :collection=>@search%>
+</div>
+</div>
+
+<%if @search%>
+<div id="lastpage_identity" type="<%=@search.total_pages%>">
+<center>
+<%= will_paginate(@search)%></center></div>	
+<%end%>

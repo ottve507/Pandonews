@@ -32,6 +32,8 @@ Auth::Application.routes.draw do
   match "/identities/showplate/:id", to: "identities#showplate", :as => "showplate_identities"
   match "/identities/:id", to: "identities#show", :as => "user"
   match "/suggestions/1", to: "suggestions#show", :as => "suggestion"
+  match "/searches/show_users", to: "searches#show_users", :as => "search_user"
+  match "/searches/show_feeds", to: "searches#show_feeds", :as => "search_feed"
 
   resources :identities
   resources :relationships

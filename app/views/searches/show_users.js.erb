@@ -1,0 +1,9 @@
+var $j = jQuery.noConflict();
+	$j('#feedboxes').append('<%= j render :partial => 'ur', :collection => @usersearch %>');
+	<% if @usersearch.next_page %>
+  	$j('.pagination').replaceWith('<%= j will_paginate(@usersearch) %>');
+	<% else %>
+  	$j('.pagination').remove();
+	$j('#lastpage_identity').remove();
+	<% end %>
+<% sleep 0 %>

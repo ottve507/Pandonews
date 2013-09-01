@@ -35,7 +35,7 @@ function displayMap() {
 	<div id="dialog">
 		<center><img src="<%=@feed.feedpic%>" class="home_feed_pic_size"><br>
 		<%=@feed.type_of_feed%><br>
-		<%if current_user && !current_user.plates.nil?%>		
+		<%if current_user && !current_user.plates.nil? && !Cronfeed.find_by_address(@feed.url_to_feed).nil?%>		
 		<%= form_for(@cpr) do |cpr| %>
 			<%= cpr.collection_select :plate_id, current_user.plates, :id, :name%>
 			<%=cpr.hidden_field :cronfeed_id, :value=>Cronfeed.find_by_address(@feed.url_to_feed).id%>

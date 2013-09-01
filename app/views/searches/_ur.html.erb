@@ -2,39 +2,36 @@
 <%  @set = Setting.find_by_id(ur.id) %>
 
 <div id="feedbox">
-<div id="placecounter">
-	<% if @counter %>
-	<%@counter=@counter+1%>
-	#<%=@counter%>
-	<%else%>
-	 :P
-	<%end%>
+  <div id="feedbox_content_identity">
+	<div id="userinfo_identity">
+		<div id="identity_photo_box_after_resize">
+			<%= link_to(@anv) do %>		
+			<%if @anv.provider=='facebook' || @anv.provider=='twitter' %>
+				<%if @set.profilepicture.url != '/profilepictures/original/missing.png' %>
+					<img src="<%=@set.profilepicture.url%>" class="identity_resize">
+				<% else %>
+					<img src="<%=@anv.image%>" class="identity_resize">
+				<%end%>
+			<%else%>
+				<%if @set.profilepicture.url != '/profilepictures/original/missing.png' %>
+				<img src="<%=@set.profilepicture.url%>" class="identity_resize">
+				<%else%>
+				<img src='/assets/nopic.png' class="identity_resize">
+				<%end%>
+			<%end%>
+		   <% end %>		
 		</div>
-<div id="userinfo">
-	<%= link_to(@anv) do %>		
-	<%if @anv.provider=='facebook' || @anv.provider=='twitter' %>
-		<%if @set.profilepicture.url != '/profilepictures/original/missing.png' %>
-			<img src="<%=@set.profilepicture.url%>" class="pictureresizing">
-		<% else %>
-			<img src="<%=@anv.image%>" class="pictureresizing">
-		<%end%>
-	<%else%>
-		<img src="<%=@set.profilepicture.url%>" class="pictureresizing">
-	<%end%>
-	<br>
-   <% end %>
-</div>
-  <div id="feedbox_content">
-  <div id ="info"><div id="headerboxtext"><p class="headerlinkstyle"> useraccount</p></div><div id="headerboximage"></div></div>		
-		<p class="feedtext">hello</p>
+	</div>
+	
+	
+	<div id="identity_feedbox_shadow">
+		<div id="headerboxtext_identity">		
+		<p class="headerlinkstyle"> <%= link_to ur.name, ur %>
+		</p>
+		</div>
 		
-
-		</div>
-		<div id="bottominfo">
-				<p class="linkstyle">
-				<%= link_to @anv.name, @anv%>
-				</p>
-			<hr style="width:80%;"/>
-			</div>
-		</div>		
-<br>
+	<p class="feedtext_identity">location: <%=@set.location %></p>
+	<p class="feedtext_identity">language: <%=@set.languages %></p>
+	</div>	
+	</div>
+</div>

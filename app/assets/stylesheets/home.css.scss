@@ -52,14 +52,19 @@ background-image: -webkit-gradient(
 }
 
 #home_top{
-margin-top:50px;
 width:100%;
 background: url('/assets/home_top_background.png') no-repeat scroll center bottom rgb(67, 67, 67);
-
-
-padding-top:50px;
+padding-top:100px;
 padding-bottom:50px;
 border-bottom:2px solid gray;
+}
+
+#home_top_fill{
+width:100%;
+float:left;
+background-color: rgb(67, 67, 67);
+height:83px;
+margin-top:0px;
 }
 
 #home_top_feeds{

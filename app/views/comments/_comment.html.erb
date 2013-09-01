@@ -4,10 +4,24 @@
 <%if comment.parent==nil%>
 <div id="comment_box_parent">
 	<%= link_to(@commenter) do %>	
-	<div id="comment_box_user_info">
-	<img src="<%=find_profile_pic(comment.user_id)%>" class="pictureresizing">
+	<div id="userinfo_identity", style="margin-left:10px; margin-right:10px;">
+		<div id="identity_photo_box_after_resize">	
+			<%if @commenter.provider=='facebook' || @commenter.provider=='twitter' %>
+				<%if @setting.profilepicture.url != '/profilepictures/original/missing.png' %>
+					<img src="<%=@setting.profilepicture.url%>" class="identity_resize">
+				<% else %>
+					<img src="<%=@commenter.image%>" class="identity_resize">
+				<%end%>
+			<%else%>
+				<%if @setting.profilepicture.url != '/profilepictures/original/missing.png' %>
+				<img src="<%=@setting.profilepicture.url%>" class="identity_resize">
+				<%else%>
+				<img src='/assets/nopic.png' class="identity_resize">
+				<%end%>
+			<%end%>		
+		</div>
 	<br>
-	<%=@commenter.name%>
+		<%= link_to @commenter.name, @commenter, :style => "font-size:11px;"%>
 	</div>
   <%end%>
  <%= h(comment.content).gsub(/\n/, '<br/>').html_safe %>
@@ -43,12 +57,25 @@
 </div>
 <%else%>
 <div id="comment_box_child">
-		<%= link_to(@commenter) do %>	
-		<div id="comment_box_user_info">
-		<img src="<%=find_profile_pic(comment.user_id)%>" class="pictureresizing">
-		
+		<%= link_to(@commenter) do %>		
+		<div id="userinfo_identity", style="margin-left:10px; margin-right:10px;">
+			<div id="identity_photo_box_after_resize">	
+				<%if @commenter.provider=='facebook' || @commenter.provider=='twitter' %>
+					<%if @setting.profilepicture.url != '/profilepictures/original/missing.png' %>
+						<img src="<%=@setting.profilepicture.url%>" class="identity_resize">
+					<% else %>
+						<img src="<%=@commenter.image%>" class="identity_resize">
+					<%end%>
+				<%else%>
+					<%if @setting.profilepicture.url != '/profilepictures/original/missing.png' %>
+					<img src="<%=@setting.profilepicture.url%>" class="identity_resize">
+					<%else%>
+					<img src='/assets/nopic.png' class="identity_resize">
+					<%end%>
+				<%end%>		
+			</div>
 		<br>
-		<%=@commenter.name%>
+			<%= link_to @commenter.name, @commenter, :style => "font-size:11px;"%>
 		</div>
 	  <%end%>
 	 <%= h(comment.content).gsub(/\n/, '<br/>').html_safe %>

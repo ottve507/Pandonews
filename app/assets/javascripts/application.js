@@ -10,7 +10,6 @@
 // require_tree .
 //= require_tree ./misc/
 //= require_tree ./jquery-ui/
-//= require autocompletehack
 
 
 

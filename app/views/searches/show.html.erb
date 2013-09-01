@@ -1,30 +1,44 @@
-<%=javascript_include_tag 'endless_page'%>
-
-
-<h1>Search results</h1>
-<div id="feedboxes">
+<div id="home_middle_menu" style="padding-top:1px;">
 	<center>
+		<p class="magic_font">search again?</p>
 	<%= form_for @newsearch do |f| %>
 		<div class ="field">
-			<%=f.text_field :keywords%>
-			<%=f.submit "Search" %>
+			<%=f.text_field :keywords, :placeholder => "keywords (users, content, titles etc.)"%>
 		</div>
-
 		<div class ="field">
-			<%=f.label :language %>
-			<%=f.text_field :language%>
-			<%=f.label :location %>
-			<%=f.text_field :location%>
+			<%=f.text_field :language, :placeholder => "language? (optional)"%>
 		</div>
-
-		<div class ="submit">
-			
+		<div class ="field">	
+			<%=f.text_field :location, :placeholder => "location? (optional)" %>
 		</div>
+		<%=f.submit "Search" %>
 	<%end%>
 	</center>
-<%=render :partial=> 'ur', :collection=>@usersearch%>
-<%=render :partial=> 'fr', :collection=>@search%>
 </div>
-<div id="lastpage" type="<%=@search.total_pages%>"><%= will_paginate(@search)%></div>
+
+<center><p class="magic_font">search results</p></center>
+
+<%if !@user5.nil? && @user5.count != 0%>
+<div id="home_feedboxes_wrap">
+	<p class = "searches_search_desc">users</p>
+	<p class = "searches_search_link"><%=link_to "see all users", {:controller => 'searches', :action => 'show_users', :param => show_users_ids}%></p>	
+	<div id="feedboxes">
+		<%=render :partial=> 'ur', :collection=>@user5%>
+	</div>
+</div>
+<%end%>
+
+<%if !@search5.nil? && @search5.count != 0%>
+<div id="home_feedboxes_wrap">
+	<p class = "searches_search_desc">feeds</p>
+	<p class = "searches_search_link"><%=link_to "see all feeds", {:controller => 'searches', :action => 'show_feeds', :param => show_feeds_ids}%></p>
+	<div id="feedboxes">
+		<%=render :partial=> 'fr', :collection=>@search5%>
+	</div>
+</div>
+<%end%>
+
+
+
 
 

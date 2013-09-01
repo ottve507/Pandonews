@@ -254,8 +254,9 @@ margin-left:10%;
 }
 
 #add_feed_input_field_part1{
-width:60%;
+width:80%;
 float:left;
+margin-left:10%;
 }
 
 #add_feed_input_field_part2{
@@ -374,6 +375,7 @@ position:absolute;
 
 ul.ui-autocomplete {
   position: absolute;
+  z-index:0;
   list-style: none;
   margin: 0;
   padding: 0;

@@ -25,6 +25,11 @@ class Feed < ActiveRecord::Base
       Feedzirra::Feed.add_common_feed_entry_element('geo:lat', :as => :lat)
       Feedzirra::Feed.add_common_feed_entry_element('geo:long', :as => :lon)
 
+      #overloading
+      def to_param
+        "#{id} #{title}".parameterize
+      end
+      
       def impression_count
        impressions.size
       end
@@ -37,13 +42,14 @@ class Feed < ActiveRecord::Base
         self.where("created_at < ? ", last).order('created_at desc').limit(5)
       end
       
-      def cronfeed_address
-        cronfeed.try(:address)
+      #For temporary feed
+      def category_name
+        nil
       end
 
-      def category_name=(address)
-        self.cronfeed = Cronfeed.find_or_create_by_name(address) if address.present?
-      end
+      def category_name=(a)
+        nil
+      end     
       
       def self.update_from_feed_new(feed_url, plates, feed_title, feedpic)
         feed = Feedzirra::Feed.fetch_and_parse(feed_url)

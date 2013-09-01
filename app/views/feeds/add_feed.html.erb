@@ -1,35 +1,35 @@
+<%= javascript_include_tag "autocompletehack" %>
+
 <div id="add_feed_main">
-		<p class="magic_font">this is where the magic happens,</p>
-		<p class="less_magic_font">add your RSS-url and share it!</p>
+		<center><p class="magic_font">Add your newsfeed</p><br>
 		
 <%if @plates!=[] %>
 	<%= form_for @feed do |f| %>
-		<div id="add_feed_input_field">
+			
 			<div id="add_feed_input_field_part1">
-  				<p class="label_text">1. enter feed url:
-					<%= f.text_field :url, data: {autocomplete_source: cronfeeds_path}, :class => "add_url_text"  %>
-  					 <p class="label_text_small">psst! for example: http://rss.nytimes.com/services/xml/rss/nyt/Europe.xml</p>
+  				<p class="label_text">1. type name of feed or the rss url:
+					<%= f.text_field :category_name, data: {autocomplete_source: cronfeeds_path}, :class => "add_url_text" %>
+  					<%= f.hidden_field :url, :id=>"cronfeed_hidden_field_url",:value=>nil%>
+					<%= f.hidden_field :type_of_feed, :id=>"cronfeed_hidden_field_type",:value=>nil%>
+<p class="label_text_small">psst! for example: http://rss.nytimes.com/services/xml/rss/nyt/Europe.xml</p>
 				</p>
 			</div>
-			<div id="add_feed_input_field_part2">
-				<p class="label_text_right">Input the url to your feed, this will be added to your plate and its settings</p>
-			</div>
-		</div>
+		
 		
 				
 		
 		<div id="add_feed_input_field">
-		<p class="label_text">2. choose which plate to add feed to:</p>
-  		<%= f.collection_select :original_plate_id, @plates, :id, :name%>
+			<p class="label_text">2. choose which plate to add feed to:</p><br>
+  			<%= f.collection_select :original_plate_id, @plates, :id, :name%>
 		</div>
 		
 		<div id="add_feed_input_field">
 			<p class="label_text">3. click share!</p>
-	  			<%= f.submit "share", :class => "submitbutton" %>
+	  			<%= f.submit "share", :class => "submitbutton", :onclick=>'submitMyForm()' %>
 			
 		</div>
 
-  	
+  	</center>
 	<% end %>
 	
 

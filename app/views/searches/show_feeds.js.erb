@@ -1,0 +1,8 @@
+var $j = jQuery.noConflict();
+	$j('#feedboxes').append('<%= j render :partial => 'fr', :collection => @search %>');
+	<% if @search.next_page %>
+  	$j('.pagination').replaceWith('<%= j will_paginate(@search) %>');
+	<% else %>
+  	$j('.pagination').remove();
+	<% end %>
+<% sleep 0 %>

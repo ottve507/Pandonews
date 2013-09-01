@@ -1,40 +1,32 @@
+<%@content = fr.summary ||= fr.content ||= ""  %>
+
 <%  @anv = User.find_by_id(fr.user_id) %>
 <%  @set = Setting.find_by_id(fr.user_id) %>
+<% @sanitized_content = Sanitize.clean(@content).first(500) %>
 
 <div id="feedbox">
-<div id="placecounter">
-	<% if @counter %>
-	<%@counter=@counter+1%>
-	#<%=@counter%>
-	<%else%>
-	 ::::
-	<%end%>
-		</div>
-<div id="userinfo">
-	<%= link_to(@anv) do %>		
-	<%if @anv.provider=='facebook' || @anv.provider=='twitter' %>
-		<%if @set.profilepicture.url != '/profilepictures/original/missing.png' %>
-			<img src="<%=@set.profilepicture.url%>" class="pictureresizing">
-		<% else %>
-			<img src="<%=@anv.image%>" class="pictureresizing">
-		<%end%>
-	<%else%>
-		<img src="<%=@set.profilepicture.url%>" class="pictureresizing">
-	<%end%>
-	<br>
-   <% end %>
-</div>
-  <div id="feedbox_content">
-  <div id ="info"><div id="headerboxtext"><p class="headerlinkstyle"> <%= link_to fr.title, fr %></p></div><div id="headerboximage"></div></div>		
-		<p class="feedtext"><%=fr.content.html_safe %></p>
-		
+  <div id="feedbox_content_identity">
+	<%if !fr.thumbnail_url.nil? || !fr.linkobject.nil? %>
+	<div id="userinfo_identity">
+		<div id="identity_photo_box_after_resize">
+			<%if fr.thumbnail_url.nil?%>
+				<img src='<%=fr.linkobject %>' class="identity_resize">
+			<%else%>
+				<img src='<%=fr.thumbnail_url %>' class="identity_resize">
+			<%end%>
 
 		</div>
-		<div id="bottominfo">
-				<p class="linkstyle">
-				<%= link_to @anv.name, @anv%>
-				</p>
-			<hr style="width:80%;"/>
-			</div>
-		</div>		
-<br>
+	</div>
+	<%end%>
+	
+	<div id="identity_feedbox_shadow">
+		<div id="headerboxtext_identity">		
+		<p class="headerlinkstyle"> <%= link_to fr.title, fr %>
+		</p>
+		</div>
+		
+	<p class="feedtext_identity"><%=@sanitized_content %></p>
+	<p class="identity_feedtext_logo_and_title"><img src="<%=fr.feedpic%>" class="home_feed_pic_size"> <%=fr.type_of_feed%><br><%=fr.created_at.strftime("%H:%M %d/%m/%Y")%></p>
+	</div>	
+	</div>
+</div>

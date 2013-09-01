@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Cronfeed < ActiveRecord::Base
   attr_accessible :address, :plate_id, :user_id, :feed_title, :feedpic, :language, :location
   has_many :cronfeedplaterelationships

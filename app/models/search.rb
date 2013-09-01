@@ -26,7 +26,11 @@ class Search < ActiveRecord::Base
       elsif keywords.present? && language.present? && location.present?
           feedresults = feedresults.find(:all, :conditions => ['(title LIKE :search OR content LIKE :search) AND language LIKE :lan AND location LIKE :loc', {:search => "%#{keywords}%", :lan => "%#{language}%", :loc => "%#{location}%"}])
       elsif !keywords.present? && language.present? && location.present?
-          feedresults = feedresults.find(:all, :conditions => ['language LIKE :lan AND location LIKE :loc', {:lan => "%#{language}%", :loc => "%#{location}%"}])
+          feedresults = feedresults.find(:all, :conditions => ['language LIKE :lan AND location LIKE :loc', {:lan => "%#{language}%", :loc => "%#{location}%"}])      
+      elsif !keywords.present? && !language.present? && location.present?
+          feedresults = feedresults.find(:all, :conditions => ['location LIKE :loc', {:loc => "%#{location}%"}])
+      elsif !keywords.present? && language.present? && !location.present?
+          feedresults = feedresults.find(:all, :conditions => ['language LIKE :lan', {:lan => "%#{language}%"}])              
       elsif searchall.present?
           feedresults = feedresults.find(:all, :conditions => ['title LIKE :search OR content LIKE :search OR language LIKE :search OR location LIKE :search', {:search => "%#{searchall}%"}])
       end
