@@ -1,4 +1,12 @@
 <%@content = @feed.content ||= @feed.summary ||= ""  %>
+<%@meta = Sanitize.clean(@content) + ' ' + @feed.title + ' ' + 'news ' + 'rss ' + 'parser ' + 'feedly ' + 'pulse ' + 'world ' + 'nyheter ' + @feed.type_of_feed%>
+<%
+meta :title => "Pandonews: " + @feed.title + " " + @feed.type_of_feed,
+     :description => @feed.title,
+     :keywords => @meta.split(/ /).join(', ')
+%>
+<%meta [:property => "og:image", :content => @feed.thumbnail_url]%>
+<%meta [:property => "og:image", :content => @feed.linkobject]%>
 
 
 <script

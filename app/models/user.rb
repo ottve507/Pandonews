@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
   #after_validation :geocode, :if => :location_changed?
   # has_many :feeds
 
-  has_many :settings     
+  has_many :settings  
+  has_many :comments   
   has_many :friendships
   has_many :friends, :through => :friendships
   has_many :plates
@@ -18,7 +19,7 @@ class User < ActiveRecord::Base
           find_by_provider_and_uid(auth["provider"], auth["uid"]) || create_with_omniauth(auth)
         end
 
-        def self.create_with_omniauth(auth)
+        def self.create_with_omniauth(auth)                
           create! do |user|
             user.provider = auth["provider"]
             user.uid = auth["uid"]
@@ -51,6 +52,7 @@ class User < ActiveRecord::Base
             setting.save
       
           end
+          
         end
 
         #Method to check if the feeder is connected to the user.

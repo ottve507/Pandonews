@@ -16,6 +16,15 @@ class HomeController < ApplicationController
     @feeds = feed.paginate(:page => params[:page], :per_page => 14)
   
     @feedsWithLocations = map_feeds_cached
+    
+    if !@feeds.nil?
+    	@meta = @feeds.first(50)
+    	@tokeywords = ' '
+    	@meta.each do |m|
+    		@tokeywords += m.title + ' '
+    	end
+    	@tokeywords += 'news parser rss feeds world pulse feedly' 
+    end
 
 
     respond_to do |format|
@@ -85,7 +94,4 @@ class HomeController < ApplicationController
    Rails.cache.fetch('Category.all') { all }
  end
 
-
- 
-  
 end

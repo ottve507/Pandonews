@@ -32,7 +32,7 @@ class PlatesController < ApplicationController
        @plate.user_id = current_user.id
 
        respond_to do |format|
-         if @plate.save      
+         if @plate.save     
            format.html { redirect_to user_path(current_user.id), notice: 'Plate was successfully created.' }
            format.json { render json: @plate, status: :created, location: @plate}
          else

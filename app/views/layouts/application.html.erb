@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<%= metamagic %>
+	
 	<script type="text/javascript">
 
 	  var _gaq = _gaq || [];
@@ -20,6 +22,7 @@
 <%= csrf_meta_tag %>
 </head>
 <body>
+	<%	meta [:property => "og:image", :content => "http://www.pandonews.com/assets/f.png"] %>
 	<div id= "home_top_fill"></div>
 	
 
@@ -49,25 +52,25 @@
 	<% if current_user %>
 	<div id="navigation_text_options">
 	<% @anvC = User.find_by_id(current_user.id) %>
-	<%=link_to "profile", user_path(@anvC.id) %>
+	<%=link_to "#{image_tag("user_profiles.png", :border => 0)} profile".html_safe, user_path(@anvC.id) %>
 	</div>
 	<% @setting = Setting.find(@anvC.id) %>
 	<div id="navigation_text_options">
-	<%=link_to "settings", edit_setting_path(@setting)%>
+	<%=link_to "#{image_tag("user_settings.png", :border => 0)} settings".html_safe, edit_setting_path(@setting)%>
 	</div>
 	<div id="navigation_text_options">
-	<%=link_to "suggestions", suggestion_path%>
+	<%=link_to "#{image_tag("suggestions_about.png", :border => 0)} about".html_safe, suggestion_path%>
 	</div>
 	<div id="navigation_text_options_last">
-	<%=link_to "logout", logout_path%>
+	<%=link_to "#{image_tag("user_logout.png", :border => 0)} logout".html_safe, logout_path%>
 	</div>
 	<% else %>
 
 	<div id="navigation_text_options">
-	<%=link_to "login", sessions_path %>
+	<%=link_to "#{image_tag("user_profiles.png", :border => 0)} login/signup".html_safe, sessions_path %>
 	</div>
 	<div id="navigation_text_options_last">
-	<%=link_to "suggestions", suggestion_path%>
+	<%=link_to "#{image_tag("suggestions_about.png", :border => 0)} about".html_safe, suggestion_path%>
 	</div>
 	<%end%>
 

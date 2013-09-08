@@ -62,10 +62,6 @@ class IdentitiesController < ApplicationController
     end
     #____________
     
-    
-    
-   
-    
     #@feeds = @allfeeds.sort_by { |obj| obj.published_at } sorted = @records.sort_by &:created_at
     #@allfeeds = @feeds.sort { |p1, p2| p2.impressionist_count(:filter=>:all, :start_date=>@t) <=> p1.impressionist_count(:filter=>:all, :start_date=>@h1)}
     # feed = @user.feeds(:order => "created_at DESC").sort { |p1, p2| p2.impressionist_count(:filter=>:all, :start_date=>@h1) <=> p1.impressionist_count(:filter=>:all, :start_date=>@h1)}

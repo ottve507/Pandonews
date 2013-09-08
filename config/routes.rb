@@ -34,7 +34,8 @@ Auth::Application.routes.draw do
   match "/suggestions/1", to: "suggestions#show", :as => "suggestion"
   match "/searches/show_users", to: "searches#show_users", :as => "search_user"
   match "/searches/show_feeds", to: "searches#show_feeds", :as => "search_feed"
-
+  match "/users/:id", to: "users#destroy", :as => "delete_user"
+  
   resources :identities
   resources :relationships
   resources :friendships
@@ -47,5 +48,6 @@ Auth::Application.routes.draw do
   resources :plates
   resources :comments
   resources :cronfeeds
+  resources :users
 
 end

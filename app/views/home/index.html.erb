@@ -1,3 +1,9 @@
+<%if @tokeywords.nil?%>
+	<%= metamagic :title => "Pandonews.com", :description => "News and feeds parsed to you easily", :keywords => "News and shit"  %>
+<%else%>
+	<%= metamagic :title => "Pandonews.com", :description => "News and feeds parsed to you easily", :keywords => @tokeywords.split(/ /).join(', ')  %>
+<%end%>
+
 <div id ="home_top"><center><div id="home_frontpagemap">
 </div><div id="home_top_feeds">
 	<%@feedsWithLocations.each do |f|%>

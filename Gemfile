@@ -32,6 +32,8 @@ gem 'domainatrix'
 gem 'whatlanguage'
 gem 'mini_exiftool'
 gem 'rails3-jquery-autocomplete'
+gem "recaptcha", :require => "recaptcha/rails"
+gem 'metamagic'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'ancestry'

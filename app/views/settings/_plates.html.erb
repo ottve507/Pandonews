@@ -1,8 +1,8 @@
 <%@plates.each do |p|%>
-	<%=link_to p.name, showplate_identities_path(p)%>, <%= link_to "x", Plate.find(p.id), :method => :delete %>
+	<%=link_to p.name, showplate_identities_path(p)%> <%= link_to image_tag("delete_icon.png", :border => 0), Plate.find(p.id), :method => :delete %>
 	<br>
 	<%@cronfeeds = p.cronfeeds%>
 	<%@cronfeeds.each do |c|%>
-		<img src="<%=c.feedpic%>"> - <%=c.feed_title%> <%= link_to "x", Cronfeedplaterelationship.find_by_cronfeed_id(c.id), :method => :delete %><br>
+		<img src="<%=c.feedpic%>"> - <%=c.feed_title%> <%= link_to image_tag("delete_icon_cronfeed.png", :border => 0), Cronfeedplaterelationship.find_by_cronfeed_id(c.id), :method => :delete %><br>
 	<%end%>	
 <%end%>
