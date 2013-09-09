@@ -5,6 +5,7 @@ class IdentitiesController < ApplicationController
   def new
     if current_user.blank?
     @identity = env['omniauth.identity']
+    @setting = Setting.new
     else
       redirect_to root_url
     end

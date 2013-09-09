@@ -20,18 +20,17 @@ end
 end
 
 def create
-@setting = Setting.new(params[:setting])
-@setting.user_id = current_user.id
-
-respond_to do |format|
-if @setting.save
-  format.html { redirect_to edit_setting_path(@setting), notice: 'Setting was successfully created.' }
-  format.json { render json: edit_setting_path(@setting), status: :created, location: @setting }
-else
-  format.html { render action: "new" }
-  format.json { render json: @setting.errors, status: :unprocessable_entity }
-end
-end
+    @setting = Setting.new(params[:setting])
+    @setting.user_id = current_user.id
+    respond_to do |format|
+      if @setting.save
+        format.html { redirect_to edit_setting_path(@setting), notice: 'Setting was successfully created.' }
+        format.json { render json: edit_setting_path(@setting), status: :created, location: @setting }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @setting.errors, status: :unprocessable_entity }
+      end
+    end
 end
 
 def update
