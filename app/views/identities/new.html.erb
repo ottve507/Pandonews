@@ -1,5 +1,5 @@
 <div id="sessions_middlebox">
-<h1>New Account</h1>
+<p class="magic_font" style="margin-left:10%; margin-top:0px;">New Account</p>
 
 <%= form_tag "/auth/identity/register" do %>
 
@@ -13,25 +13,32 @@
 	      </ul>
 	    </div>
 	  <% end %>
-
-	  <div class="field">
+	
+	<div id="sessions_field">
+	<div id="sessions_new_divider">
+	
+	  <div id="sessions_fields">
 	    <%= label_tag "Full name" %><br>
 	    <%= text_field_tag :name, @identity.try(:name) %>
 	  </div>
-	  <div class="field">
+	  <div id="sessions_fields">
 	    <%= label_tag :email %><br>
 	    <%= text_field_tag :email, @identity.try(:email) %>
 	  </div>
-	  <div class="field">
+	  <div id="sessions_fields">
 	    <%= label_tag :password %><br>
 	    <%= password_field_tag :password %>
 	  </div>
-	  <div class="field">
+	  <div id="sessions_fields">
 	    <%= label_tag :password_confirmation %><br>
 	    <%= password_field_tag :password_confirmation %>
 	  </div>
-	
+	  <div class="actions"><%=submit_tag "Register" %></div>
+	</div>
 
-  <div class="actions"><%=submit_tag "Register" %></div>
+	<img src="/assets/einsteinequation.png" id="sessions_new_divider">
+	<p class="magic_font" style="margin:0; margin-left:5%; float:left; font-size:17px;">Happy PANDO</p>
+	</div>
+		
 <% end %>
 </div>
