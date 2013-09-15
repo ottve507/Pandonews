@@ -143,6 +143,7 @@ class Cronfeed < ActiveRecord::Base
   def self.findImageInfo(url, feed)
     require 'open-uri'
     
+    begin
     open('./app/assets/temp/image.jpg', 'wb') do |file|
       file << open(url).read
     end
@@ -214,6 +215,12 @@ class Cronfeed < ActiveRecord::Base
       
       
       File.delete('./app/assets/temp/image.jpg')
+    rescue
+      feed.location = 0
+      feed.longitude = nil
+      feed.latitude = nil
+      feed.save
+    end
     
   end
   
