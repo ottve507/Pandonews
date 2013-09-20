@@ -103,12 +103,11 @@
 <p class="identity_nearme"><%=check_box_tag 'sortnearme', 'true', @location_setting!=nil%> Near me</p>
 <br>
 
-<%= submit_tag "update", :class => "submitbutton_identity" %>
+<%= submit_tag "update", :class => "btn btn-warning", :style=>"margin-left:2.5%;" %>
 
 <% end %>
 
 <div id="menuarea">
-	<hr style="width:50%;"/>
 	<center>
 	<%= link_to "Create plate", '/plates/new'%> | <%= link_to "Add feed", '/feeds/add_feed'%>
 	</center>

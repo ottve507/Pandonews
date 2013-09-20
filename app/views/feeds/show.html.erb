@@ -1,4 +1,5 @@
 <%@content = @feed.content ||= @feed.summary ||= ""  %>
+<%@content = Sanitize.clean(@content)  %>
 <%@meta = Sanitize.clean(@content) + ' ' + @feed.title + ' ' + 'news ' + 'rss ' + 'parser ' + 'feedly ' + 'pulse ' + 'world ' + 'nyheter ' + @feed.type_of_feed%>
 <%
 meta :title => "Pandonews: " + @feed.title + " " + @feed.type_of_feed,
@@ -62,17 +63,18 @@ function displayMap() {
 		 <center> <%= link_to @feed.title, @feed.url %></center>
 		 </h2>
 		</p>
-		<p id="notice"><%= notice %></p>
-  		<%= @content.html_safe%>
+  		<span class="span8"><%= @content.html_safe%></span>
 
 <center>
-<img src="<%= @feed.thumbnail_url %>">
-<img src="<%= @feed.linkobject %>">
+	<span class="span8">
+		<img src="<%= @feed.thumbnail_url %>">
+		<img src="<%= @feed.linkobject %>">
+	</span>
 </center>
 
 		
 		
-			<hr class="style-two">
+			<hr class="span8 style-two">
 		
 		<div id="show_feed_wrapper_bottom">
 
@@ -111,13 +113,13 @@ function displayMap() {
 				  	<%if current_user.up_voted?(@feed)%>
 					up
 					<%else%>
-					<%= link_to "up", vote_path(:type=>"up") %>
+					<%= link_to " up", vote_path(:type=>"up"), :class=>"icon-thumbs-up" %>
 					<%end%>
 					|
 					<%if current_user.down_voted?(@feed)%>
 					down
 					<%else%>
-					<%= link_to "down", vote_path(:type=>"down") %>
+					<%= link_to " down", vote_path(:type=>"down"), :class=>"icon-thumbs-down" %>
 					<%end%>
 				<% end %>
 				

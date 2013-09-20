@@ -24,24 +24,23 @@
 
 <% if current_user%>
 	<% if current_user.id != @plate.user_id%>
-		<hr style="width:50%;"/>
 		<% if current_user.secondaryplates.any?%>
 			<%@sp = current_user.secondaryplates%>
 			<%if @sp.include? @plate%>
-				<% @currentupr = Userplaterelationship.find_by_secondaryplate_id(@plate.id) %>
-				<%= link_to "Unsubscribe ", @currentupr, :method => :delete %>
+				<% @currentupr = Userplaterelationship.find_by_secondaryplate_id(@plate.id) %><br>
+				<%= link_to "Unsubscribe ", @currentupr, :method => :delete, :class => "btn btn-danger", :style=>"margin-bottom:5px;" %><br>
 			<%else%>
 				<%= form_for(@upr) do |upr| %>
 					<%=upr.hidden_field :secondaryplate_id, :value=>@plate.id%>
 					<%=upr.hidden_field :user_id, :value=>current_user.id%>
-					<%=upr.submit "Subscribe"%>
+					<%=upr.submit "Subscribe", :class => "btn btn-warning"%>
 				<%end%>
 			<%end%>	
 		<%else%>
 			<%= form_for(@upr, :class => "identity_subscription_button_to_link") do |upr| %>
 				<%=upr.hidden_field :secondaryplate_id, :value=>@plate.id%>
 				<%=upr.hidden_field :user_id, :value=>current_user.id%>
-				<%=upr.submit "Subscribe", :class=>"submitbutton_identity_showplate"%>
+				<%=upr.submit "Subscribe", :class => "btn btn-warning" %>
 			<%end%>		
 		<%end%>	
 	<%end%>
