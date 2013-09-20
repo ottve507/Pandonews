@@ -4,8 +4,8 @@
 <%  @set = Setting.find_by_id(feeds.user_id) %>
 <% @sanitized_content = Sanitize.clean(@content).first(500) %>
 
-<div id="feedbox">
-  <div id="feedbox_content_identity">
+<div id="feedbox" class="row">
+  <div id="feedbox_content_identity" class="span3">
 	<%if !feeds.thumbnail_url.nil? || !feeds.linkobject.nil? %>
 	<div id="userinfo_identity">
 		<div id="identity_photo_box_after_resize">
@@ -20,13 +20,11 @@
 	<%end%>
 	
 	<div id="identity_feedbox_shadow">
-		<div id="headerboxtext_identity">		
-		<p class="headerlinkstyle"> <%= link_to feeds.title, feeds %>
-		</p>
-		</div>
+	<p class="headerlinkstyle" style="margin-left:2%;"> <%= link_to feeds.title, feeds %></p>
 		
 	<p class="feedtext_identity"><%=@sanitized_content %></p>
 	<p class="identity_feedtext_logo_and_title"><img src="<%=feeds.feedpic%>" class="home_feed_pic_size"> <%=feeds.type_of_feed%><br><%=feeds.created_at.strftime("%H:%M %d/%m/%Y")%></p>
 	</div>	
 	</div>
 </div>
+<div class="clearfix"></div>

@@ -1,7 +1,7 @@
 <%if @tokeywords.nil?%>
-	<%= metamagic :title => "Pandonews.com", :description => "News and feeds parsed to you easily", :keywords => "News and shit"  %>
+	<%= metamagic :title => "pandonews - news near you", :description => "News near you", :keywords => "news near you rss aggregator find rss feeds"  %>
 <%else%>
-	<%= metamagic :title => "Pandonews.com", :description => "News and feeds parsed to you easily", :keywords => @tokeywords.split(/ /).join(', ')  %>
+	<%= metamagic :title => "pandonews - news near you", :description => "News near you"%>
 <%end%>
 
 <div id ="home_top"><center><div id="home_frontpagemap">
@@ -48,41 +48,40 @@
 	
 </script>
 
-
-
-	
 </div></center>
 </div>
 
 
-<div id="home_middle_menu">
+<div id="home_middle_menu" style="padding-bottom:5%;">
+		<div class="row-fluid">
 		<center>
+			<h1>
+				top news entries	
+		</h1></center>
+			</div>
+			<div class="clearfix"></div>
+	
 			
-
-			<p class="logoText">
-				top feed entries	
-		</p></center>
-		<hr style="width:50%;"/>
-		<center>
-		<nav>
-		
+		<div class="row-fluid">
+				<center>
+		<ul class="nav nav-pills" style="display: inline-block; list-style-type: none; margin:0px;">
 		<%case @link_feed_type %>
 		  <%when 'mostread' || ''%>
-			<%= link_to content_tag(:b, "Most read"), root_path(:feed_type => "mostread") %> |
-			<%= link_to "Most recent", root_path(:feed_type => "mostrecent") %> |
-			<%= link_to "Most discussed", root_path(:feed_type => "mostcommented") %>		    
+			<li class="active"><%= link_to content_tag(:b, "Most read"), root_path(:feed_type => "mostread") %></li>
+			<li><%= link_to "Most recent", root_path(:feed_type => "mostrecent") %> </li>
+			<li><%= link_to "Most discussed", root_path(:feed_type => "mostcommented") %></li>		    
 		  <%when 'mostrecent'%>
-			<%= link_to "Most read", root_path(:feed_type => "mostread") %> |
-			<%= link_to content_tag(:b, "Most recent"), root_path(:feed_type => "mostrecent") %> |
-			<%= link_to "Most discussed", root_path(:feed_type => "mostcommented") %>	    
+			<li><%= link_to "Most read", root_path(:feed_type => "mostread") %> </li>
+			<li class="active"><%= link_to content_tag(:b, "Most recent"), root_path(:feed_type => "mostrecent") %> </li>
+			<li><%= link_to "Most discussed", root_path(:feed_type => "mostcommented") %>	</li>    
 		  <%else%>
-			<%= link_to "Most read", root_path(:feed_type => "mostread") %> |
-			<%= link_to "Most recent", root_path(:feed_type => "mostrecent") %> |
-			<%= link_to content_tag(:b, "Most discussed"), root_path(:feed_type => "mostcommented") %>		
+			<li><%= link_to "Most read", root_path(:feed_type => "mostread") %> </li>
+			<li><%= link_to "Most recent", root_path(:feed_type => "mostrecent") %> </li>
+			<li class="active"><%= link_to content_tag(:b, "Most discussed"), root_path(:feed_type => "mostcommented") %>	</li>	
 		<%end%>
-		</nav>
-
+		</ul>
 		</center>
+		</div>
 		
 </div>
 
@@ -93,7 +92,7 @@
 
 </div>
 <%if @feeds%>
-<div id="lastpage_identity" type="<%=@feeds.total_pages%>">
+<div id="lastpage_identity" type="<%=@feeds.total_pages%>" class="span5">
 <center>
 <%= will_paginate(@feeds)%></center></div>	
 <%end%>

@@ -16,12 +16,13 @@
 	  })();
 
 	</script>
-<title>pandonews</title>
+<title>pandonews - news near you</title>
 <%= stylesheet_link_tag    "application" %>
 <%= javascript_include_tag "application" %>
 <%= csrf_meta_tag %>
 </head>
 <body>
+	<meta name="description" content="Pandonews - The way to find news near you">
 	<%	meta [:property => "og:image", :content => "http://www.pandonews.com/assets/f.png"] %>
 	<div id= "home_top_fill"></div>
 	
@@ -30,13 +31,12 @@
 	<%= content_tag :div, msg, :id => "flash_#{name}" %>
 	<% end %> 
 
-	<div id="container">
+	<div id="container-old">
 		<%= yield %>		
 	</div>
 
 
 </body>
-
 <div id="navigation">
 	<div id="navigation_image">
 		<%= link_to image_tag("/assets/f.png", :class=>"logo"), root_url %> 
@@ -48,30 +48,46 @@
 <%end%>
 
 <div id="navigation_text">
-
 	<% if current_user %>
-	<div id="navigation_text_options">
+	<ul class="nav nav-tabs nav-justified">
 	<% @anvC = User.find_by_id(current_user.id) %>
-	<%=link_to "#{image_tag("user_profiles.png", :border => 0)} profile".html_safe, user_path(@anvC.id) %>
-	</div>
 	<% @setting = Setting.find(@anvC.id) %>
-	<div id="navigation_text_options">
-	<%=link_to "#{image_tag("user_settings.png", :border => 0)} settings".html_safe, edit_setting_path(@setting)%>
-	</div>
-	<div id="navigation_text_options">
-	<%=link_to "#{image_tag("suggestions_about.png", :border => 0)} about".html_safe, suggestion_path%>
-	</div>
-	<div id="navigation_text_options_last">
-	<%=link_to "#{image_tag("user_logout.png", :border => 0)} logout".html_safe, logout_path%>
-	</div>
+	<li><%=link_to user_path(@anvC.id) do %>
+		<span class="icon-user"></span>
+		profile
+	<%end%>	
+	</li> 	
+	<li><%=link_to edit_setting_path(@setting) do %>
+		<span class="icon-wrench"></span>
+		settings
+	<%end%>	
+	</li>
+	<li><%=link_to suggestion_path do %>
+		<span class="icon-heart"></span>
+		about
+	<%end%>	
+	</li>
+	<li><%=link_to logout_path do %>
+		<span class="icon-chevron-down"></span>
+		logout
+	<%end%>	
+	</li>
+	</ul>
 	<% else %>
 
-	<div id="navigation_text_options">
-	<%=link_to "#{image_tag("user_profiles.png", :border => 0)} login/signup".html_safe, sessions_path %>
-	</div>
-	<div id="navigation_text_options_last">
-	<%=link_to "#{image_tag("suggestions_about.png", :border => 0)} about".html_safe, suggestion_path%>
-	</div>
+<ul class="nav nav-tabs nav-justified">
+	<li><%=link_to sessions_path do %>
+		<span class="icon-globe"></span>
+		login or signup
+	<%end%>	
+	</li>
+	
+	<li><%=link_to suggestion_path do %>
+		<span class="icon-heart"></span>
+		about
+	<%end%>	
+	</li>
+</ul>
 	<%end%>
 
 

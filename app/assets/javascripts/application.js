@@ -7,6 +7,7 @@
 
 //= require jquery-1.9.1
 //= require jquery_ujs
+//= require twitter/bootstrap
 // require_tree .
 //= require_tree ./misc/
 //= require_tree ./jquery-ui/

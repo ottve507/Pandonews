@@ -14,12 +14,12 @@
 
 html, body {
  /* background-color: #FFFFF8;*/
- 	background: none repeat scroll 0% 0% rgb(241, 242, 243);
-  font-family: Helvetica;
+  background: none repeat scroll 0% 0% rgb(241, 242, 243);
   font-size: 14px;
   margin: 0;
   padding: 0;
   height:100%;
+  width:100% !important;
 }
 
 #header {
@@ -28,11 +28,12 @@ html, body {
    position:fixed;
 }
  
-#container {
+#container-old {
    min-height:100%;
    display: inline-block;
    width:100%;
    margin-bottom:-60px;
+   background: none repeat scroll 0% 0% rgb(241, 242, 243);
 }
 
 #footer {

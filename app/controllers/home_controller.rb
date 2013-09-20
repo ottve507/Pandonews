@@ -20,12 +20,12 @@ class HomeController < ApplicationController
     if !@feeds.nil?
     	@meta = @feeds.first(50)
     	@tokeywords = ' '
-    	@meta.each do |m|
-    		@tokeywords += m.title + ' '
-    	end
-    	@tokeywords += 'news parser rss feeds world pulse feedly' 
+    	#@meta.each do |m|
+    		#@tokeywords += m.title + ' '
+    	#end
+    	#@tokeywords += 'news parser rss feeds world pulse feedly' 
     end
-
+    @tokeywords = "latest news breaking world rss aggregator how to market blog"
 
     respond_to do |format|
        format.html 
