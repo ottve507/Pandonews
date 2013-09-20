@@ -174,3 +174,12 @@ nav a {
 	width: 90%;
 	margin-top:5px;
 }
+
+.settings_drop{
+	position:absolute;
+	top: 20px;
+    left: 0;
+	margin-right:5%;
+	float:none;
+	margin:0px;
+}

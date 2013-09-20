@@ -48,8 +48,10 @@
 <%end%>
 
 <div id="navigation_text">
+
+	
 	<% if current_user %>
-	<ul class="nav nav-tabs nav-justified">
+	<ul class="span6 nav nav-tabs nav-justified">
 	<% @anvC = User.find_by_id(current_user.id) %>
 	<% @setting = Setting.find(@anvC.id) %>
 	<li><%=link_to user_path(@anvC.id) do %>
@@ -70,9 +72,10 @@
 	<li><%=link_to logout_path do %>
 		<span class="icon-chevron-down"></span>
 		logout
-	<%end%>	
+		<%end%>	
 	</li>
 	</ul>
+	
 	<% else %>
 
 <ul class="nav nav-tabs nav-justified">
@@ -88,12 +91,13 @@
 	<%end%>	
 	</li>
 </ul>
+
+
+
 	<%end%>
 
 
 </div>
-
-
 </div>
 
 
