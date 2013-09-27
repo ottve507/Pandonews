@@ -4,7 +4,12 @@ a img {
 
 a {
   color: orange;
-text-decoration: none;
+   ext-decoration: none;
+}
+
+a:hover
+{
+color:orange;
 }
 
 .show_link{
@@ -182,4 +187,9 @@ nav a {
 	margin-right:5%;
 	float:none;
 	margin:0px;
+}
+
+.nav .ul .li .active {
+	background-color:orange;
+	color:orange;
 }

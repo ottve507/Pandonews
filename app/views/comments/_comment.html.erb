@@ -1,7 +1,9 @@
+
 <%@commenter = User.find(comment.user_id)%>
 <%@setting = Setting.find(comment.user_id)%>
 
 <%if comment.parent==nil%>
+
 <div id="comment_box_parent">
 	<%= link_to(@commenter) do %>	
 	<div id="userinfo_identity", style="margin-left:10px; margin-right:10px;">
@@ -31,15 +33,14 @@
 	<div id="comment_box_vote"><h1 class="votecount"><%=comment.votes%></h1>
 		<%if current_user%>
 		<%if current_user.up_voted?(comment)%>
-		up
+		<i class="icon-thumbs-up"></i>
 		<%else%>
-		<%= link_to "up", votecomment_path(:type=>"up", :comment_id=>comment.id) %>
+		<%= link_to "", votecomment_path(:type=>"up", :comment_id=>comment.id), :class=>"icon-thumbs-up" %>
 		<%end%>
-		|
 		<%if current_user.down_voted?(comment)%>
-		down
+		<i class="icon-thumbs-down"></i>
 		<%else%>
-		<%= link_to "down", votecomment_path(:type=>"down", :comment_id=>comment.id) %>
+		<%= link_to "", votecomment_path(:type=>"down", :comment_id=>comment.id), :class=>"icon-thumbs-down"  %>
 		<%end%>
 		<%end%>
 		</div>
@@ -85,15 +86,15 @@
 		<div id="comment_box_vote"><h1 class="votecount"><%=comment.votes%></h1>
 			<%if current_user%>
 			<%if current_user.up_voted?(comment)%>
-			up
+			<i class="icon-thumbs-up"></i>
 			<%else%>
-			<%= link_to "up", votecomment_path(:type=>"up", :comment_id=>comment.id) %>
+			<%= link_to "", votecomment_path(:type=>"up", :comment_id=>comment.id), :class=>"icon-thumbs-up" %>
 			<%end%>
 			|
 			<%if current_user.down_voted?(comment)%>
-			down
+			<i class="icon-thumbs-down"></i>
 			<%else%>
-			<%= link_to "down", votecomment_path(:type=>"down", :comment_id=>comment.id) %>
+			<%= link_to "", votecomment_path(:type=>"down", :comment_id=>comment.id), :class=>"icon-thumbs-up" %>
 			<%end%>
 			<%end%>
 			</div>

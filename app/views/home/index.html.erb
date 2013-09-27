@@ -72,7 +72,7 @@
 			<li><%= link_to "Most discussed", root_path(:feed_type => "mostcommented") %></li>		    
 		  <%when 'mostrecent'%>
 			<li><%= link_to "Most read", root_path(:feed_type => "mostread") %> </li>
-			<li class="active"><%= link_to content_tag(:b, "Most recent"), root_path(:feed_type => "mostrecent") %> </li>
+			<li class="active"  style="color:green;"><%= link_to content_tag(:b, "Most recent"), root_path(:feed_type => "mostrecent") %> </li>
 			<li><%= link_to "Most discussed", root_path(:feed_type => "mostcommented") %>	</li>    
 		  <%else%>
 			<li><%= link_to "Most read", root_path(:feed_type => "mostread") %> </li>
